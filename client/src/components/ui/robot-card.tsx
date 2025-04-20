@@ -40,10 +40,11 @@ const RobotCard: React.FC<RobotCardProps> = ({ robot }) => {
               </Badge>
             )}
             {robot.awards && robot.awards.some(award => award.name.includes("Winner") || award.name.includes("Champion")) && (
-              <Badge className="bg-blue-600 text-white font-semibold flex items-center">
-                <Trophy className="w-3 h-3 mr-1" /> 
-                Blue Banner
-              </Badge>
+              <img 
+                src="https://i.postimg.cc/Y0yt1JxS/blue-banner.png"
+                alt="Blue Banner Winner"
+                className="absolute -top-2 -right-2 h-16 z-10"
+              />
             )}
           </div>
         </div>
