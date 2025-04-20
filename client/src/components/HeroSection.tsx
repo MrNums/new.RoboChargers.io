@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import robot2025Image from "../assets/robots/robot_2025.png";
 
 const HeroSection: React.FC = () => {
   return (
@@ -14,7 +15,7 @@ const HeroSection: React.FC = () => {
             </h1>
             <p className="text-lg mb-8">
               We are the RoboChargers, an award-winning robotics team from
-              Coppell High School participating in FIRST Robotics competitions.
+              Emmett J Conrad High School in Dallas, Texas participating in FIRST Robotics competitions.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button
@@ -37,9 +38,9 @@ const HeroSection: React.FC = () => {
           <div className="md:w-1/2 flex justify-center">
             <div className="relative w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] rounded-full bg-[#ffd700]/20 flex items-center justify-center">
               <img
-                src="https://images.unsplash.com/photo-1561146143-5de11da702f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=400&q=80"
-                alt="RoboChargers Robot"
-                className="w-3/4 h-auto"
+                src={robot2025Image}
+                alt="RoboChargers 2025 Robot - Dynamo"
+                className="w-5/6 h-auto"
               />
             </div>
           </div>
