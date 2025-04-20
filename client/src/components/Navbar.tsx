@@ -52,14 +52,13 @@ const Navbar: React.FC = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <Link href="/">
-              <a
-                className={`text-white hover:text-[#ffd700] font-medium transition duration-150 ${
-                  isActive("/") ? "text-[#ffd700]" : ""
-                }`}
-              >
-                Home
-              </a>
+            <Link 
+              href="/"
+              className={`text-white hover:text-[#ffd700] font-medium transition duration-150 ${
+                isActive("/") ? "text-[#ffd700]" : ""
+              }`}
+            >
+              Home
             </Link>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -115,41 +114,37 @@ const Navbar: React.FC = () => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <Link href="/gallery">
-              <a
-                className={`text-white hover:text-[#ffd700] font-medium transition duration-150 ${
-                  isActive("/gallery") ? "text-[#ffd700]" : ""
-                }`}
-              >
-                Gallery
-              </a>
+            <Link 
+              href="/gallery"
+              className={`text-white hover:text-[#ffd700] font-medium transition duration-150 ${
+                isActive("/gallery") ? "text-[#ffd700]" : ""
+              }`}
+            >
+              Gallery
             </Link>
-            <Link href="/schedule">
-              <a
-                className={`text-white hover:text-[#ffd700] font-medium transition duration-150 ${
-                  isActive("/schedule") ? "text-[#ffd700]" : ""
-                }`}
-              >
-                Schedule
-              </a>
+            <Link 
+              href="/schedule"
+              className={`text-white hover:text-[#ffd700] font-medium transition duration-150 ${
+                isActive("/schedule") ? "text-[#ffd700]" : ""
+              }`}
+            >
+              Schedule
             </Link>
-            <Link href="/sponsors">
-              <a
-                className={`text-white hover:text-[#ffd700] font-medium transition duration-150 ${
-                  isActive("/sponsors") ? "text-[#ffd700]" : ""
-                }`}
-              >
-                Sponsors
-              </a>
+            <Link 
+              href="/sponsors"
+              className={`text-white hover:text-[#ffd700] font-medium transition duration-150 ${
+                isActive("/sponsors") ? "text-[#ffd700]" : ""
+              }`}
+            >
+              Sponsors
             </Link>
-            <Link href="/resources">
-              <a
-                className={`text-white hover:text-[#ffd700] font-medium transition duration-150 ${
-                  isActive("/resources") ? "text-[#ffd700]" : ""
-                }`}
-              >
-                Resources
-              </a>
+            <Link 
+              href="/resources"
+              className={`text-white hover:text-[#ffd700] font-medium transition duration-150 ${
+                isActive("/resources") ? "text-[#ffd700]" : ""
+              }`}
+            >
+              Resources
             </Link>
           </nav>
 
@@ -168,17 +163,16 @@ const Navbar: React.FC = () => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-[#0a1a70] border-t border-gray-700 py-2">
           <div className="px-4 space-y-2">
-            <Link href="/">
-              <a
-                className={`block py-2 ${
-                  isActive("/")
-                    ? "text-[#ffd700]"
-                    : "text-white hover:text-[#ffd700]"
-                }`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Home
-              </a>
+            <Link 
+              href="/"
+              className={`block py-2 ${
+                isActive("/")
+                  ? "text-[#ffd700]"
+                  : "text-white hover:text-[#ffd700]"
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Home
             </Link>
             <div>
               <button
@@ -197,29 +191,26 @@ const Navbar: React.FC = () => {
                 About <ChevronDown className="h-4 w-4" />
               </button>
               <div id="about-submenu" className="hidden pl-4 space-y-2 mt-1">
-                <Link href="/about">
-                  <a
-                    className="block text-white hover:text-[#ffd700] py-1"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Team History
-                  </a>
+                <Link 
+                  href="/about"
+                  className="block text-white hover:text-[#ffd700] py-1"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Team History
                 </Link>
-                <Link href="/about#mission">
-                  <a
-                    className="block text-white hover:text-[#ffd700] py-1"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Mission & Values
-                  </a>
+                <Link 
+                  href="/about#mission"
+                  className="block text-white hover:text-[#ffd700] py-1"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Mission & Values
                 </Link>
-                <Link href="/team">
-                  <a
-                    className="block text-white hover:text-[#ffd700] py-1"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Team Members
-                  </a>
+                <Link 
+                  href="/team"
+                  className="block text-white hover:text-[#ffd700] py-1"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Team Members
                 </Link>
               </div>
             </div>
@@ -240,79 +231,72 @@ const Navbar: React.FC = () => {
                 Projects <ChevronDown className="h-4 w-4" />
               </button>
               <div id="projects-submenu" className="hidden pl-4 space-y-2 mt-1">
-                <Link href="/projects">
-                  <a
-                    className="block text-white hover:text-[#ffd700] py-1"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    FRC Team 3005
-                  </a>
+                <Link 
+                  href="/projects"
+                  className="block text-white hover:text-[#ffd700] py-1"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  FRC Team 3005
                 </Link>
-                <Link href="/projects?team=ftc">
-                  <a
-                    className="block text-white hover:text-[#ffd700] py-1"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    FTC Teams
-                  </a>
+                <Link 
+                  href="/projects?team=ftc"
+                  className="block text-white hover:text-[#ffd700] py-1"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  FTC Teams
                 </Link>
-                <Link href="/projects?view=past">
-                  <a
-                    className="block text-white hover:text-[#ffd700] py-1"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Past Robots
-                  </a>
+                <Link 
+                  href="/projects?view=past"
+                  className="block text-white hover:text-[#ffd700] py-1"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Past Robots
                 </Link>
               </div>
             </div>
-            <Link href="/gallery">
-              <a
-                className={`block py-2 ${
-                  isActive("/gallery")
-                    ? "text-[#ffd700]"
-                    : "text-white hover:text-[#ffd700]"
-                }`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Gallery
-              </a>
+            <Link 
+              href="/gallery"
+              className={`block py-2 ${
+                isActive("/gallery")
+                  ? "text-[#ffd700]"
+                  : "text-white hover:text-[#ffd700]"
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Gallery
             </Link>
-            <Link href="/schedule">
-              <a
-                className={`block py-2 ${
-                  isActive("/schedule")
-                    ? "text-[#ffd700]"
-                    : "text-white hover:text-[#ffd700]"
-                }`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Schedule
-              </a>
+            <Link 
+              href="/schedule"
+              className={`block py-2 ${
+                isActive("/schedule")
+                  ? "text-[#ffd700]"
+                  : "text-white hover:text-[#ffd700]"
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Schedule
             </Link>
-            <Link href="/sponsors">
-              <a
-                className={`block py-2 ${
-                  isActive("/sponsors")
-                    ? "text-[#ffd700]"
-                    : "text-white hover:text-[#ffd700]"
-                }`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Sponsors
-              </a>
+            <Link 
+              href="/sponsors"
+              className={`block py-2 ${
+                isActive("/sponsors")
+                  ? "text-[#ffd700]"
+                  : "text-white hover:text-[#ffd700]"
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Sponsors
             </Link>
-            <Link href="/resources">
-              <a
-                className={`block py-2 ${
-                  isActive("/resources")
-                    ? "text-[#ffd700]"
-                    : "text-white hover:text-[#ffd700]"
-                }`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Resources
-              </a>
+            <Link 
+              href="/resources"
+              className={`block py-2 ${
+                isActive("/resources")
+                  ? "text-[#ffd700]"
+                  : "text-white hover:text-[#ffd700]"
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Resources
             </Link>
           </div>
         </div>
