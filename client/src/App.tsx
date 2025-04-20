@@ -15,6 +15,7 @@ import Schedule from "@/pages/Schedule";
 import Sponsors from "@/pages/Sponsors";
 import Contact from "@/pages/Contact";
 import Resources from "@/pages/Resources";
+import Store from "@/pages/Store";
 import AuthPage from "@/pages/auth-page";
 import NotFound from "@/pages/not-found";
 
@@ -31,6 +32,7 @@ function Router() {
         <ProtectedRoute path="/sponsors" component={Sponsors} />
         <ProtectedRoute path="/contact" component={Contact} />
         <ProtectedRoute path="/resources" component={Resources} />
+        <ProtectedRoute path="/store" component={Store} />
         <Route path="/auth" component={AuthPage} />
         <Route component={NotFound} />
       </Switch>

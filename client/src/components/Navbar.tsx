@@ -47,7 +47,7 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-4">
             <Link 
               href="/"
               className={`text-white hover:text-[#ffd700] font-medium transition duration-150 my-auto ${
@@ -141,6 +141,14 @@ const Navbar: React.FC = () => {
               }`}
             >
               Resources
+            </Link>
+            <Link 
+              href="/store"
+              className={`text-white hover:text-[#ffd700] font-medium transition duration-150 my-auto ${
+                isActive("/store") ? "text-[#ffd700]" : ""
+              }`}
+            >
+              Store
             </Link>
           </nav>
 
@@ -326,6 +334,17 @@ const Navbar: React.FC = () => {
               onClick={() => setMobileMenuOpen(false)}
             >
               Resources
+            </Link>
+            <Link 
+              href="/store"
+              className={`block py-2 ${
+                isActive("/store")
+                  ? "text-[#ffd700]"
+                  : "text-white hover:text-[#ffd700]"
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Store
             </Link>
             
             {/* Mobile User Menu */}
