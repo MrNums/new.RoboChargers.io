@@ -36,7 +36,7 @@ const RobotShowcase: React.FC = () => {
         <div className="mb-10 relative">
           <div className="flex justify-between items-center mb-6">
             <h3 className="text-2xl font-bold text-[#1a36e8]">
-              Featured Robot: Dynamo (2025)
+              Featured Robot: Relay (2026)
             </h3>
             <div className="flex space-x-3">
               <Button
@@ -71,6 +71,7 @@ const RobotShowcase: React.FC = () => {
           >
             <div className="flex space-x-6 pb-2">
               {robots
+                .filter(robot => ["1", "2", "3", "4"].includes(robot.id)) // Only show first 4 robots
                 .sort((a, b) => parseInt(b.season) - parseInt(a.season)) // Sort by newest first
                 .map((robot) => (
                   <RobotCard key={robot.id} robot={robot} />

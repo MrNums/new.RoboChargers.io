@@ -319,6 +319,7 @@ export const teamMembers = {
 import robot2023Image from "../assets/robots/robot_2023.png";
 import robot2024Image from "../assets/robots/robot_2024.png";
 import robot2025Image from "../assets/robots/robot_2025.png";
+import robot2026Image from "../assets/robot_2026.png";
 import teamLogoBlue from "../assets/robots/team_logo_blue.png";
 import teamLogoWhite from "../assets/robots/team_logo_white.png";
 
@@ -326,12 +327,12 @@ import teamLogoWhite from "../assets/robots/team_logo_white.png";
 export const robots: Robot[] = [
   {
     id: "1",
-    name: "Dynamo",
-    description: "Our 2025 robot designed for the CRESCENDO challenge, featuring advanced intake and shooting mechanisms for high-precision scoring.",
-    season: "2025",
+    name: "Relay",
+    description: "Our 2026 robot designed for the CRESCENDO challenge, featuring advanced intake and shooting mechanisms for high-precision scoring.",
+    season: "2026",
     challenge: "CRESCENDO",
     team: "frc",
-    imageUrl: robot2025Image,
+    imageUrl: robot2026Image,
     current: true,
     features: [
       "Precision shooter with variable angles",
@@ -343,12 +344,12 @@ export const robots: Robot[] = [
   },
   {
     id: "2",
-    name: "Charger",
-    description: "Our 2024 robot designed for the CHARGED UP challenge, featuring a multi-joint arm and lift mechanism for game piece placement.",
-    season: "2024",
-    challenge: "CHARGED UP",
+    name: "Surge",
+    description: "Our 2025 robot designed for the CRESCENDO challenge, featuring a multi-joint arm and lift mechanism for game piece placement.",
+    season: "2025",
+    challenge: "CRESCENDO",
     team: "frc",
-    imageUrl: robot2024Image,
+    imageUrl: robot2025Image,
     current: false,
     features: [
       "Multi-joint articulating arm system",
@@ -360,15 +361,15 @@ export const robots: Robot[] = [
   },
   {
     id: "3",
-    name: "Volt",
-    description: "Our 2023 robot designed for the ENERGIZE challenge, featuring an advanced shooter and climbing mechanism.",
-    season: "2023",
-    challenge: "ENERGIZE",
+    name: "Blackout",
+    description: "Our 2024 robot designed for the CHARGED UP challenge, featuring an advanced lift system and climbing mechanism.",
+    season: "2024",
+    challenge: "CHARGED UP",
     team: "frc",
-    imageUrl: robot2023Image,
+    imageUrl: robot2024Image,
     current: false,
     features: [
-      "Variable-angle shooter for different distances",
+      "Variable-height lift mechanism",
       "High-reach climbing apparatus",
       "Quick intake roller system",
       "Vision-guided targeting system",
@@ -377,6 +378,23 @@ export const robots: Robot[] = [
   },
   {
     id: "4",
+    name: "Amp",
+    description: "Our 2023 robot designed for the ENERGIZE challenge, featuring precision mechanisms for game element manipulation.",
+    season: "2023",
+    challenge: "ENERGIZE",
+    team: "frc",
+    imageUrl: robot2023Image,
+    current: false,
+    features: [
+      "Precision manipulator for game elements",
+      "Balanced drive system for stability",
+      "Efficient power management",
+      "Custom sensor integration",
+      "Modular component design"
+    ]
+  },
+  {
+    id: "5",
     name: "Spark",
     description: "Our 2019 robot for DESTINATION: DEEP SPACE featuring a hatch panel mechanism and cargo scoring system.",
     season: "2019",

@@ -28,11 +28,11 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center py-3">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <div className="flex items-center mr-3">
+              <div className="flex items-center mr-3 bg-white rounded-full p-1">
                 <img 
                   src={logoImage} 
                   alt="RoboChargers Logo" 
-                  className="h-10 w-auto"
+                  className="h-9 w-auto"
                 />
               </div>
               <span className="text-white font-bold text-xl">RoboChargers</span>
