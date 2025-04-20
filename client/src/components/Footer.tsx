@@ -10,6 +10,7 @@ import {
   Mail,
   Phone,
 } from "lucide-react";
+import logoImage from "../assets/2_20230413_174021_0001.png";
 
 const Footer: React.FC = () => {
   return (
@@ -18,24 +19,12 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center mb-4">
-              <div className="bg-white rounded-full p-1 mr-2">
-                <svg
-                  className="h-8 w-8"
-                  viewBox="0 0 100 100"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle cx="50" cy="50" r="50" fill="#0a1a70" />
-                  <path
-                    d="M50 10 L60 40 L90 50 L60 60 L50 90 L40 60 L10 50 L40 40 Z"
-                    fill="#ffd700"
-                  />
-                  <path
-                    d="M40 30 L60 70"
-                    stroke="#ffd700"
-                    strokeWidth="8"
-                    strokeLinecap="round"
-                  />
-                </svg>
+              <div className="mr-2">
+                <img 
+                  src={logoImage} 
+                  alt="RoboChargers Logo" 
+                  className="h-9 w-auto"
+                />
               </div>
               <span className="font-bold text-xl">RoboChargers</span>
             </div>
@@ -91,52 +80,38 @@ const Footer: React.FC = () => {
             <h3 className="font-bold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/">
-                  <a className="text-gray-400 hover:text-white transition duration-150">
-                    Home
-                  </a>
+                <Link href="/" className="text-gray-400 hover:text-white transition duration-150">
+                  Home
                 </Link>
               </li>
               <li>
-                <Link href="/about">
-                  <a className="text-gray-400 hover:text-white transition duration-150">
-                    About Us
-                  </a>
+                <Link href="/about" className="text-gray-400 hover:text-white transition duration-150">
+                  About Us
                 </Link>
               </li>
               <li>
-                <Link href="/team">
-                  <a className="text-gray-400 hover:text-white transition duration-150">
-                    Our Teams
-                  </a>
+                <Link href="/team" className="text-gray-400 hover:text-white transition duration-150">
+                  Our Teams
                 </Link>
               </li>
               <li>
-                <Link href="/projects">
-                  <a className="text-gray-400 hover:text-white transition duration-150">
-                    Projects
-                  </a>
+                <Link href="/projects" className="text-gray-400 hover:text-white transition duration-150">
+                  Projects
                 </Link>
               </li>
               <li>
-                <Link href="/gallery">
-                  <a className="text-gray-400 hover:text-white transition duration-150">
-                    Gallery
-                  </a>
+                <Link href="/gallery" className="text-gray-400 hover:text-white transition duration-150">
+                  Gallery
                 </Link>
               </li>
               <li>
-                <Link href="/schedule">
-                  <a className="text-gray-400 hover:text-white transition duration-150">
-                    Schedule
-                  </a>
+                <Link href="/schedule" className="text-gray-400 hover:text-white transition duration-150">
+                  Schedule
                 </Link>
               </li>
               <li>
-                <Link href="/contact">
-                  <a className="text-gray-400 hover:text-white transition duration-150">
-                    Contact
-                  </a>
+                <Link href="/contact" className="text-gray-400 hover:text-white transition duration-150">
+                  Contact
                 </Link>
               </li>
             </ul>
@@ -146,45 +121,33 @@ const Footer: React.FC = () => {
             <h3 className="font-bold text-lg mb-4">Resources</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/resources#documents">
-                  <a className="text-gray-400 hover:text-white transition duration-150">
-                    Team Documents
-                  </a>
+                <Link href="/resources#documents" className="text-gray-400 hover:text-white transition duration-150">
+                  Team Documents
                 </Link>
               </li>
               <li>
-                <Link href="/resources#cad">
-                  <a className="text-gray-400 hover:text-white transition duration-150">
-                    CAD Files
-                  </a>
+                <Link href="/resources#cad" className="text-gray-400 hover:text-white transition duration-150">
+                  CAD Files
                 </Link>
               </li>
               <li>
-                <Link href="/resources#programming">
-                  <a className="text-gray-400 hover:text-white transition duration-150">
-                    Programming Guides
-                  </a>
+                <Link href="/resources#programming" className="text-gray-400 hover:text-white transition duration-150">
+                  Programming Guides
                 </Link>
               </li>
               <li>
-                <Link href="/resources#notebook">
-                  <a className="text-gray-400 hover:text-white transition duration-150">
-                    Engineering Notebook
-                  </a>
+                <Link href="/resources#notebook" className="text-gray-400 hover:text-white transition duration-150">
+                  Engineering Notebook
                 </Link>
               </li>
               <li>
-                <Link href="/resources#safety">
-                  <a className="text-gray-400 hover:text-white transition duration-150">
-                    Safety Guidelines
-                  </a>
+                <Link href="/resources#safety" className="text-gray-400 hover:text-white transition duration-150">
+                  Safety Guidelines
                 </Link>
               </li>
               <li>
-                <Link href="/sponsors#packet">
-                  <a className="text-gray-400 hover:text-white transition duration-150">
-                    Sponsorship Packet
-                  </a>
+                <Link href="/sponsors#packet" className="text-gray-400 hover:text-white transition duration-150">
+                  Sponsorship Packet
                 </Link>
               </li>
             </ul>
@@ -196,11 +159,11 @@ const Footer: React.FC = () => {
               <li className="flex items-start">
                 <MapPin className="mt-1 mr-2 flex-shrink-0" size={18} />
                 <span className="text-gray-400">
-                  Coppell High School
+                  Emmett J Conrad High School
                   <br />
-                  185 W Parkway Blvd
+                  7502 Fair Oaks Ave
                   <br />
-                  Coppell, TX 75019
+                  Dallas, TX 75231
                 </span>
               </li>
               <li className="flex items-center">
@@ -230,20 +193,14 @@ const Footer: React.FC = () => {
             &copy; {new Date().getFullYear()} RoboChargers. All rights reserved.
           </p>
           <div className="flex flex-wrap space-x-4 text-sm">
-            <Link href="/privacy">
-              <a className="text-gray-400 hover:text-white transition duration-150">
-                Privacy Policy
-              </a>
+            <Link href="/privacy" className="text-gray-400 hover:text-white transition duration-150">
+              Privacy Policy
             </Link>
-            <Link href="/terms">
-              <a className="text-gray-400 hover:text-white transition duration-150">
-                Terms of Service
-              </a>
+            <Link href="/terms" className="text-gray-400 hover:text-white transition duration-150">
+              Terms of Service
             </Link>
-            <Link href="/cookies">
-              <a className="text-gray-400 hover:text-white transition duration-150">
-                Cookie Policy
-              </a>
+            <Link href="/cookies" className="text-gray-400 hover:text-white transition duration-150">
+              Cookie Policy
             </Link>
           </div>
         </div>
