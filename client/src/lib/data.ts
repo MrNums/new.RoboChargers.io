@@ -315,57 +315,64 @@ export const teamMembers = {
   ]
 };
 
+// Import robot images
+import robot2023Image from "../assets/robots/robot_2023.png";
+import robot2024Image from "../assets/robots/robot_2024.png";
+import robot2025Image from "../assets/robots/robot_2025.png";
+import teamLogoBlue from "../assets/robots/team_logo_blue.png";
+import teamLogoWhite from "../assets/robots/team_logo_white.png";
+
 // Robots data
 export const robots: Robot[] = [
   {
     id: "1",
-    name: "Amp",
-    description: "Our 2023 robot designed for the CHARGED UP challenge, featuring a multi-joint arm for game piece manipulation.",
-    season: "2023",
-    challenge: "CHARGED UP",
+    name: "Dynamo",
+    description: "Our 2025 robot designed for the CRESCENDO challenge, featuring advanced intake and shooting mechanisms for high-precision scoring.",
+    season: "2025",
+    challenge: "CRESCENDO",
     team: "frc",
-    imageUrl: "https://images.unsplash.com/photo-1561146143-5de11da702f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80",
+    imageUrl: robot2025Image,
     current: true,
     features: [
-      "Multi-joint articulating arm for precise placement",
-      "Swerve drive for omnidirectional movement",
-      "Automated vision tracking system",
-      "Powerful intake mechanism for game pieces",
-      "Auto-balancing capabilities for charging station"
+      "Precision shooter with variable angles",
+      "Advanced swerve drive system",
+      "Quick intake mechanism for note collection",
+      "Stable climbing apparatus for end-game",
+      "Computer vision for autonomous targeting"
     ]
   },
   {
     id: "2",
-    name: "Voltage",
-    description: "Our 2022 robot for RAPID REACT, featuring a high-speed shooter and climb mechanism for traversal rung.",
-    season: "2022",
-    challenge: "RAPID REACT",
+    name: "Charger",
+    description: "Our 2024 robot designed for the CHARGED UP challenge, featuring a multi-joint arm and lift mechanism for game piece placement.",
+    season: "2024",
+    challenge: "CHARGED UP",
     team: "frc",
-    imageUrl: "https://images.unsplash.com/photo-1558137623-ce933996c730?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80",
+    imageUrl: robot2024Image,
     current: false,
     features: [
-      "High-speed flywheel shooter for cargo",
-      "Telescoping arm for multi-level climbing",
-      "Intake roller system for ground pickup",
-      "Advanced autonomous routines",
-      "6-wheel tank drive with shifting gearbox"
+      "Multi-joint articulating arm system",
+      "Robust lifting mechanism for high goals",
+      "Swerve drive for omnidirectional movement",
+      "Automated game piece tracking",
+      "Efficient auto-balancing capabilities"
     ]
   },
   {
     id: "3",
-    name: "Circuit",
-    description: "Our 2020 robot for INFINITE RECHARGE with automated shooting capabilities and effective defense mechanisms.",
-    season: "2020",
-    challenge: "INFINITE RECHARGE",
+    name: "Volt",
+    description: "Our 2023 robot designed for the ENERGIZE challenge, featuring an advanced shooter and climbing mechanism.",
+    season: "2023",
+    challenge: "ENERGIZE",
     team: "frc",
-    imageUrl: "https://images.unsplash.com/photo-1608501078713-8e445a709b39?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80",
+    imageUrl: robot2023Image,
     current: false,
     features: [
-      "Variable-angle shooter for power cells",
-      "Color wheel manipulation mechanism",
-      "Robust bumper design for defense",
+      "Variable-angle shooter for different distances",
+      "High-reach climbing apparatus",
+      "Quick intake roller system",
       "Vision-guided targeting system",
-      "Low center of gravity for stability"
+      "Reliable autonomous routines"
     ]
   },
   {
@@ -568,8 +575,8 @@ export const events: Event[] = [
     month: "MAY",
     year: "2023",
     time: "6:00 PM - 9:00 PM",
-    location: "Coppell High School Cafeteria",
-    calendarLink: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=End%20of%20Year%20Team%20Banquet&dates=20230527T180000/20230527T210000&details=Celebration%20of%20our%20team's%20achievements%20throughout%20the%20season.&location=Coppell%20High%20School%20Cafeteria",
+    location: "Emmett J Conrad High School Cafeteria",
+    calendarLink: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=End%20of%20Year%20Team%20Banquet&dates=20230527T180000/20230527T210000&details=Celebration%20of%20our%20team's%20achievements%20throughout%20the%20season.&location=Emmett%20J%20Conrad%20High%20School%20Cafeteria",
     type: "meeting"
   },
   {
@@ -580,8 +587,8 @@ export const events: Event[] = [
     month: "JUN",
     year: "2023",
     time: "10:00 AM - 2:00 PM",
-    location: "Coppell High School Parking Lot",
-    calendarLink: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Car%20Wash%20Fundraiser&dates=20230610T100000/20230610T140000&details=Team%20fundraising%20event%20to%20support%20our%20program's%20expenses.&location=Coppell%20High%20School%20Parking%20Lot",
+    location: "Emmett J Conrad High School Parking Lot",
+    calendarLink: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Car%20Wash%20Fundraiser&dates=20230610T100000/20230610T140000&details=Team%20fundraising%20event%20to%20support%20our%20program's%20expenses.&location=Emmett%20J%20Conrad%20High%20School%20Parking%20Lot",
     type: "fundraising"
   }
 ];
@@ -625,24 +632,24 @@ export const sponsors: Sponsor[] = [
   },
   {
     id: "6",
-    name: "Coppell Education Foundation",
+    name: "Dallas Education Foundation",
     level: "silver",
     logoUrl: "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&auto=format&fit=crop&w=120&q=80",
-    website: "https://www.coppellisdef.com/"
+    website: "https://futureofdallas.org/"
   },
   {
     id: "7",
-    name: "First Community Bank",
+    name: "Bank of Texas",
     level: "bronze",
     logoUrl: "https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?ixlib=rb-1.2.1&auto=format&fit=crop&w=120&q=80",
-    website: "https://www.fcbtexas.com/"
+    website: "https://www.bankoftexas.com/"
   },
   {
     id: "8",
-    name: "Coppell Chamber of Commerce",
+    name: "Dallas Regional Chamber",
     level: "bronze",
     logoUrl: "https://images.unsplash.com/photo-1535868463750-2318539a9176?ixlib=rb-1.2.1&auto=format&fit=crop&w=120&q=80",
-    website: "https://www.coppellchamber.org/"
+    website: "https://www.dallaschamber.org/"
   }
 ];
 
