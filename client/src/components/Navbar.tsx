@@ -40,10 +40,10 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex items-center space-x-8">
             <Link 
               href="/"
-              className={`text-white hover:text-[#ffd700] font-medium transition duration-150 ${
+              className={`text-white hover:text-[#ffd700] font-medium transition duration-150 my-auto ${
                 isActive("/") ? "text-[#ffd700]" : ""
               }`}
             >
@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="link"
-                  className="text-white hover:text-[#ffd700] font-medium transition duration-150 p-0"
+                  className="text-white hover:text-[#ffd700] font-medium transition duration-150 p-0 text-base"
                 >
                   About <ChevronDown className="ml-1 h-4 w-4" />
                 </Button>
@@ -80,7 +80,7 @@ const Navbar: React.FC = () => {
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="link"
-                  className="text-white hover:text-[#ffd700] font-medium transition duration-150 p-0"
+                  className="text-white hover:text-[#ffd700] font-medium transition duration-150 p-0 text-base"
                 >
                   Projects <ChevronDown className="ml-1 h-4 w-4" />
                 </Button>
@@ -105,7 +105,7 @@ const Navbar: React.FC = () => {
             </DropdownMenu>
             <Link 
               href="/gallery"
-              className={`text-white hover:text-[#ffd700] font-medium transition duration-150 ${
+              className={`text-white hover:text-[#ffd700] font-medium transition duration-150 my-auto ${
                 isActive("/gallery") ? "text-[#ffd700]" : ""
               }`}
             >
@@ -113,7 +113,7 @@ const Navbar: React.FC = () => {
             </Link>
             <Link 
               href="/schedule"
-              className={`text-white hover:text-[#ffd700] font-medium transition duration-150 ${
+              className={`text-white hover:text-[#ffd700] font-medium transition duration-150 my-auto ${
                 isActive("/schedule") ? "text-[#ffd700]" : ""
               }`}
             >
@@ -121,7 +121,7 @@ const Navbar: React.FC = () => {
             </Link>
             <Link 
               href="/sponsors"
-              className={`text-white hover:text-[#ffd700] font-medium transition duration-150 ${
+              className={`text-white hover:text-[#ffd700] font-medium transition duration-150 my-auto ${
                 isActive("/sponsors") ? "text-[#ffd700]" : ""
               }`}
             >
@@ -129,7 +129,7 @@ const Navbar: React.FC = () => {
             </Link>
             <Link 
               href="/resources"
-              className={`text-white hover:text-[#ffd700] font-medium transition duration-150 ${
+              className={`text-white hover:text-[#ffd700] font-medium transition duration-150 my-auto ${
                 isActive("/resources") ? "text-[#ffd700]" : ""
               }`}
             >
