@@ -33,11 +33,19 @@ const RobotCard: React.FC<RobotCardProps> = ({ robot }) => {
             alt={`Robot ${robot.name}`}
             className={`w-full ${isPortrait ? 'h-72 object-cover' : 'h-52 object-contain'} bg-gradient-to-b from-blue-50 to-gray-100 p-3`}
           />
-          {robot.current && (
-            <Badge className="absolute top-3 right-3 bg-[#ffd700] text-[#0a1a70] font-semibold">
-              Current
-            </Badge>
-          )}
+          <div className="absolute top-3 right-3 flex flex-col gap-2">
+            {robot.current && (
+              <Badge className="bg-[#ffd700] text-[#0a1a70] font-semibold">
+                Current
+              </Badge>
+            )}
+            {robot.awards && robot.awards.some(award => award.name.includes("Winner") || award.name.includes("Champion")) && (
+              <Badge className="bg-blue-600 text-white font-semibold flex items-center">
+                <Trophy className="w-3 h-3 mr-1" /> 
+                Blue Banner
+              </Badge>
+            )}
+          </div>
         </div>
         <CardContent className="p-5">
           <div className="flex justify-between items-start mb-2">
@@ -119,10 +127,15 @@ const RobotCard: React.FC<RobotCardProps> = ({ robot }) => {
                     <Trophy className="h-5 w-5 mr-2 text-[#ffd700]" />
                     Awards and Achievements
                   </h3>
-                  <div className="space-y-3">
+                  <div className="space-y-3 max-h-44 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-blue-50">
                     {robot.awards.map((award, index) => (
-                      <div key={index} className="bg-blue-50 p-3 rounded-lg">
-                        <div className="font-medium text-[#0a1a70]">{award.name}</div>
+                      <div key={index} className={`p-3 rounded-lg ${award.name.includes("Winner") || award.name.includes("Champion") ? "bg-blue-100 border-l-4 border-blue-600" : "bg-blue-50"}`}>
+                        <div className="font-medium text-[#0a1a70] flex items-start">
+                          {(award.name.includes("Winner") || award.name.includes("Champion")) && (
+                            <Trophy className="h-4 w-4 mr-1 text-[#ffd700] mt-0.5 flex-shrink-0" />
+                          )}
+                          <span>{award.name}</span>
+                        </div>
                         <div className="text-sm text-gray-600">
                           {award.event} ({award.year})
                         </div>
