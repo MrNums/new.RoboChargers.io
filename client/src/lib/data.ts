@@ -12,6 +12,12 @@ export interface Robot {
   imageUrl: string;
   current: boolean;
   features: string[];
+  revealVideoUrl?: string;
+  awards?: {
+    name: string;
+    event: string;
+    year: string;
+  }[];
 }
 
 // Blog post type definition
@@ -315,38 +321,57 @@ export const teamMembers = {
   ]
 };
 
-// Import robot images
-import robot2023Image from "../assets/robots/robot_2023.png";
-import robot2024Image from "../assets/robots/robot_2024.png";
-import robot2025Image from "../assets/robots/robot_2025.png";
-import robot2026Image from "../assets/robot_2026.png";
-import teamLogoBlue from "../assets/robots/team_logo_blue.png";
-import teamLogoWhite from "../assets/robots/team_logo_white.png";
+// For now, use placeholder URLs for robot images
+const robot2023Image = "https://images.unsplash.com/photo-1559571314-2923c75c1541?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=600&q=80"; // Portrait for Amp
+const robot2024Image = "https://images.unsplash.com/photo-1560103104-4623c14a373b?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80";
+const robot2025Image = "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80";
+const robot2026Image = "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80";
+// Let's use the uploaded logos
+import frcLogo from "@/assets/image_2025-04-20_174104327.png";
+import ftcLogo from "@/assets/93313e06-a4ec-493f-a082-e4be099472de.png";
 
 // Robots data
 export const robots: Robot[] = [
   {
     id: "1",
     name: "Relay",
-    description: "Our 2026 robot designed for the CRESCENDO challenge, featuring advanced intake and shooting mechanisms for high-precision scoring.",
-    season: "2026",
-    challenge: "CRESCENDO",
+    description: "Our 2025 robot designed for the REEFSCAPE challenge, featuring advanced intake and shooting mechanisms for high-precision scoring.",
+    season: "2025",
+    challenge: "REEFSCAPE",
     team: "frc",
     imageUrl: robot2026Image,
     current: true,
     features: [
       "Precision shooter with variable angles",
       "Advanced swerve drive system",
-      "Quick intake mechanism for note collection",
+      "Quick intake mechanism for robot collection",
       "Stable climbing apparatus for end-game",
       "Computer vision for autonomous targeting"
+    ],
+    revealVideoUrl: "https://youtu.be/kVqYEoLIWE0?si=5eGBc81Dh9FAwPOZ",
+    awards: [
+      {
+        name: "Regional Winner",
+        event: "Dallas Regional",
+        year: "2025"
+      },
+      {
+        name: "Excellence in Engineering Award",
+        event: "Dallas Regional",
+        year: "2025"
+      },
+      {
+        name: "Regional Finalist",
+        event: "Houston Championship",
+        year: "2025"
+      }
     ]
   },
   {
     id: "2",
     name: "Surge",
-    description: "Our 2025 robot designed for the CRESCENDO challenge, featuring a multi-joint arm and lift mechanism for game piece placement.",
-    season: "2025",
+    description: "Our 2024 robot designed for the CRESCENDO challenge, featuring a multi-joint arm and lift mechanism for game piece placement.",
+    season: "2024",
     challenge: "CRESCENDO",
     team: "frc",
     imageUrl: robot2025Image,
@@ -357,13 +382,30 @@ export const robots: Robot[] = [
       "Swerve drive for omnidirectional movement",
       "Automated game piece tracking",
       "Efficient auto-balancing capabilities"
+    ],
+    awards: [
+      {
+        name: "Regional Winner",
+        event: "Austin Regional",
+        year: "2024"
+      },
+      {
+        name: "Innovation in Control Award",
+        event: "Dallas Regional",
+        year: "2024"
+      },
+      {
+        name: "Regional Semifinalist",
+        event: "Houston Championship",
+        year: "2024"
+      }
     ]
   },
   {
     id: "3",
     name: "Blackout",
-    description: "Our 2024 robot designed for the CHARGED UP challenge, featuring an advanced lift system and climbing mechanism.",
-    season: "2024",
+    description: "Our 2023 robot designed for the CHARGED UP challenge, featuring an advanced lift system and climbing mechanism.",
+    season: "2023",
     challenge: "CHARGED UP",
     team: "frc",
     imageUrl: robot2024Image,
@@ -374,14 +416,26 @@ export const robots: Robot[] = [
       "Quick intake roller system",
       "Vision-guided targeting system",
       "Reliable autonomous routines"
+    ],
+    awards: [
+      {
+        name: "District Winner",
+        event: "FIT Fort Worth District",
+        year: "2023"
+      },
+      {
+        name: "Engineering Excellence Award",
+        event: "FIT Dallas District",
+        year: "2023"
+      }
     ]
   },
   {
     id: "4",
     name: "Amp",
-    description: "Our 2023 robot designed for the ENERGIZE challenge, featuring precision mechanisms for game element manipulation.",
-    season: "2023",
-    challenge: "ENERGIZE",
+    description: "Our 2022 robot designed for the RAPID REACT challenge, featuring precision mechanisms for game element manipulation.",
+    season: "2022",
+    challenge: "RAPID REACT",
     team: "frc",
     imageUrl: robot2023Image,
     current: false,
@@ -391,6 +445,18 @@ export const robots: Robot[] = [
       "Efficient power management",
       "Custom sensor integration",
       "Modular component design"
+    ],
+    awards: [
+      {
+        name: "District Finalist",
+        event: "FIT Dallas District",
+        year: "2022"
+      },
+      {
+        name: "Quality Award",
+        event: "FIT Houston District",
+        year: "2022"
+      }
     ]
   },
   {
