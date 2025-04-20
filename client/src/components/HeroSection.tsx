@@ -8,10 +8,11 @@ const HeroSection: React.FC = () => {
   return (
     <section className="relative bg-[#0a1a70] text-white py-16 md:py-24">
       <div 
-        className="absolute inset-0 z-0 opacity-10 bg-repeat"
+        className="absolute inset-0 z-0 opacity-10"
         style={{ 
           backgroundImage: `url(${backgroundPattern})`, 
-          backgroundSize: '200px' 
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
         }}
       ></div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -52,12 +53,18 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
           <div className="md:w-1/2 flex justify-center">
-            <div className="relative w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden bg-white/10 flex items-center justify-center">
-              <img
-                src={robotImage}
-                alt="RoboChargers Robot"
-                className="w-full h-full object-cover"
-              />
+            <div className="relative w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] rounded-full">
+              {/* Background circle */}
+              <div className="absolute inset-0 bg-white/10 rounded-full"></div>
+              
+              {/* Robot image that extends beyond the circle */}
+              <div className="absolute inset-0 flex items-center justify-center" style={{ transform: 'scale(1.2)' }}>
+                <img
+                  src={robotImage}
+                  alt="RoboChargers Robot"
+                  className="w-full h-full object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>
