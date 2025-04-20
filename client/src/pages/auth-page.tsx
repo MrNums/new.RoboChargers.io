@@ -18,6 +18,7 @@ import {
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -27,40 +28,55 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Loader2 } from "lucide-react";
 import logoImage from "../assets/2_20230413_174021_0001.png";
 
-const formSchema = insertUserSchema.extend({
+const loginFormSchema = insertUserSchema.extend({
   password: z.string().min(6, {
     message: "Password must be at least 6 characters",
   }),
 });
 
-type FormValues = z.infer<typeof formSchema>;
+const registerFormSchema = insertUserSchema.extend({
+  password: z.string().min(6, {
+    message: "Password must be at least 6 characters",
+  }),
+  activationCode: z.string().min(6, {
+    message: "Activation code is required and must be at least 6 characters",
+  }),
+});
+
+type LoginFormValues = z.infer<typeof loginFormSchema>;
+type RegisterFormValues = z.infer<typeof registerFormSchema>;
 
 export default function AuthPage() {
   const [activeTab, setActiveTab] = useState<"login" | "register">("login");
   const { user, loginMutation, registerMutation } = useAuth();
 
-  const loginForm = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
+  const loginForm = useForm<LoginFormValues>({
+    resolver: zodResolver(loginFormSchema),
     defaultValues: {
       username: "",
       password: "",
     },
   });
 
-  const registerForm = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
+  const registerForm = useForm<RegisterFormValues>({
+    resolver: zodResolver(registerFormSchema),
     defaultValues: {
       username: "",
       password: "",
+      activationCode: "",
     },
   });
 
-  const onLogin = (data: FormValues) => {
+  const onLogin = (data: LoginFormValues) => {
     loginMutation.mutate(data);
   };
 
-  const onRegister = (data: FormValues) => {
-    registerMutation.mutate(data);
+  const onRegister = (data: RegisterFormValues) => {
+    // We'll remove the activation code before sending to the API
+    const { activationCode, ...userData } = data;
+    // Here we could validate the activation code against a list of valid codes
+    // For now, we'll just pass the user data to the API
+    registerMutation.mutate(userData);
   };
 
   // Redirect if user is already logged in
@@ -190,6 +206,26 @@ export default function AuthPage() {
                               />
                             </FormControl>
                             <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      <FormField
+                        control={registerForm.control}
+                        name="activationCode"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Activation Code</FormLabel>
+                            <FormControl>
+                              <Input 
+                                placeholder="Enter mentor-provided activation code" 
+                                {...field} 
+                                disabled={registerMutation.isPending}
+                              />
+                            </FormControl>
+                            <FormMessage />
+                            <FormDescription>
+                              You need an activation code from a team mentor to register
+                            </FormDescription>
                           </FormItem>
                         )}
                       />
