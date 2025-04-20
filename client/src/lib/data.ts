@@ -321,14 +321,15 @@ export const teamMembers = {
   ]
 };
 
-// For now, use placeholder URLs for robot images
-const robot2023Image = "https://images.unsplash.com/photo-1559571314-2923c75c1541?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=600&q=80"; // Portrait for Amp
-const robot2024Image = "https://images.unsplash.com/photo-1560103104-4623c14a373b?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80";
-const robot2025Image = "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80";
-const robot2026Image = "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80";
-// Let's use the uploaded logos
-import frcLogo from "@/assets/image_2025-04-20_174104327.png";
-import ftcLogo from "@/assets/93313e06-a4ec-493f-a082-e4be099472de.png";
+// Use image URLs
+const relayImage = "https://i.imgur.com/QVbCw6m.png"; // 2025 robot
+const surgeImage = "https://i.imgur.com/2H3GySd.png"; // 2024 robot
+const blackoutImage = "https://i.imgur.com/JHxmXFs.png"; // 2023 robot
+const ampImage = "https://i.imgur.com/pFGWZMm.png"; // 2022 robot (in portrait)
+
+// Define FRC and FTC logos (use public URLs for now)
+const frcLogo = "https://www.firstinspires.org/sites/default/files/uploads/resource_library/brand/FRC-Stack-Full-Color.png";
+const ftcLogo = "https://www.firstinspires.org/sites/default/files/uploads/resource_library/brand/FTC-Vertical-Full-Color.png";
 
 // Robots data
 export const robots: Robot[] = [
@@ -339,7 +340,7 @@ export const robots: Robot[] = [
     season: "2025",
     challenge: "REEFSCAPE",
     team: "frc",
-    imageUrl: robot2026Image,
+    imageUrl: relayImage,
     current: true,
     features: [
       "Precision shooter with variable angles",
@@ -374,7 +375,7 @@ export const robots: Robot[] = [
     season: "2024",
     challenge: "CRESCENDO",
     team: "frc",
-    imageUrl: robot2025Image,
+    imageUrl: surgeImage,
     current: false,
     features: [
       "Multi-joint articulating arm system",
@@ -408,7 +409,7 @@ export const robots: Robot[] = [
     season: "2023",
     challenge: "CHARGED UP",
     team: "frc",
-    imageUrl: robot2024Image,
+    imageUrl: blackoutImage,
     current: false,
     features: [
       "Variable-height lift mechanism",
@@ -437,7 +438,7 @@ export const robots: Robot[] = [
     season: "2022",
     challenge: "RAPID REACT",
     team: "frc",
-    imageUrl: robot2023Image,
+    imageUrl: ampImage,
     current: false,
     features: [
       "Precision manipulator for game elements",
