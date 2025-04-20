@@ -1,0 +1,97 @@
+// pages/_app.tsx
+import "tailwindcss/tailwind.css";
+
+export default function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />;
+}
+
+// pages/index.tsx
+import Link from 'next/link';
+
+export default function Home() {
+  return (
+    <div className="p-6 space-y-6">
+      <h1 className="text-4xl font-bold">Welcome to Our Robotics Team</h1>
+      <p>Building the future, one robot at a time.</p>
+      <nav className="space-x-4">
+        <Link href="/about">About</Link>
+        <Link href="/team">Team</Link>
+        <Link href="/projects">Projects</Link>
+        <Link href="/gallery">Gallery</Link>
+        <Link href="/schedule">Schedule</Link>
+        <Link href="/sponsors">Sponsors</Link>
+        <Link href="/contact">Contact</Link>
+      </nav>
+    </div>
+  );
+}
+
+// pages/about.tsx
+export default function About() {
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-semibold">About Us</h1>
+      <p>We are a passionate group of students building competitive robots and learning real-world engineering skills.</p>
+    </div>
+  );
+}
+
+// pages/team.tsx
+export default function Team() {
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-semibold">Our Team</h1>
+      <p>Meet the students, mentors, and alumni that make our team great.</p>
+    </div>
+  );
+}
+
+// pages/projects.tsx
+export default function Projects() {
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-semibold">Projects & Robots</h1>
+      <p>Take a look at our past and present engineering accomplishments.</p>
+    </div>
+  );
+}
+
+// pages/gallery.tsx
+export default function Gallery() {
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-semibold">Gallery</h1>
+      <p>Photos and videos from events, competitions, and builds.</p>
+    </div>
+  );
+}
+
+// pages/schedule.tsx
+export default function Schedule() {
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-semibold">Schedule & Events</h1>
+      <p>Stay updated with our event calendar and meeting times.</p>
+    </div>
+  );
+}
+
+// pages/sponsors.tsx
+export default function Sponsors() {
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-semibold">Sponsors & Partners</h1>
+      <p>We thank our sponsors for supporting STEM and innovation.</p>
+    </div>
+  );
+}
+
+// pages/contact.tsx
+export default function Contact() {
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-semibold">Contact Us</h1>
+      <p>Have questions or want to get involved? Reach out to us!</p>
+    </div>
+  );
+}
