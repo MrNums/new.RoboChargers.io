@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoImage from "../assets/2_20230413_174021_0001.png";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -27,24 +28,12 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center py-3">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <div className="flex items-center mr-2 bg-white rounded-full p-1">
-                <svg
-                  className="h-8 w-8"
-                  viewBox="0 0 100 100"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle cx="50" cy="50" r="50" fill="#0a1a70" />
-                  <path
-                    d="M50 10 L60 40 L90 50 L60 60 L50 90 L40 60 L10 50 L40 40 Z"
-                    fill="#ffd700"
-                  />
-                  <path
-                    d="M40 30 L60 70"
-                    stroke="#ffd700"
-                    strokeWidth="8"
-                    strokeLinecap="round"
-                  />
-                </svg>
+              <div className="flex items-center mr-3">
+                <img 
+                  src={logoImage} 
+                  alt="RoboChargers Logo" 
+                  className="h-10 w-auto"
+                />
               </div>
               <span className="text-white font-bold text-xl">RoboChargers</span>
             </Link>
