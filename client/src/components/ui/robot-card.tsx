@@ -175,7 +175,7 @@ const RobotCard: React.FC<RobotCardProps> = ({ robot }) => {
                   .map((award, index) => (
                     <div key={index} className="flex-shrink-0 w-56 relative">
                       <img 
-                        src="https://i.postimg.cc/Y0yt1JxS/blue-banner.png" 
+                        src="/images/blue-banner.png" 
                         alt={`${award.event} Blue Banner`} 
                         className="w-full h-auto"
                       />
