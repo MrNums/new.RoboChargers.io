@@ -39,13 +39,7 @@ const RobotCard: React.FC<RobotCardProps> = ({ robot }) => {
                 Current
               </Badge>
             )}
-            {robot.awards && robot.awards.some(award => award.name.includes("Winner") || award.name.includes("Champion")) && (
-              <img 
-                src="https://i.postimg.cc/Y0yt1JxS/blue-banner.png"
-                alt="Blue Banner Winner"
-                className="absolute -top-2 -right-2 h-16 z-10"
-              />
-            )}
+{/* No blue banner on card */}
           </div>
         </div>
         <CardContent className="p-5">
@@ -171,6 +165,31 @@ const RobotCard: React.FC<RobotCardProps> = ({ robot }) => {
             </div>
           </div>
           
+          {/* Blue Banners section */}
+          {robot.awards && robot.awards.some(award => award.name.includes("Winner") || award.name.includes("Championship")) && (
+            <div className="mt-4 border-t pt-4">
+              <h3 className="font-semibold text-[#0a1a70] mb-3">Blue Banners</h3>
+              <div className="flex overflow-x-auto space-x-2 pb-2">
+                {robot.awards
+                  .filter(award => award.name.includes("Winner") || award.name.includes("Champion"))
+                  .map((award, index) => (
+                    <div key={index} className="flex-shrink-0 w-56 relative">
+                      <img 
+                        src="https://i.postimg.cc/Y0yt1JxS/blue-banner.png" 
+                        alt={`${award.event} Blue Banner`} 
+                        className="w-full h-auto"
+                      />
+                      <div className="absolute inset-0 flex flex-col justify-center items-center pt-16 px-2">
+                        <div className="text-white text-center font-bold text-xs mt-8">
+                          {award.event} ({award.year})
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          )}
+
           <DialogFooter>
             <Button 
               variant="outline" 
