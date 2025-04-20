@@ -8,7 +8,11 @@ const HeroSection: React.FC = () => {
   return (
     <section className="relative bg-[#0a1a70] text-white py-16 md:py-24">
       <div 
-        className="absolute inset-0 z-0 opacity-20 bg-[#0a1a70]"
+        className="absolute inset-0 z-0 opacity-10 bg-repeat"
+        style={{ 
+          backgroundImage: `url(${backgroundPattern})`, 
+          backgroundSize: '200px' 
+        }}
       ></div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col md:flex-row items-center">
