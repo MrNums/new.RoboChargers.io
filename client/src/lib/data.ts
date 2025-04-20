@@ -411,7 +411,7 @@ export const robots: Robot[] = [
     ]
   },
   {
-    id: "5",
+    id: "6",
     name: "Watt",
     description: "Our 2018 robot for FIRST POWER UP with a multi-cube intake and efficient autonomous capabilities.",
     season: "2018",
@@ -428,7 +428,7 @@ export const robots: Robot[] = [
     ]
   },
   {
-    id: "6",
+    id: "10",
     name: "Zeta",
     description: "Our 2023 FTC robot featuring precision mechanisms for POWERPLAY challenges.",
     season: "2023",
