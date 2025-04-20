@@ -17,6 +17,7 @@ import Contact from "@/pages/Contact";
 import Resources from "@/pages/Resources";
 import Store from "@/pages/Store";
 import AuthPage from "@/pages/auth-page";
+import AdminPage from "@/pages/admin-page";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -33,6 +34,7 @@ function Router() {
         <ProtectedRoute path="/contact" component={Contact} />
         <ProtectedRoute path="/resources" component={Resources} />
         <ProtectedRoute path="/store" component={Store} />
+        <ProtectedRoute path="/admin" component={AdminPage} />
         <Route path="/auth" component={AuthPage} />
         <Route component={NotFound} />
       </Switch>

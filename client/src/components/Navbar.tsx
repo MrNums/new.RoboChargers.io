@@ -171,10 +171,12 @@ const Navbar: React.FC = () => {
                     <User size={16} className="mr-2" />
                     <span>Profile</span>
                   </DropdownMenuItem>
-                  <DropdownMenuItem className="cursor-pointer">
-                    <Settings size={16} className="mr-2" />
-                    <span>Settings</span>
-                  </DropdownMenuItem>
+                  <Link href="/admin">
+                    <DropdownMenuItem className="cursor-pointer">
+                      <Settings size={16} className="mr-2" />
+                      <span>Admin Dashboard</span>
+                    </DropdownMenuItem>
+                  </Link>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={handleLogout} className="cursor-pointer text-red-500 focus:text-red-500">
                     <LogOut size={16} className="mr-2" />
@@ -361,6 +363,13 @@ const Navbar: React.FC = () => {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Profile Settings
+                </Link>
+                <Link 
+                  href="/admin"
+                  className="block py-2 text-white hover:text-[#ffd700]"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Admin Dashboard
                 </Link>
                 <button
                   onClick={() => {

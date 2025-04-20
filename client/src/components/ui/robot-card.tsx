@@ -173,14 +173,14 @@ const RobotCard: React.FC<RobotCardProps> = ({ robot }) => {
                 {robot.awards
                   .filter(award => award.name.includes("Winner") || award.name.includes("Champion"))
                   .map((award, index) => (
-                    <div key={index} className="flex-shrink-0 w-56 relative">
+                    <div key={index} className="flex-shrink-0 w-full max-w-[280px] relative">
                       <img 
                         src="/images/blue-banner.png" 
                         alt={`${award.event} Blue Banner`} 
                         className="w-full h-auto"
                       />
-                      <div className="absolute inset-0 flex flex-col justify-center items-center pt-16 px-2">
-                        <div className="text-white text-center font-bold text-xs mt-8">
+                      <div className="absolute inset-0 flex flex-col justify-center items-center pt-28 px-4">
+                        <div className="text-white text-center font-bold text-sm mt-12">
                           {award.event} ({award.year})
                         </div>
                       </div>

@@ -322,10 +322,10 @@ export const teamMembers = {
 };
 
 // Use local images for reliability
-const relayImage = "/images/robot1.png"; // 2025 robot
-const surgeImage = "/images/robot2.png"; // 2024 robot
-const blackoutImage = "/images/robot3.png"; // 2023 robot
-const ampImage = "/images/robot4.png"; // 2022 robot (in portrait)
+const relayImage = "/images/robots/relay.png"; // 2025 robot
+const surgeImage = "/images/robots/surge.png"; // 2024 robot
+const blackoutImage = "/images/robots/blackout.png"; // 2023 robot
+const ampImage = "/images/robots/amp.png"; // 2022 robot (in portrait)
 
 // Define FRC and FTC logos (use public URLs for now)
 const frcLogo = "https://www.firstinspires.org/sites/default/files/uploads/resource_library/brand/FRC-Stack-Full-Color.png";
