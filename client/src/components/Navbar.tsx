@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoImage from "../assets/2_20230413_174021_0001.png";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -30,7 +29,7 @@ const Navbar: React.FC = () => {
             <Link href="/" className="flex items-center">
               <div className="flex items-center mr-3">
                 <img 
-                  src={logoImage} 
+                  src="/images/robot2.png" 
                   alt="RoboChargers Logo" 
                   className="h-10 w-auto"
                 />
