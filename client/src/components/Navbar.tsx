@@ -1,21 +1,18 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, ChevronDown, User, LogOut, Settings } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useAuth } from "@/hooks/use-auth";
 import logoImage from "../assets/2_20230413_174021_0001.png";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
 const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [location] = useLocation();
-  const { user, logoutMutation } = useAuth();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -23,10 +20,6 @@ const Navbar: React.FC = () => {
 
   const isActive = (path: string) => {
     return location === path;
-  };
-  
-  const handleLogout = () => {
-    logoutMutation.mutate();
   };
 
   return (
@@ -152,40 +145,18 @@ const Navbar: React.FC = () => {
             </Link>
           </nav>
 
-          {/* User menu - only shows when logged in */}
-          {user && (
-            <div className="hidden md:flex items-center ml-4">
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button 
-                    variant="outline" 
-                    className="rounded-full bg-[#1a36e8] hover:bg-[#0a1a70] text-white border-none flex items-center space-x-1"
-                    size="sm"
-                  >
-                    <User size={18} className="mr-1" />
-                    <span className="font-medium">{user.username}</span>
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-48">
-                  <DropdownMenuItem className="cursor-pointer">
-                    <User size={16} className="mr-2" />
-                    <span>Profile</span>
-                  </DropdownMenuItem>
-                  <Link href="/admin">
-                    <DropdownMenuItem className="cursor-pointer">
-                      <Settings size={16} className="mr-2" />
-                      <span>Admin Dashboard</span>
-                    </DropdownMenuItem>
-                  </Link>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={handleLogout} className="cursor-pointer text-red-500 focus:text-red-500">
-                    <LogOut size={16} className="mr-2" />
-                    <span>Logout</span>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </div>
-          )}
+          {/* Contact Us button */}
+          <div className="hidden md:flex items-center ml-4">
+            <Link href="/contact">
+              <Button 
+                variant="outline" 
+                className="rounded-full bg-[#1a36e8] hover:bg-[#0a1a70] text-white border-none"
+                size="sm"
+              >
+                Contact Us
+              </Button>
+            </Link>
+          </div>
 
           {/* Mobile menu button */}
           <Button
@@ -349,39 +320,7 @@ const Navbar: React.FC = () => {
               Store
             </Link>
             
-            {/* Mobile User Menu */}
-            {user && (
-              <>
-                <div className="border-t border-gray-700 my-2"></div>
-                <div className="py-2 flex items-center text-white">
-                  <User size={16} className="mr-2" />
-                  <span className="font-medium">{user.username}</span>
-                </div>
-                <Link 
-                  href="/profile"
-                  className="block py-2 text-white hover:text-[#ffd700]"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Profile Settings
-                </Link>
-                <Link 
-                  href="/admin"
-                  className="block py-2 text-white hover:text-[#ffd700]"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Admin Dashboard
-                </Link>
-                <button
-                  onClick={() => {
-                    handleLogout();
-                    setMobileMenuOpen(false);
-                  }}
-                  className="w-full text-left py-2 text-red-400 hover:text-red-300"
-                >
-                  Logout
-                </button>
-              </>
-            )}
+
           </div>
         </div>
       )}

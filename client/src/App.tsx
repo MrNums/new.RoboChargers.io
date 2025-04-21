@@ -3,8 +3,6 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { AuthProvider } from "@/hooks/use-auth";
-import { ProtectedRoute } from "@/lib/protected-route";
 import Layout from "@/components/Layout";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
@@ -16,26 +14,22 @@ import Sponsors from "@/pages/Sponsors";
 import Contact from "@/pages/Contact";
 import Resources from "@/pages/Resources";
 import Store from "@/pages/Store";
-import AuthPage from "@/pages/auth-page";
-import AdminPage from "@/pages/admin-page";
 import NotFound from "@/pages/not-found";
 
 function Router() {
   return (
     <Layout>
       <Switch>
-        <ProtectedRoute path="/" component={Home} />
-        <ProtectedRoute path="/about" component={About} />
-        <ProtectedRoute path="/team" component={Team} />
-        <ProtectedRoute path="/projects" component={Projects} />
-        <ProtectedRoute path="/gallery" component={Gallery} />
-        <ProtectedRoute path="/schedule" component={Schedule} />
-        <ProtectedRoute path="/sponsors" component={Sponsors} />
-        <ProtectedRoute path="/contact" component={Contact} />
-        <ProtectedRoute path="/resources" component={Resources} />
-        <ProtectedRoute path="/store" component={Store} />
-        <ProtectedRoute path="/admin" component={AdminPage} />
-        <Route path="/auth" component={AuthPage} />
+        <Route path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/team" component={Team} />
+        <Route path="/projects" component={Projects} />
+        <Route path="/gallery" component={Gallery} />
+        <Route path="/schedule" component={Schedule} />
+        <Route path="/sponsors" component={Sponsors} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/resources" component={Resources} />
+        <Route path="/store" component={Store} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
@@ -45,12 +39,10 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <AuthProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-        </TooltipProvider>
-      </AuthProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Router />
+      </TooltipProvider>
     </QueryClientProvider>
   );
 }
