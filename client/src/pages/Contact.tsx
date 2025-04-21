@@ -112,9 +112,9 @@ const Contact: React.FC = () => {
                     <div>
                       <h3 className="font-semibold">Address</h3>
                       <p className="text-gray-600">
-                        Coppell High School<br />
-                        185 W Parkway Blvd<br />
-                        Coppell, TX 75019
+                        Emmett J. Conrad High School<br />
+                        7502 Fair Oaks Ave<br />
+                        Dallas, TX 75231
                       </p>
                     </div>
                   </div>
@@ -156,19 +156,13 @@ const Contact: React.FC = () => {
                     <div>
                       <h3 className="font-semibold text-[#1a36e8]">FRC Team 3005</h3>
                       <p className="text-gray-600">
-                        Monday - Friday: 4:00 PM - 6:30 PM<br />
-                        Saturday: 9:00 AM - 2:00 PM (during build season)
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-[#1a36e8]">FTC Teams</h3>
-                      <p className="text-gray-600">
-                        Schedule varies by team. Contact us for specific meeting times.
+                        Monday - Friday: 5:00 PM - 8:00 PM<br />
+                        Saturday: 10:00 AM - 5:00 PM (during build season)
                       </p>
                     </div>
                     <div className="pt-2">
                       <p className="text-sm text-gray-500 italic">
-                        All meetings take place in the Robotics Lab (Room 1420) at Coppell High School
+                        All meetings take place in the Robotics Lab at Emmett J. Conrad High School,
                         unless otherwise noted.
                       </p>
                     </div>
@@ -325,7 +319,7 @@ const Contact: React.FC = () => {
                 <div>
                   <h3 className="font-bold text-lg mb-2">Looking to join our team?</h3>
                   <p className="text-gray-700 mb-4">
-                    If you're a Coppell High School student interested in joining the RoboChargers, please 
+                    If you're a Emmett J Conrad High School student interested in joining the RoboChargers, please 
                     attend one of our information sessions at the beginning of the school year or contact 
                     us directly using the form above.
                   </p>
@@ -337,24 +331,6 @@ const Contact: React.FC = () => {
               </div>
             </CardContent>
           </Card>
-        </div>
-      </div>
-
-      <div className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold mb-8 text-center">Find Us</h2>
-          <div className="rounded-lg overflow-hidden shadow-lg h-[400px] max-w-4xl mx-auto">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3347.7164967853316!2d-97.01868482380548!3d32.96305087349365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c2b05e4cecd5d%3A0xcf32a5d1b75e6fb0!2sCoppell%20High%20School!5e0!3m2!1sen!2sus!4v1696458828954!5m2!1sen!2sus"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Coppell High School Map"
-            ></iframe>
-          </div>
         </div>
       </div>
 
