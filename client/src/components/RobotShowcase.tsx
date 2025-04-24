@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import RobotCard from "@/components/ui/robot-card";
+import HomeRobotCard from "@/components/HomeRobotCard";
 import { robots } from "@/lib/data";
 
 const RobotShowcase: React.FC = () => {
@@ -10,13 +10,16 @@ const RobotShowcase: React.FC = () => {
 
   const scroll = (direction: "left" | "right") => {
     if (carouselRef.current) {
-      const scrollAmount = 300;
+      const cardWidth = 430; // Card width (400px) + spacing (30px)
       const scrollLeft = carouselRef.current.scrollLeft;
+      
+      // Calculate next card position
+      const position = direction === "left"
+        ? Math.floor(scrollLeft / cardWidth) * cardWidth - cardWidth
+        : Math.floor(scrollLeft / cardWidth) * cardWidth + cardWidth;
+        
       carouselRef.current.scrollTo({
-        left:
-          direction === "left"
-            ? scrollLeft - scrollAmount
-            : scrollLeft + scrollAmount,
+        left: position,
         behavior: "smooth",
       });
     }
@@ -74,7 +77,7 @@ const RobotShowcase: React.FC = () => {
                 .filter(robot => ["1", "2", "3", "4"].includes(robot.id)) // Only show first 4 robots
                 .sort((a, b) => parseInt(b.season) - parseInt(a.season)) // Sort by newest first
                 .map((robot) => (
-                  <RobotCard key={robot.id} robot={robot} />
+                  <HomeRobotCard key={robot.id} robot={robot} />
                 ))}
             </div>
           </div>
