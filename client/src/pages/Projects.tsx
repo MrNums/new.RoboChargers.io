@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
+import { Video } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -73,38 +74,51 @@ const Projects: React.FC = () => {
               <p className="text-gray-600 mb-6">
                 Our current competition robot for the FIRST Robotics Competition, designed and built by Team 3005.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
                 {currentRobots.filter(robot => robot.team === "frc").map((robot) => (
-                  <Card key={robot.id} className="overflow-hidden">
-                    <div className="md:flex">
-                      <div className="md:w-1/2">
+                  <Card key={robot.id} className="overflow-hidden shadow-lg">
+                    <div className="lg:flex">
+                      <div className="lg:w-2/5">
                         <img
                           src={robot.imageUrl}
                           alt={`Robot ${robot.name}`}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover object-center bg-gradient-to-b from-blue-50 to-gray-100"
                         />
                       </div>
-                      <div className="p-6 md:w-1/2">
-                        <h3 className="font-bold text-xl mb-2">{robot.name}</h3>
-                        <p className="text-gray-600 mb-4">{robot.description}</p>
-                        <div className="mb-4">
-                          <div className="flex justify-between mb-1">
-                            <span className="font-medium">Season:</span>
-                            <span>{robot.season}</span>
+                      <div className="p-8 lg:w-3/5">
+                        <h3 className="font-bold text-2xl mb-3 text-[#0a1a70]">{robot.name}</h3>
+                        <p className="text-gray-700 mb-5 text-lg">{robot.description}</p>
+                        <div className="mb-5 grid grid-cols-2 gap-x-4 gap-y-2">
+                          <div className="col-span-2 md:col-span-1">
+                            <span className="font-semibold text-[#1a36e8]">Season:</span>
+                            <span className="ml-2 text-gray-800">{robot.season}</span>
                           </div>
-                          <div className="flex justify-between mb-1">
-                            <span className="font-medium">Challenge:</span>
-                            <span>{robot.challenge}</span>
+                          <div className="col-span-2 md:col-span-1">
+                            <span className="font-semibold text-[#1a36e8]">Challenge:</span>
+                            <span className="ml-2 text-gray-800">{robot.challenge}</span>
                           </div>
                         </div>
                         <div>
-                          <h4 className="font-semibold mb-2">Key Features:</h4>
-                          <ul className="list-disc list-inside text-gray-600">
+                          <h4 className="font-semibold text-lg mb-3 text-[#0a1a70]">Key Features:</h4>
+                          <ul className="list-disc pl-5 text-gray-700 space-y-2 text-base">
                             {robot.features.map((feature, index) => (
                               <li key={index}>{feature}</li>
                             ))}
                           </ul>
                         </div>
+                        {robot.revealVideoUrl && (
+                          <div className="mt-5">
+                            <a 
+                              href={robot.revealVideoUrl} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center text-[#1a36e8] hover:text-[#0a1a70] font-semibold"
+                            >
+                              <Video className="mr-2 h-5 w-5" />
+                              Watch Robot Reveal Video
+                            </a>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </Card>

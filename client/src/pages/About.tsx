@@ -15,7 +15,7 @@ const About: React.FC = () => {
           content="Learn about the RoboChargers robotics team, our history, mission, and values."
         />
       </Helmet>
-      
+
       <div className="bg-[#0a1a70] text-white py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold mb-4">About RoboChargers</h1>
@@ -30,7 +30,9 @@ const About: React.FC = () => {
         <Tabs defaultValue="history" className="w-full max-w-4xl mx-auto">
           <TabsList className="grid w-full grid-cols-3 mb-8">
             <TabsTrigger value="history">Team History</TabsTrigger>
-            <TabsTrigger value="mission" id="mission">Mission & Values</TabsTrigger>
+            <TabsTrigger value="mission" id="mission">
+              Mission & Values
+            </TabsTrigger>
             <TabsTrigger value="achievements">Achievements</TabsTrigger>
           </TabsList>
           <TabsContent value="history">
@@ -39,9 +41,9 @@ const About: React.FC = () => {
                 <h2 className="text-2xl font-bold">Our History</h2>
                 <p>
                   Founded in 2009, RoboChargers began with a small group of
-                  passionate students and mentors at Coppell High School. Over
-                  the years, we've grown into a thriving program with multiple
-                  FRC and FTC teams.
+                  passionate students and mentors at Emmett J Conrad High
+                  School. Over the years, we've grown into a thriving program
+                  with multiple FRC and FTC teams.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                   <div>
@@ -81,9 +83,9 @@ const About: React.FC = () => {
                 <h2 className="text-2xl font-bold">Our Mission</h2>
                 <p>
                   The RoboChargers mission is to inspire students in STEM
-                  through competitive robotics while developing technical skills,
-                  leadership, and collaborative abilities in a supportive team
-                  environment.
+                  through competitive robotics while developing technical
+                  skills, leadership, and collaborative abilities in a
+                  supportive team environment.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                   <div className="bg-gray-50 p-6 rounded-lg">
@@ -120,8 +122,8 @@ const About: React.FC = () => {
                 <h2 className="text-2xl font-bold">Team Achievements</h2>
                 <p>
                   Over the years, RoboChargers teams have received numerous
-                  awards and recognition for our technical excellence,
-                  community outreach, and team spirit.
+                  awards and recognition for our technical excellence, community
+                  outreach, and team spirit.
                 </p>
                 <div className="mt-8">
                   <h3 className="text-xl font-semibold mb-4">
@@ -133,7 +135,9 @@ const About: React.FC = () => {
                       <ul className="list-disc list-inside text-gray-600 pl-4">
                         <li>FIRST in Texas District Champions</li>
                         <li>Engineering Excellence Award</li>
-                        <li>FIRST World Championship - Houston Division Finalists</li>
+                        <li>
+                          FIRST World Championship - Houston Division Finalists
+                        </li>
                       </ul>
                     </div>
                     <div className="bg-gray-50 p-4 rounded-lg">
@@ -164,7 +168,11 @@ const About: React.FC = () => {
             className="bg-[#1a36e8] hover:bg-[#0a1a70] text-white font-bold"
             size="lg"
           >
-            <a href="https://www.firstinspires.org/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.firstinspires.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Learn About FIRST Robotics
             </a>
           </Button>
