@@ -165,7 +165,7 @@ const Team: React.FC = () => {
             <div>
               <h3 className="text-lg font-semibold mb-2">Requirements</h3>
               <ul className="list-disc list-inside text-gray-600 space-y-1">
-                <li>Coppell High School student</li>
+                <li>Emmett J Conrad High School student</li>
                 <li>Interest in robotics, engineering, or STEM</li>
                 <li>Commitment to team meetings and events</li>
                 <li>Willingness to learn and collaborate</li>
