@@ -26,12 +26,12 @@ const RobotCard: React.FC<RobotCardProps> = ({ robot }) => {
   
   return (
     <>
-      <Card className="flex-shrink-0 w-80 bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl border border-gray-100">
+      <Card className="flex-shrink-0 w-full bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl border border-gray-100">
         <div className="relative">
           <img
             src={robot.imageUrl}
             alt={`Robot ${robot.name}`}
-            className={`w-full ${isPortrait ? 'h-72 object-cover' : 'h-52 object-contain'} bg-gradient-to-b from-blue-50 to-gray-100 p-3`}
+            className="w-full h-80 object-cover object-center" 
           />
           <div className="absolute top-3 right-3 flex flex-col gap-2">
             {robot.current && (
@@ -39,34 +39,34 @@ const RobotCard: React.FC<RobotCardProps> = ({ robot }) => {
                 Current
               </Badge>
             )}
-{/* No blue banner on card */}
-          </div>
-        </div>
-        <CardContent className="p-5">
-          <div className="flex justify-between items-start mb-2">
-            <h4 className="font-bold text-xl text-[#0a1a70]">{robot.name}</h4>
-            <Badge variant="outline" className="border-[#1a36e8] text-[#1a36e8]">
+            <Badge variant="outline" className="bg-white/80 backdrop-blur-sm border-[#1a36e8] text-[#1a36e8] font-medium">
               {robot.season}
             </Badge>
           </div>
-          <p className="text-sm text-gray-600 mb-3 line-clamp-3">{robot.description}</p>
-          <div className="text-xs font-medium text-gray-500 mb-2">
-            {robot.challenge}
+        </div>
+        <CardContent className="p-6">
+          <div className="mb-2">
+            <h4 className="font-bold text-xl text-[#0a1a70]">{robot.name}</h4>
+            <div className="text-sm font-medium text-gray-500 mb-3">
+              {robot.challenge}
+            </div>
           </div>
-          <div className="flex flex-wrap gap-1 mt-3">
+          <p className="text-sm text-gray-600 mb-4 line-clamp-3">{robot.description}</p>
+          
+          <div className="space-y-2">
             {robot.features.slice(0, 2).map((feature, index) => (
-              <Badge key={index} variant="secondary" className="text-xs bg-gray-100 text-gray-700">
+              <div key={index} className="px-3 py-1.5 bg-gray-100 text-gray-700 text-sm rounded-md">
                 {feature}
-              </Badge>
+              </div>
             ))}
             {robot.features.length > 2 && (
-              <Badge variant="secondary" className="text-xs bg-gray-100 text-gray-700">
-                +{robot.features.length - 2} more
-              </Badge>
+              <div className="text-sm text-gray-500">
+                +{robot.features.length - 2} more features
+              </div>
             )}
           </div>
         </CardContent>
-        <CardFooter className="px-5 pb-5 pt-0 flex justify-end">
+        <CardFooter className="px-6 pb-6 pt-0 flex justify-end">
           <Button 
             variant="link" 
             onClick={() => setIsDialogOpen(true)}

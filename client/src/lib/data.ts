@@ -259,8 +259,8 @@ export const teamMembers = {
       role: "Lead Mentor",
       photoUrl:
         "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
-      bio: "Engineering teacher at Emmett J Conrad High School with 10+ years of FIRST experience.",
-      company: "Emmett J Conrad High School",
+      bio: "Engineering teacher at Coppell High School with 10+ years of FIRST experience.",
+      company: "Coppell High School",
     },
     {
       id: "16",
@@ -502,124 +502,6 @@ export const robots: Robot[] = [
         event: "FIT Houston District",
         year: "2022",
       },
-    ],
-  },
-  {
-    id: "5",
-    name: "Spark",
-    description:
-      "Our 2019 robot for DESTINATION: DEEP SPACE featuring a hatch panel mechanism and cargo scoring system.",
-    season: "2019",
-    challenge: "DESTINATION: DEEP SPACE",
-    team: "frc",
-    imageUrl:
-      "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80",
-    current: false,
-    features: [
-      "Pneumatic hatch panel grabber",
-      "Elevator system for multi-level scoring",
-      "Cargo manipulation arm",
-      "Sandstorm (autonomous) capabilities",
-      "Drive train optimized for defense",
-    ],
-  },
-  {
-    id: "6",
-    name: "Watt",
-    description:
-      "Our 2018 robot for FIRST POWER UP with a multi-cube intake and efficient autonomous capabilities.",
-    season: "2018",
-    challenge: "FIRST POWER UP",
-    team: "frc",
-    imageUrl:
-      "https://images.unsplash.com/photo-1597773150796-e5c14ebecbf5?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80",
-    current: false,
-    features: [
-      "Intake system for multiple power cubes",
-      "Scale climbing mechanism",
-      "Elevator for different height placements",
-      "Fast autonomous cube placement",
-      "Robust drivetrain for quick field traversal",
-    ],
-  },
-  {
-    id: "10",
-    name: "Zeta",
-    description:
-      "Our 2023 FTC robot featuring precision mechanisms for POWERPLAY challenges.",
-    season: "2023",
-    challenge: "POWERPLAY",
-    team: "ftc",
-    ftcTeam: "13537",
-    imageUrl:
-      "https://images.unsplash.com/photo-1596838132731-3301c3fd4317?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80",
-    current: true,
-    features: [
-      "Precise cone stacking mechanism",
-      "Mecanum wheel drive system",
-      "Signal sleeve detection vision system",
-      "Terminal collection mechanism",
-      "Efficient junction scoring",
-    ],
-  },
-  {
-    id: "7",
-    name: "Quantum",
-    description:
-      "2023 FTC robot designed for efficient game element handling in POWERPLAY.",
-    season: "2023",
-    challenge: "POWERPLAY",
-    team: "ftc",
-    ftcTeam: "13542",
-    imageUrl:
-      "https://images.unsplash.com/photo-1569396116180-210c182bedb8?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80",
-    current: true,
-    features: [
-      "Advanced signal identification system",
-      "Multi-cone intake and storage",
-      "High precision junction targeting",
-      "Parallel linkage lifting arm",
-      "Custom electronics layout for reliability",
-    ],
-  },
-  {
-    id: "8",
-    name: "Impulse",
-    description:
-      "FTC robot for POWERPLAY with innovative scoring mechanisms and autonomous routines.",
-    season: "2023",
-    challenge: "POWERPLAY",
-    team: "ftc",
-    ftcTeam: "13552",
-    imageUrl:
-      "https://images.unsplash.com/photo-1604948501466-4e9c339b9c24?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80",
-    current: true,
-    features: [
-      "Telescoping linear slide system",
-      "Servo-controlled precision gripper",
-      "Path-following autonomous routines",
-      "Custom designed 3D printed components",
-      "Junction targeting vision system",
-    ],
-  },
-  {
-    id: "9",
-    name: "Nova",
-    description:
-      "First-year FTC robot for our newest team, designed for POWERPLAY competition.",
-    season: "2023",
-    challenge: "POWERPLAY",
-    team: "ftc",
-    ftcTeam: "18871",
-    imageUrl:
-      "https://images.unsplash.com/photo-1597424216809-3ba9864aeb02?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80",
-    current: true,
-    features: [
-      "Simplified but effective cone grabber design",
-      "Four-wheel drive base with omni wheels",
-      "Basic autonomous capabilities",
-      "Manual junction scoring mechanism",
-      "Lightweight and efficient design approach",
     ],
   },
 ];

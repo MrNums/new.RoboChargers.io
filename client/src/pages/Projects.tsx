@@ -131,7 +131,7 @@ const Projects: React.FC = () => {
               <p className="text-gray-600 mb-6">
                 Explore our past FRC robots and the engineering solutions we've developed over the years.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-8">
                 {frcRobots.filter(robot => !robot.current).map((robot) => (
                   <RobotCard key={robot.id} robot={robot} />
                 ))}
@@ -154,7 +154,7 @@ const Projects: React.FC = () => {
                     <p className="mb-4">
                       The Circuit Breakers specialize in innovative mechanisms and precise control systems.
                     </p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+                    <div className="grid grid-cols-1 gap-8 mt-6">
                       {ftcRobots.filter(robot => robot.ftcTeam === "13537").map((robot) => (
                         <RobotCard key={robot.id} robot={robot} />
                       ))}
@@ -171,7 +171,7 @@ const Projects: React.FC = () => {
                     <p className="mb-4">
                       Alternating Current is known for their software excellence and autonomous capabilities.
                     </p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+                    <div className="grid grid-cols-1 gap-8 mt-6">
                       {ftcRobots.filter(robot => robot.ftcTeam === "13542").map((robot) => (
                         <RobotCard key={robot.id} robot={robot} />
                       ))}
@@ -188,7 +188,7 @@ const Projects: React.FC = () => {
                     <p className="mb-4">
                       Voltage focuses on efficient mechanical design and robust drive systems.
                     </p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+                    <div className="grid grid-cols-1 gap-8 mt-6">
                       {ftcRobots.filter(robot => robot.ftcTeam === "13552").map((robot) => (
                         <RobotCard key={robot.id} robot={robot} />
                       ))}
@@ -205,7 +205,7 @@ const Projects: React.FC = () => {
                     <p className="mb-4">
                       Power Surge, our newest team, brings fresh ideas and creative approaches to FTC challenges.
                     </p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+                    <div className="grid grid-cols-1 gap-8 mt-6">
                       {ftcRobots.filter(robot => robot.ftcTeam === "18871").map((robot) => (
                         <RobotCard key={robot.id} robot={robot} />
                       ))}
@@ -240,7 +240,7 @@ const Projects: React.FC = () => {
                   <AccordionItem key={season} value={`season-${season}`}>
                     <AccordionTrigger>Season {season}</AccordionTrigger>
                     <AccordionContent>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 p-6">
                         {pastRobots.filter(robot => robot.season === season).map((robot) => (
                           <RobotCard key={robot.id} robot={robot} />
                         ))}
