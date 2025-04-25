@@ -27,6 +27,83 @@ const Team: React.FC = () => {
         </div>
       </div>
 
+      {/* Team Principals Section */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 border-b border-gray-200">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-6 text-center text-[#0a1a70]">Team Principals</h2>
+          
+          {/* Current Team Principals */}
+          <div className="mb-12">
+            <h3 className="text-xl font-semibold mb-4 text-center">Current Leadership (2025-Present)</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <Card className="overflow-hidden shadow-lg">
+                <div className="p-6 flex flex-col items-center">
+                  <Avatar className="h-32 w-32 mb-4">
+                    <AvatarImage src="/images/team/karen-herrada.jpg" alt="Karen Herrada" />
+                    <AvatarFallback>KH</AvatarFallback>
+                  </Avatar>
+                  <h3 className="font-bold text-xl text-[#0a1a70]">Karen Herrada</h3>
+                  <p className="text-[#1a36e8] font-medium mb-3">Team Principal</p>
+                  <p className="text-gray-600 text-center">
+                    Guiding our team with passion and innovation since 2025. Ms. Herrada brings expertise in engineering education and a commitment to student success.
+                  </p>
+                </div>
+              </Card>
+
+              <Card className="overflow-hidden shadow-lg">
+                <div className="p-6 flex flex-col items-center">
+                  <Avatar className="h-32 w-32 mb-4">
+                    <AvatarImage src="/images/team/adam-gaddis.jpg" alt="Adam Gaddis" />
+                    <AvatarFallback>AG</AvatarFallback>
+                  </Avatar>
+                  <h3 className="font-bold text-xl text-[#0a1a70]">Adam Gaddis</h3>
+                  <p className="text-[#1a36e8] font-medium mb-3">Team Principal</p>
+                  <p className="text-gray-600 text-center">
+                    Mr. Gaddis joined our leadership team in 2025, bringing valuable industry experience and a dedication to helping students develop real-world engineering skills.
+                  </p>
+                </div>
+              </Card>
+            </div>
+          </div>
+
+          {/* Former Team Principals */}
+          <div className="mb-6">
+            <h3 className="text-xl font-semibold mb-4 text-center">Former Leadership (2009-2025)</h3>
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <p className="text-center text-gray-700 mb-6">
+                We honor the dedication and vision of our founding team principals who built the foundation for our program's success over 16 remarkable years.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="flex flex-col items-center">
+                  <Avatar className="h-24 w-24 mb-3">
+                    <AvatarImage src="/images/team/marco-guerra.jpg" alt="Marco Guerra" />
+                    <AvatarFallback>MG</AvatarFallback>
+                  </Avatar>
+                  <h4 className="font-bold text-lg text-[#0a1a70]">Marco Guerra</h4>
+                  <p className="text-[#1a36e8] text-sm mb-2">Team Principal (2009-2025)</p>
+                  <p className="text-gray-600 text-sm text-center">
+                    A founding leader whose vision and guidance helped establish Team 3005 as a powerhouse in FIRST Robotics.
+                  </p>
+                </div>
+
+                <div className="flex flex-col items-center">
+                  <Avatar className="h-24 w-24 mb-3">
+                    <AvatarImage src="/images/team/rachel-moore.jpg" alt="Rachel Moore" />
+                    <AvatarFallback>RM</AvatarFallback>
+                  </Avatar>
+                  <h4 className="font-bold text-lg text-[#0a1a70]">Rachel Moore</h4>
+                  <p className="text-[#1a36e8] text-sm mb-2">Team Principal (2009-2025)</p>
+                  <p className="text-gray-600 text-sm text-center">
+                    Provided exceptional leadership and mentorship for our students through 16 competition seasons.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Team Members Tabs Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <Tabs defaultValue="students" className="w-full max-w-4xl mx-auto">
           <TabsList className="grid w-full grid-cols-3 mb-8">
@@ -38,7 +115,7 @@ const Team: React.FC = () => {
             <div className="mb-8">
               <h2 className="text-2xl font-bold mb-4">FRC Team 3005 Students</h2>
               <p className="text-gray-600 mb-6">
-                Our FRC team members represent the best and brightest from Coppell High School, bringing diverse skills and perspectives to our robotics challenges.
+                Our FRC team members represent the best and brightest from Emmett J Conrad High School, bringing diverse skills and perspectives to our robotics challenges.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {teamMembers.students.frc.map((member) => (

@@ -449,7 +449,7 @@ export const robots: Robot[] = [
       },
       {
         name: "Galileo Division – FIRST Championship",
-        event: "Championship Division Finalist",
+        event: "Championship Division Semi-Finalist",
         year: "2024",
       },
       {
@@ -460,7 +460,7 @@ export const robots: Robot[] = [
       {
         name: "Kettering AllStar Alliance Invitational",
         event: "Event Finalist",
-        year: "2023"
+        year: "2023",
       },
     ],
   },
@@ -521,7 +521,7 @@ export const robots: Robot[] = [
     description:
       "Our 2022 robot designed for the RAPID REACT challenge, featuring an advanced lift system and climbing mechanism.",
     season: "2022",
-    challenge: "CHARGED UP",
+    challenge: "RAPID REACT",
     team: "frc",
     imageUrl: blackoutImage,
     current: false,
