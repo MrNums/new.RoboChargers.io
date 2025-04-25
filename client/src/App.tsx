@@ -5,6 +5,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ScrollToTop from "@/components/ScrollToTop";
 import Layout from "@/components/Layout";
+import { ThemeProvider } from "@/components/theme-provider";
+import PageTransition from "@/components/page-transition";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Team from "@/pages/Team";
@@ -21,19 +23,21 @@ function Router() {
   return (
     <Layout>
       <ScrollToTop />
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/team" component={Team} />
-        <Route path="/projects" component={Projects} />
-        <Route path="/gallery" component={Gallery} />
-        <Route path="/schedule" component={Schedule} />
-        <Route path="/sponsors" component={Sponsors} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/resources" component={Resources} />
-        <Route path="/store" component={Store} />
-        <Route component={NotFound} />
-      </Switch>
+      <PageTransition>
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/team" component={Team} />
+          <Route path="/projects" component={Projects} />
+          <Route path="/gallery" component={Gallery} />
+          <Route path="/schedule" component={Schedule} />
+          <Route path="/sponsors" component={Sponsors} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/resources" component={Resources} />
+          <Route path="/store" component={Store} />
+          <Route component={NotFound} />
+        </Switch>
+      </PageTransition>
     </Layout>
   );
 }
@@ -41,10 +45,12 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Router />
-      </TooltipProvider>
+      <ThemeProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Router />
+        </TooltipProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }

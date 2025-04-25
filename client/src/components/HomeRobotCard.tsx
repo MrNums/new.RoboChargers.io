@@ -13,6 +13,9 @@ import {
 import { Button } from "@/components/ui/button";
 import { Trophy, Video, X } from "lucide-react";
 import { Robot } from "@/lib/data";
+import { LazyImage } from "@/components/ui/lazy-image";
+import OnShapeViewer from "@/components/ui/onshape-viewer";
+import RobotModelViewer from "@/components/ui/robot-model-viewer";
 
 interface HomeRobotCardProps {
   robot: Robot;

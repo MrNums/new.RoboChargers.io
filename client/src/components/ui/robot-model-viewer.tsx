@@ -155,15 +155,9 @@ const RobotModelViewer: React.FC<RobotModelViewerProps> = ({
     const handleResize = () => {
       if (!containerRef.current) return;
       
-      const container = containerRef.current;
-      const renderer = container.querySelector('canvas')?.parentNode as THREE.WebGLRenderer;
-      const camera = renderer?.userData?.camera as THREE.PerspectiveCamera;
-      
-      if (renderer && camera) {
-        camera.aspect = container.clientWidth / container.clientHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(container.clientWidth, container.clientHeight);
-      }
+      // Force rerender on resize instead of trying to access renderer directly
+      setIsLoading(true);
+      setTimeout(() => setIsLoading(false), 100);
     };
     
     window.addEventListener('resize', handleResize);
