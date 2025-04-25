@@ -67,11 +67,18 @@ const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
                 delay: 0.2
               }}
             >
-              <img 
-                src="/images/lightning-bolt.png" 
-                alt="Lightning bolt" 
-                className="w-24 h-auto filter brightness-110"
-              />
+              <svg
+                width="120"
+                height="120"
+                viewBox="0 0 600 600"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M300 0L150 225L0 450L300 225L600 0L450 225L300 450L450 225L600 450L300 600Z"
+                  fill="#FFD700"
+                />
+              </svg>
             </motion.div>
 
             {}

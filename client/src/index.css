@@ -10,15 +10,6 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
-
-  /* Dark mode styles */
-  .dark {
-    color-scheme: dark;
-  }
-
-  .dark body {
-    @apply bg-zinc-900 text-zinc-50;
-  }
 }
 
 /* Custom styles for lazy loaded images */
