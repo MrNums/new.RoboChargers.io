@@ -23,49 +23,56 @@ interface HomeRobotCardProps {
 
 const HomeRobotCard: React.FC<HomeRobotCardProps> = ({ robot }) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [modelViewMode, setModelViewMode] = useState<'image' | '3d'>('image');
   
   // Scroll to top when dialog closes
   const handleCloseDialog = () => {
     setIsDialogOpen(false);
+    // Reset to image view when dialog closes
+    setTimeout(() => setModelViewMode('image'), 300);
   };
   
   return (
     <>
-      <Card className="flex-shrink-0 w-[400px] bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl border border-gray-100">
+      <Card className="flex-shrink-0 w-[400px] bg-white dark:bg-zinc-800 rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl border border-gray-100 dark:border-zinc-700">
         <div className="relative">
-          <img
-            src={robot.imageUrl}
-            alt={`Robot ${robot.name}`}
-            className="w-full h-64 object-cover object-center"
-          />
+          <div className="w-full h-64 overflow-hidden">
+            <LazyImage
+              src={robot.imageUrl}
+              alt={`Robot ${robot.name}`}
+              className="w-full h-64 object-cover object-center"
+              effect="blur"
+              placeholderSrc="/images/placeholder-robot.png"
+            />
+          </div>
           <div className="absolute top-3 right-3 flex flex-col gap-2">
             {robot.current && (
               <Badge className="bg-[#ffd700] text-[#0a1a70] font-semibold">
                 Current
               </Badge>
             )}
-            <Badge variant="outline" className="bg-white/80 backdrop-blur-sm border-[#1a36e8] text-[#1a36e8] font-medium">
+            <Badge variant="outline" className="bg-white/80 dark:bg-zinc-800/80 backdrop-blur-sm border-[#1a36e8] text-[#1a36e8] font-medium">
               {robot.season}
             </Badge>
           </div>
         </div>
         <CardContent className="p-6">
           <div className="mb-2">
-            <h4 className="font-bold text-xl text-[#0a1a70]">{robot.name}</h4>
-            <div className="text-sm font-medium text-gray-500 mb-3">
+            <h4 className="font-bold text-xl text-[#0a1a70] dark:text-blue-300">{robot.name}</h4>
+            <div className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-3">
               {robot.challenge}
             </div>
           </div>
-          <p className="text-sm text-gray-600 mb-4 line-clamp-2">{robot.description}</p>
+          <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">{robot.description}</p>
           
           <div className="space-y-2">
             {robot.features.slice(0, 2).map((feature, index) => (
-              <div key={index} className="px-3 py-1.5 bg-gray-100 text-gray-700 text-sm rounded-md">
+              <div key={index} className="px-3 py-1.5 bg-gray-100 dark:bg-zinc-700 text-gray-700 dark:text-gray-200 text-sm rounded-md">
                 {feature}
               </div>
             ))}
             {robot.features.length > 2 && (
-              <div className="text-sm text-gray-500">
+              <div className="text-sm text-gray-500 dark:text-gray-400">
                 +{robot.features.length - 2} more features
               </div>
             )}
@@ -87,31 +94,77 @@ const HomeRobotCard: React.FC<HomeRobotCardProps> = ({ robot }) => {
 
       {/* Robot Details Dialog */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto">
+        <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto dark:bg-zinc-900 dark:border-zinc-700">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold flex items-center">
-              <span className="text-[#0a1a70]">{robot.name}</span>
-              <Badge variant="outline" className="ml-3 border-[#1a36e8] text-[#1a36e8]">
+              <span className="text-[#0a1a70] dark:text-blue-300">{robot.name}</span>
+              <Badge variant="outline" className="ml-3 border-[#1a36e8] text-[#1a36e8] dark:border-blue-400 dark:text-blue-400">
                 {robot.season} {robot.challenge}
               </Badge>
             </DialogTitle>
-            <DialogDescription className="text-base text-gray-700 mt-2">
+            <DialogDescription className="text-base text-gray-700 dark:text-gray-300 mt-2">
               {robot.description}
             </DialogDescription>
           </DialogHeader>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-4">
             <div>
-              <img
-                src={robot.imageUrl}
-                alt={`Robot ${robot.name}`}
-                className="w-full rounded-lg object-contain bg-gradient-to-b from-blue-50 to-gray-100 p-3 h-64"
-              />
+              <div className="relative">
+                {/* Tabs for switching between image and 3D model */}
+                <div className="flex mb-3 border border-gray-200 dark:border-zinc-700 rounded-lg overflow-hidden">
+                  <Button
+                    variant={modelViewMode === 'image' ? 'default' : 'ghost'}
+                    className={`flex-1 rounded-none ${modelViewMode === 'image' ? 'bg-[#1a36e8] text-white' : 'text-gray-700 dark:text-gray-300'}`}
+                    onClick={() => setModelViewMode('image')}
+                  >
+                    Photo
+                  </Button>
+                  <Button
+                    variant={modelViewMode === '3d' ? 'default' : 'ghost'}
+                    className={`flex-1 rounded-none ${modelViewMode === '3d' ? 'bg-[#1a36e8] text-white' : 'text-gray-700 dark:text-gray-300'}`}
+                    onClick={() => setModelViewMode('3d')}
+                  >
+                    3D Model
+                  </Button>
+                </div>
+                
+                {/* Image view */}
+                {modelViewMode === 'image' && (
+                  <div className="rounded-lg overflow-hidden">
+                    <LazyImage
+                      src={robot.imageUrl}
+                      alt={`Robot ${robot.name}`}
+                      className="w-full rounded-lg object-contain bg-gradient-to-b from-blue-50 to-gray-100 dark:from-blue-950 dark:to-zinc-900 p-3 h-64"
+                      effect="blur"
+                    />
+                  </div>
+                )}
+                
+                {/* 3D model view */}
+                {modelViewMode === '3d' && (
+                  <div className="rounded-lg overflow-hidden h-64">
+                    {/* We'd use this for actual OnShape models */}
+                    {/* Example: robot.onShapeDocumentId and robot.onShapeElementId would be defined in the data model */}
+                    {robot.name === 'Relay' ? (
+                      <OnShapeViewer
+                        documentId="2d47b6157553adb3cb65d2a5"
+                        elementId="1a1bf39505d3843e896d26de"
+                        height="256px"
+                      />
+                    ) : (
+                      <RobotModelViewer
+                        modelUrl={robot.imageUrl} // This would be replaced with actual model URL
+                        height="256px"
+                      />
+                    )}
+                  </div>
+                )}
+              </div>
               
               {/* Features list */}
               <div className="mt-4">
-                <h3 className="font-semibold text-[#0a1a70] mb-2">Key Features</h3>
-                <ul className="list-disc pl-5 text-gray-700 space-y-1">
+                <h3 className="font-semibold text-[#0a1a70] dark:text-blue-300 mb-2">Key Features</h3>
+                <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1">
                   {robot.features.map((feature, index) => (
                     <li key={index}>{feature}</li>
                   ))}
@@ -123,20 +176,25 @@ const HomeRobotCard: React.FC<HomeRobotCardProps> = ({ robot }) => {
               {/* Awards section */}
               {robot.awards && robot.awards.length > 0 && (
                 <div className="mb-6">
-                  <h3 className="font-semibold text-[#0a1a70] flex items-center mb-3">
+                  <h3 className="font-semibold text-[#0a1a70] dark:text-blue-300 flex items-center mb-3">
                     <Trophy className="h-5 w-5 mr-2 text-[#ffd700]" />
                     Awards and Achievements
                   </h3>
-                  <div className="space-y-3 max-h-44 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-blue-50">
+                  <div className="space-y-3 max-h-44 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-blue-200 dark:scrollbar-thumb-blue-700 scrollbar-track-blue-50 dark:scrollbar-track-zinc-800">
                     {robot.awards.map((award, index) => (
-                      <div key={index} className={`p-3 rounded-lg ${award.name.includes("Winner") || award.name.includes("Champion") ? "bg-blue-100 border-l-4 border-blue-600" : "bg-blue-50"}`}>
-                        <div className="font-medium text-[#0a1a70] flex items-start">
+                      <div 
+                        key={index} 
+                        className={`p-3 rounded-lg ${award.name.includes("Winner") || award.name.includes("Champion") 
+                          ? "bg-blue-100 dark:bg-blue-900/40 border-l-4 border-blue-600 dark:border-blue-500" 
+                          : "bg-blue-50 dark:bg-blue-950/30"}`}
+                      >
+                        <div className="font-medium text-[#0a1a70] dark:text-blue-300 flex items-start">
                           {(award.name.includes("Winner") || award.name.includes("Champion")) && (
                             <Trophy className="h-4 w-4 mr-1 text-[#ffd700] mt-0.5 flex-shrink-0" />
                           )}
                           <span>{award.name}</span>
                         </div>
-                        <div className="text-sm text-gray-600">
+                        <div className="text-sm text-gray-600 dark:text-gray-400">
                           {award.event} ({award.year})
                         </div>
                       </div>
@@ -148,11 +206,11 @@ const HomeRobotCard: React.FC<HomeRobotCardProps> = ({ robot }) => {
               {/* Reveal video section */}
               {robot.revealVideoUrl && (
                 <div>
-                  <h3 className="font-semibold text-[#0a1a70] flex items-center mb-3">
-                    <Video className="h-5 w-5 mr-2 text-red-600" />
+                  <h3 className="font-semibold text-[#0a1a70] dark:text-blue-300 flex items-center mb-3">
+                    <Video className="h-5 w-5 mr-2 text-red-600 dark:text-red-400" />
                     Robot Reveal Video
                   </h3>
-                  <div className="bg-gray-100 p-1 rounded-lg">
+                  <div className="bg-gray-100 dark:bg-zinc-800 p-1 rounded-lg">
                     <div className="aspect-video">
                       <iframe
                         width="100%"
@@ -172,17 +230,18 @@ const HomeRobotCard: React.FC<HomeRobotCardProps> = ({ robot }) => {
           
           {/* Blue Banners section */}
           {robot.awards && robot.awards.some(award => award.name.includes("Winner") || award.name.includes("Championship")) && (
-            <div className="mt-4 border-t pt-4">
-              <h3 className="font-semibold text-[#0a1a70] mb-3">Blue Banners</h3>
+            <div className="mt-4 border-t dark:border-zinc-700 pt-4">
+              <h3 className="font-semibold text-[#0a1a70] dark:text-blue-300 mb-3">Blue Banners</h3>
               <div className="flex overflow-x-auto space-x-2 pb-2">
                 {robot.awards
                   .filter(award => award.name.includes("Winner") || award.name.includes("Champion"))
                   .map((award, index) => (
                     <div key={index} className="flex-shrink-0 w-full max-w-[280px] relative">
-                      <img 
+                      <LazyImage
                         src="/images/blue-banner.png" 
                         alt={`${award.event} Blue Banner`} 
                         className="w-full h-auto"
+                        effect="opacity"
                       />
                       <div className="absolute inset-0 flex flex-col justify-center items-center pt-28 px-4">
                         <div className="text-white text-center font-bold text-sm mt-12">
@@ -199,7 +258,7 @@ const HomeRobotCard: React.FC<HomeRobotCardProps> = ({ robot }) => {
             <Button 
               variant="outline" 
               onClick={handleCloseDialog}
-              className="border-[#1a36e8] text-[#1a36e8] hover:bg-[#1a36e8] hover:text-white"
+              className="border-[#1a36e8] text-[#1a36e8] dark:border-blue-400 dark:text-blue-400 hover:bg-[#1a36e8] hover:text-white"
             >
               Close
             </Button>
