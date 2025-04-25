@@ -1,20 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
-import { Card, CardContent } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import CTASection from "@/components/CTASection";
 import { teamMembers } from "@/lib/data";
 
 const Team: React.FC = () => {
+  const [mentorPage, setMentorPage] = useState(0);
+  const [alumniPage, setAlumniPage] = useState(0);
+  
+  // Define how many items to show per page
+  const itemsPerPage = 6; // 2x3 grid
+  
+  // Calculate total pages needed (ceiling division)
+  const totalMentorPages = Math.ceil(teamMembers.mentors.length / itemsPerPage);
+  const totalAlumniPages = Math.ceil(teamMembers.alumni.length / itemsPerPage);
+  
+  // Handle navigation for mentor cards
+  const handlePrevMentors = () => {
+    setMentorPage((prev) => Math.max(0, prev - 1));
+  };
+  
+  const handleNextMentors = () => {
+    setMentorPage((prev) => Math.min(totalMentorPages - 1, prev + 1));
+  };
+  
+  // Handle navigation for alumni cards
+  const handlePrevAlumni = () => {
+    setAlumniPage((prev) => Math.max(0, prev - 1));
+  };
+  
+  const handleNextAlumni = () => {
+    setAlumniPage((prev) => Math.min(totalAlumniPages - 1, prev + 1));
+  };
+  
+  // Get the current page of mentors and alumni
+  const currentMentors = teamMembers.mentors.slice(
+    mentorPage * itemsPerPage,
+    (mentorPage + 1) * itemsPerPage
+  );
+  
+  const currentAlumni = teamMembers.alumni.slice(
+    alumniPage * itemsPerPage,
+    (alumniPage + 1) * itemsPerPage
+  );
+  
   return (
     <>
       <Helmet>
         <title>Our Team - RoboChargers</title>
         <meta
           name="description"
-          content="Meet the students, mentors, and coaches that make up the RoboChargers robotics team."
+          content="Meet the mentors, coaches, and alumni that make up the RoboChargers robotics team."
         />
       </Helmet>
 
@@ -22,7 +61,7 @@ const Team: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold mb-4">Our Team</h1>
           <p className="text-xl">
-            Meet the students, mentors, and alumni that make our team great.
+            Meet the mentors and alumni that make our team great.
           </p>
         </div>
       </div>
@@ -103,34 +142,149 @@ const Team: React.FC = () => {
         </div>
       </div>
 
-      {/* Team Members Tabs Section */}
+      {/* Team Members Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-6 text-center">Team Mentors & Coaches</h2>
-          <p className="text-gray-600 mb-6 text-center">
-            Our dedicated mentors provide guidance, expertise, and support to help our students succeed in robotics and beyond.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {teamMembers.mentors.map((mentor) => (
-              <Card key={mentor.id} className="overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                <div className="p-6 flex flex-col items-center">
-                  <Avatar className="h-24 w-24 mb-4">
-                    <AvatarImage src={mentor.photoUrl} alt={mentor.name} />
-                    <AvatarFallback>{mentor.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                  </Avatar>
-                  <h3 className="font-bold text-lg text-[#0a1a70]">{mentor.name}</h3>
-                  <p className="text-[#1a36e8] mb-3 font-medium">{mentor.role}</p>
-                  <p className="text-sm text-gray-600 text-center">
-                    {mentor.bio}
-                  </p>
-                  {mentor.company && (
-                    <p className="text-sm font-medium mt-3 bg-blue-50 px-3 py-1 rounded-full text-[#0a1a70]">
-                      {mentor.company}
-                    </p>
-                  )}
-                </div>
-              </Card>
-            ))}
+          {/* Mentors Section */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-bold mb-6 text-center text-[#0a1a70]">Team Mentors & Coaches</h2>
+            <p className="text-gray-600 mb-6 text-center">
+              Our dedicated mentors provide guidance, expertise, and support to help our students succeed in robotics and beyond.
+            </p>
+            
+            <div className="relative">
+              {/* Navigation buttons */}
+              <div className="flex justify-between absolute top-1/2 -translate-y-1/2 w-full px-2 z-10">
+                <Button 
+                  variant="outline" 
+                  size="icon" 
+                  className={`rounded-full bg-white/90 shadow-md ${mentorPage === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-50'}`}
+                  onClick={handlePrevMentors}
+                  disabled={mentorPage === 0}
+                >
+                  <ChevronLeft className="h-6 w-6 text-[#1a36e8]" />
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="icon" 
+                  className={`rounded-full bg-white/90 shadow-md ${mentorPage >= totalMentorPages - 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-50'}`}
+                  onClick={handleNextMentors}
+                  disabled={mentorPage >= totalMentorPages - 1}
+                >
+                  <ChevronRight className="h-6 w-6 text-[#1a36e8]" />
+                </Button>
+              </div>
+              
+              {/* Mentors grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {currentMentors.map((mentor) => (
+                  <Card key={mentor.id} className="overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <div className="p-6 flex flex-col items-center">
+                      <Avatar className="h-24 w-24 mb-4">
+                        <AvatarImage src={mentor.photoUrl} alt={mentor.name} />
+                        <AvatarFallback>{mentor.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                      </Avatar>
+                      <h3 className="font-bold text-lg text-[#0a1a70]">{mentor.name}</h3>
+                      <p className="text-[#1a36e8] mb-3 font-medium">{mentor.role}</p>
+                      <p className="text-sm text-gray-600 text-center">
+                        {mentor.bio}
+                      </p>
+                      {mentor.company && (
+                        <p className="text-sm font-medium mt-3 bg-blue-50 px-3 py-1 rounded-full text-[#0a1a70]">
+                          {mentor.company}
+                        </p>
+                      )}
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            </div>
+            
+            {/* Page indicator */}
+            {totalMentorPages > 1 && (
+              <div className="flex justify-center mt-4 space-x-1">
+                {Array.from({ length: totalMentorPages }).map((_, index) => (
+                  <div 
+                    key={index}
+                    className={`h-2 w-2 rounded-full ${mentorPage === index ? 'bg-[#1a36e8]' : 'bg-gray-300'}`}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+          
+          {/* Alumni Section */}
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold mb-6 text-center text-[#0a1a70]">Alumni Network</h2>
+            <p className="text-gray-600 mb-6 text-center">
+              Our former team members continue to support the RoboChargers while pursuing their education and careers in STEM fields and beyond.
+            </p>
+            
+            <div className="relative">
+              {/* Navigation buttons */}
+              <div className="flex justify-between absolute top-1/2 -translate-y-1/2 w-full px-2 z-10">
+                <Button 
+                  variant="outline" 
+                  size="icon" 
+                  className={`rounded-full bg-white/90 shadow-md ${alumniPage === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-50'}`}
+                  onClick={handlePrevAlumni}
+                  disabled={alumniPage === 0}
+                >
+                  <ChevronLeft className="h-6 w-6 text-[#1a36e8]" />
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="icon" 
+                  className={`rounded-full bg-white/90 shadow-md ${alumniPage >= totalAlumniPages - 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-50'}`}
+                  onClick={handleNextAlumni}
+                  disabled={alumniPage >= totalAlumniPages - 1}
+                >
+                  <ChevronRight className="h-6 w-6 text-[#1a36e8]" />
+                </Button>
+              </div>
+              
+              {/* Alumni grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {currentAlumni.map((alumnus) => (
+                  <Card key={alumnus.id} className="overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <div className="p-6">
+                      <div className="flex items-center space-x-4 mb-4">
+                        <Avatar className="h-16 w-16">
+                          <AvatarImage src={alumnus.photoUrl} alt={alumnus.name} />
+                          <AvatarFallback>{alumnus.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                        </Avatar>
+                        <div>
+                          <h3 className="font-bold text-[#0a1a70]">{alumnus.name}</h3>
+                          <p className="text-sm text-gray-600">Class of {alumnus.gradYear}</p>
+                        </div>
+                      </div>
+                      <p className="text-[#1a36e8] font-medium mb-1 text-sm">
+                        {alumnus.currentRole}
+                      </p>
+                      <p className="text-sm text-gray-600 mb-3">
+                        {alumnus.schoolOrCompany}
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        <span className="font-medium">On the team: </span>
+                        {alumnus.teamRole}
+                      </p>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            </div>
+            
+            {/* Page indicator */}
+            {totalAlumniPages > 1 && (
+              <div className="flex justify-center mt-4 space-x-1">
+                {Array.from({ length: totalAlumniPages }).map((_, index) => (
+                  <div 
+                    key={index}
+                    className={`h-2 w-2 rounded-full ${alumniPage === index ? 'bg-[#1a36e8]' : 'bg-gray-300'}`}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </div>
 

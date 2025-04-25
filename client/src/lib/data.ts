@@ -110,151 +110,9 @@ export interface FTCTeam {
 
 // Team Members data
 export const teamMembers = {
-  students: {
-    frc: [
-      {
-        id: "1",
-        name: "Alex Johnson",
-        role: "Team Captain",
-        photoUrl:
-          "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
-        bio: "Fourth-year team member specializing in mechanical design and team leadership.",
-      },
-      {
-        id: "2",
-        name: "Taylor Rodriguez",
-        role: "Lead Programmer",
-        photoUrl:
-          "https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
-        bio: "Third-year member with expertise in Java and robot control systems.",
-      },
-      {
-        id: "3",
-        name: "Jordan Smith",
-        role: "Mechanical Lead",
-        photoUrl:
-          "https://images.unsplash.com/photo-1541647376583-8934aaf3448a?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
-        bio: "Specializes in CAD design and mechanism fabrication.",
-      },
-      {
-        id: "4",
-        name: "Casey Wilson",
-        role: "Electrical Lead",
-        photoUrl:
-          "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
-        bio: "Expert in wiring, electrical systems, and troubleshooting.",
-      },
-      {
-        id: "5",
-        name: "Morgan Lee",
-        role: "Business & Outreach",
-        photoUrl:
-          "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
-        bio: "Handles team fundraising, social media, and community engagement.",
-      },
-      {
-        id: "6",
-        name: "Riley Carter",
-        role: "Strategy Lead",
-        photoUrl:
-          "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
-        bio: "Analyzes competition strategies and leads scouting efforts.",
-      },
-    ],
-    ftc: [
-      {
-        teamNumber: "13537",
-        teamName: "Circuit Breakers",
-        members: [
-          {
-            id: "7",
-            name: "Sam Davis",
-            role: "Team Lead",
-            photoUrl:
-              "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
-            bio: "Second-year member with focus on team organization.",
-          },
-          {
-            id: "8",
-            name: "Jamie Lewis",
-            role: "Engineer",
-            photoUrl:
-              "https://images.unsplash.com/photo-1521119989659-a83eee488004?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
-            bio: "Responsible for mechanical systems design.",
-          },
-        ],
-      },
-      {
-        teamNumber: "13542",
-        teamName: "Alternating Current",
-        members: [
-          {
-            id: "9",
-            name: "Quinn Brown",
-            role: "Team Lead",
-            photoUrl:
-              "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
-            bio: "Third-year member with strong programming background.",
-          },
-          {
-            id: "10",
-            name: "Avery Martinez",
-            role: "Programmer",
-            photoUrl:
-              "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
-            bio: "Software specialist focusing on autonomous code.",
-          },
-        ],
-      },
-      {
-        teamNumber: "13552",
-        teamName: "Voltage",
-        members: [
-          {
-            id: "11",
-            name: "Kai Thompson",
-            role: "Team Lead",
-            photoUrl:
-              "https://images.unsplash.com/photo-1504257432389-52343af06ae3?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
-            bio: "Second-year member with CAD design expertise.",
-          },
-          {
-            id: "12",
-            name: "Drew Garcia",
-            role: "Engineer",
-            photoUrl:
-              "https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
-            bio: "Mechanical design and fabrication specialist.",
-          },
-        ],
-      },
-      {
-        teamNumber: "18871",
-        teamName: "Power Surge",
-        members: [
-          {
-            id: "13",
-            name: "Jordan Parker",
-            role: "Team Lead",
-            photoUrl:
-              "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
-            bio: "First-year team captain with previous FLL experience.",
-          },
-          {
-            id: "14",
-            name: "Charlie Wright",
-            role: "Programmer",
-            photoUrl:
-              "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
-            bio: "Focuses on control systems and sensor integration.",
-          },
-        ],
-      },
-    ],
-  },
   mentors: [
     {
-      id: "15",
+      id: "1",
       name: "Dr. Emily Richards",
       role: "Lead Mentor",
       photoUrl:
@@ -263,7 +121,7 @@ export const teamMembers = {
       company: "Coppell High School",
     },
     {
-      id: "16",
+      id: "2",
       name: "Michael Torres",
       role: "Technical Mentor",
       photoUrl:
@@ -272,7 +130,7 @@ export const teamMembers = {
       company: "Texas Instruments",
     },
     {
-      id: "17",
+      id: "3",
       name: "Sarah Chen",
       role: "Programming Mentor",
       photoUrl:
@@ -281,7 +139,7 @@ export const teamMembers = {
       company: "Lockheed Martin",
     },
     {
-      id: "18",
+      id: "4",
       name: "Robert Washington",
       role: "Mechanical Mentor",
       photoUrl:
@@ -292,7 +150,7 @@ export const teamMembers = {
   ],
   alumni: [
     {
-      id: "19",
+      id: "1",
       name: "Emma Williams",
       gradYear: "2019",
       photoUrl:
@@ -302,7 +160,7 @@ export const teamMembers = {
       teamRole: "Former Team Captain",
     },
     {
-      id: "20",
+      id: "2",
       name: "Jason Kim",
       gradYear: "2020",
       photoUrl:
@@ -312,7 +170,7 @@ export const teamMembers = {
       teamRole: "Former Lead Programmer",
     },
     {
-      id: "21",
+      id: "3",
       name: "Olivia Patel",
       gradYear: "2018",
       photoUrl:
@@ -322,7 +180,7 @@ export const teamMembers = {
       teamRole: "Former Electrical Lead",
     },
     {
-      id: "22",
+      id: "4",
       name: "Marcus Johnson",
       gradYear: "2017",
       photoUrl:
@@ -332,7 +190,7 @@ export const teamMembers = {
       teamRole: "Former Strategy Lead",
     },
     {
-      id: "23",
+      id: "5",
       name: "Sophia Clark",
       gradYear: "2021",
       photoUrl:
