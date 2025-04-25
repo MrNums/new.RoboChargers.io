@@ -105,131 +105,34 @@ const Team: React.FC = () => {
 
       {/* Team Members Tabs Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <Tabs defaultValue="students" className="w-full max-w-4xl mx-auto">
-          <TabsList className="grid w-full grid-cols-3 mb-8">
-            <TabsTrigger value="students">Students</TabsTrigger>
-            <TabsTrigger value="mentors">Mentors</TabsTrigger>
-            <TabsTrigger value="alumni">Alumni</TabsTrigger>
-          </TabsList>
-          <TabsContent value="students">
-            <div className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">FRC Team 3005 Students</h2>
-              <p className="text-gray-600 mb-6">
-                Our FRC team members represent the best and brightest from Emmett J Conrad High School, bringing diverse skills and perspectives to our robotics challenges.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {teamMembers.students.frc.map((member) => (
-                  <Card key={member.id} className="overflow-hidden">
-                    <div className="p-4 flex flex-col items-center">
-                      <Avatar className="h-24 w-24 mb-4">
-                        <AvatarImage src={member.photoUrl} alt={member.name} />
-                        <AvatarFallback>{member.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                      </Avatar>
-                      <h3 className="font-bold text-lg">{member.name}</h3>
-                      <p className="text-[#1a36e8] mb-2">{member.role}</p>
-                      <p className="text-sm text-gray-600 text-center">
-                        {member.bio}
-                      </p>
-                    </div>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-bold mb-4">FTC Team Students</h2>
-              <p className="text-gray-600 mb-6">
-                Our four FTC teams allow more students to experience competitive robotics in a format that's ideal for learning and growth.
-              </p>
-
-              {teamMembers.students.ftc.map((team) => (
-                <div key={team.teamNumber} className="mb-8">
-                  <h3 className="text-xl font-semibold mb-4">
-                    Team {team.teamNumber} - {team.teamName}
-                  </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {team.members.map((member) => (
-                      <Card key={member.id} className="overflow-hidden">
-                        <CardContent className="p-4 flex items-center space-x-4">
-                          <Avatar>
-                            <AvatarImage src={member.photoUrl} alt={member.name} />
-                            <AvatarFallback>{member.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                          </Avatar>
-                          <div>
-                            <h4 className="font-semibold">{member.name}</h4>
-                            <p className="text-sm text-gray-600">{member.role}</p>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    ))}
-                  </div>
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold mb-6 text-center">Team Mentors & Coaches</h2>
+          <p className="text-gray-600 mb-6 text-center">
+            Our dedicated mentors provide guidance, expertise, and support to help our students succeed in robotics and beyond.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {teamMembers.mentors.map((mentor) => (
+              <Card key={mentor.id} className="overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                <div className="p-6 flex flex-col items-center">
+                  <Avatar className="h-24 w-24 mb-4">
+                    <AvatarImage src={mentor.photoUrl} alt={mentor.name} />
+                    <AvatarFallback>{mentor.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                  </Avatar>
+                  <h3 className="font-bold text-lg text-[#0a1a70]">{mentor.name}</h3>
+                  <p className="text-[#1a36e8] mb-3 font-medium">{mentor.role}</p>
+                  <p className="text-sm text-gray-600 text-center">
+                    {mentor.bio}
+                  </p>
+                  {mentor.company && (
+                    <p className="text-sm font-medium mt-3 bg-blue-50 px-3 py-1 rounded-full text-[#0a1a70]">
+                      {mentor.company}
+                    </p>
+                  )}
                 </div>
-              ))}
-            </div>
-          </TabsContent>
-          <TabsContent value="mentors">
-            <h2 className="text-2xl font-bold mb-4">Team Mentors & Coaches</h2>
-            <p className="text-gray-600 mb-6">
-              Our dedicated mentors provide guidance, expertise, and support to help our students succeed in robotics and beyond.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {teamMembers.mentors.map((mentor) => (
-                <Card key={mentor.id} className="overflow-hidden">
-                  <div className="p-4 flex flex-col items-center">
-                    <Avatar className="h-24 w-24 mb-4">
-                      <AvatarImage src={mentor.photoUrl} alt={mentor.name} />
-                      <AvatarFallback>{mentor.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                    </Avatar>
-                    <h3 className="font-bold text-lg">{mentor.name}</h3>
-                    <p className="text-[#1a36e8] mb-2">{mentor.role}</p>
-                    <p className="text-sm text-gray-600 text-center">
-                      {mentor.bio}
-                    </p>
-                    {mentor.company && (
-                      <p className="text-sm font-medium mt-2">
-                        {mentor.company}
-                      </p>
-                    )}
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </TabsContent>
-          <TabsContent value="alumni">
-            <h2 className="text-2xl font-bold mb-4">Alumni Network</h2>
-            <p className="text-gray-600 mb-6">
-              Our former team members continue to support the RoboChargers while pursuing their education and careers in STEM fields and beyond.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {teamMembers.alumni.map((alumnus) => (
-                <Card key={alumnus.id} className="overflow-hidden">
-                  <div className="p-4">
-                    <div className="flex items-center space-x-4 mb-4">
-                      <Avatar>
-                        <AvatarImage src={alumnus.photoUrl} alt={alumnus.name} />
-                        <AvatarFallback>{alumnus.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <h3 className="font-bold">{alumnus.name}</h3>
-                        <p className="text-sm text-gray-600">Class of {alumnus.gradYear}</p>
-                      </div>
-                    </div>
-                    <p className="text-[#1a36e8] font-medium mb-1">
-                      {alumnus.currentRole}
-                    </p>
-                    <p className="text-sm text-gray-600 mb-3">
-                      {alumnus.schoolOrCompany}
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      <span className="font-medium">On the team: </span>
-                      {alumnus.teamRole}
-                    </p>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </TabsContent>
-        </Tabs>
+              </Card>
+            ))}
+          </div>
+        </div>
 
         <div id="join" className="mt-16 bg-gray-100 p-8 rounded-lg max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold mb-4 text-center">
