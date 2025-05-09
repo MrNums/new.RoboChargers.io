@@ -29,8 +29,8 @@ const RobotShowcase: React.FC = () => {
     <section className="py-16 bg-gradient-to-b from-gray-50 to-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4 text-[#0a1a70]">Our Robots</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-[#0a1a70]">Our Robots</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Explore our engineering achievements through the years, featuring
             innovative designs and competition-ready robots built by Team 3005.
           </p>
@@ -89,7 +89,7 @@ const RobotShowcase: React.FC = () => {
         <div className="text-center">
           <Button
             asChild
-            className="bg-[#1a36e8] hover:bg-[#0a1a70] text-white font-bold shadow-md transition-transform hover:scale-105"
+            className="bg-[#1a36e8] hover:bg-[#0a1a70] text-white font-bold text-lg shadow-lg transition-transform hover:scale-105 px-8 py-6 h-auto"
             size="lg"
           >
             <Link href="/projects">View All Robots</Link>

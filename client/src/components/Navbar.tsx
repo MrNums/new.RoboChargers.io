@@ -28,9 +28,9 @@ const Navbar: React.FC = () => {
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <div className="flex items-center mr-3">
-                <img 
-                  src="/images/robot2.png" 
-                  alt="RoboChargers Logo" 
+                <img
+                  src="/images/RCLogoWhite.png"
+                  alt="RoboChargers Logo"
                   className="h-10 w-auto"
                 />
               </div>
@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-4">
-            <Link 
+            <Link
               href="/"
               className={`text-white hover:text-[#ffd700] font-medium transition duration-150 my-auto ${
                 isActive("/") ? "text-[#ffd700]" : ""
@@ -102,7 +102,7 @@ const Navbar: React.FC = () => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <Link 
+            <Link
               href="/gallery"
               className={`text-white hover:text-[#ffd700] font-medium transition duration-150 my-auto ${
                 isActive("/gallery") ? "text-[#ffd700]" : ""
@@ -110,7 +110,7 @@ const Navbar: React.FC = () => {
             >
               Gallery
             </Link>
-            <Link 
+            <Link
               href="/schedule"
               className={`text-white hover:text-[#ffd700] font-medium transition duration-150 my-auto ${
                 isActive("/schedule") ? "text-[#ffd700]" : ""
@@ -118,7 +118,7 @@ const Navbar: React.FC = () => {
             >
               Schedule
             </Link>
-            <Link 
+            <Link
               href="/sponsors"
               className={`text-white hover:text-[#ffd700] font-medium transition duration-150 my-auto ${
                 isActive("/sponsors") ? "text-[#ffd700]" : ""
@@ -126,7 +126,7 @@ const Navbar: React.FC = () => {
             >
               Sponsors
             </Link>
-            <Link 
+            <Link
               href="/resources"
               className={`text-white hover:text-[#ffd700] font-medium transition duration-150 my-auto ${
                 isActive("/resources") ? "text-[#ffd700]" : ""
@@ -134,7 +134,7 @@ const Navbar: React.FC = () => {
             >
               Resources
             </Link>
-            <Link 
+            <Link
               href="/store"
               className={`text-white hover:text-[#ffd700] font-medium transition duration-150 my-auto ${
                 isActive("/store") ? "text-[#ffd700]" : ""
@@ -147,8 +147,8 @@ const Navbar: React.FC = () => {
           {/* Contact Us button */}
           <div className="hidden md:flex items-center ml-4">
             <Link href="/contact">
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className="rounded-full bg-[#1a36e8] hover:bg-[#0a1a70] text-white border-none"
                 size="sm"
               >
@@ -172,7 +172,7 @@ const Navbar: React.FC = () => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-[#0a1a70] border-t border-gray-700 py-2">
           <div className="px-4 space-y-2">
-            <Link 
+            <Link
               href="/"
               className={`block py-2 ${
                 isActive("/")
@@ -200,21 +200,21 @@ const Navbar: React.FC = () => {
                 About <ChevronDown className="h-4 w-4" />
               </button>
               <div id="about-submenu" className="hidden pl-4 space-y-2 mt-1">
-                <Link 
+                <Link
                   href="/about"
                   className="block text-white hover:text-[#ffd700] py-1"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Team History
                 </Link>
-                <Link 
+                <Link
                   href="/about#mission"
                   className="block text-white hover:text-[#ffd700] py-1"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Mission & Values
                 </Link>
-                <Link 
+                <Link
                   href="/team"
                   className="block text-white hover:text-[#ffd700] py-1"
                   onClick={() => setMobileMenuOpen(false)}
@@ -240,21 +240,21 @@ const Navbar: React.FC = () => {
                 Projects <ChevronDown className="h-4 w-4" />
               </button>
               <div id="projects-submenu" className="hidden pl-4 space-y-2 mt-1">
-                <Link 
+                <Link
                   href="/projects"
                   className="block text-white hover:text-[#ffd700] py-1"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   FRC Team 3005
                 </Link>
-                <Link 
+                <Link
                   href="/projects?team=ftc"
                   className="block text-white hover:text-[#ffd700] py-1"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   FTC Teams
                 </Link>
-                <Link 
+                <Link
                   href="/projects?view=past"
                   className="block text-white hover:text-[#ffd700] py-1"
                   onClick={() => setMobileMenuOpen(false)}
@@ -263,7 +263,7 @@ const Navbar: React.FC = () => {
                 </Link>
               </div>
             </div>
-            <Link 
+            <Link
               href="/gallery"
               className={`block py-2 ${
                 isActive("/gallery")
@@ -274,7 +274,7 @@ const Navbar: React.FC = () => {
             >
               Gallery
             </Link>
-            <Link 
+            <Link
               href="/schedule"
               className={`block py-2 ${
                 isActive("/schedule")
@@ -285,7 +285,7 @@ const Navbar: React.FC = () => {
             >
               Schedule
             </Link>
-            <Link 
+            <Link
               href="/sponsors"
               className={`block py-2 ${
                 isActive("/sponsors")
@@ -296,7 +296,7 @@ const Navbar: React.FC = () => {
             >
               Sponsors
             </Link>
-            <Link 
+            <Link
               href="/resources"
               className={`block py-2 ${
                 isActive("/resources")
@@ -307,7 +307,7 @@ const Navbar: React.FC = () => {
             >
               Resources
             </Link>
-            <Link 
+            <Link
               href="/store"
               className={`block py-2 ${
                 isActive("/store")
@@ -318,8 +318,6 @@ const Navbar: React.FC = () => {
             >
               Store
             </Link>
-            
-
           </div>
         </div>
       )}
