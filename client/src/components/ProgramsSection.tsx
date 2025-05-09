@@ -21,7 +21,7 @@ const ProgramsSection: React.FC = () => {
             <div className="p-6 flex flex-col flex-grow">
               <div className="flex items-center mb-4">
                 <img
-                  src="/images/logos/frc-logo.svg"
+                  src="/images/otherLogos/FIRSTRobotics_iconHorz_RGB.png"
                   alt="FRC Logo"
                   className="h-14 w-auto mr-4"
                 />
@@ -77,7 +77,7 @@ const ProgramsSection: React.FC = () => {
             <div className="p-6 flex flex-col flex-grow">
               <div className="flex items-center mb-4">
                 <img
-                  src="/images/logos/ftc-logo.svg"
+                  src="/images/otherLogos/FIRSTTech_iconHorz_RGB.png"
                   alt="FTC Logo"
                   className="h-14 w-auto mr-4"
                 />
