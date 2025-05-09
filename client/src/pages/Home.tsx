@@ -2,6 +2,7 @@ import React from "react";
 import HeroSection from "@/components/HeroSection";
 import ProgramsSection from "@/components/ProgramsSection";
 import RobotShowcase from "@/components/RobotShowcase";
+import StatsCounter from "@/components/StatsCounter";
 import RecentUpdates from "@/components/RecentUpdates";
 import UpcomingEvents from "@/components/UpcomingEvents";
 import SponsorSection from "@/components/SponsorSection";
@@ -21,6 +22,7 @@ const Home: React.FC = () => {
       <HeroSection />
       <ProgramsSection />
       <RobotShowcase />
+      <StatsCounter />
       <RecentUpdates />
       <UpcomingEvents />
       <SponsorSection />
