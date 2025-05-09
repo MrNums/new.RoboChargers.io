@@ -42,25 +42,28 @@ const StatsCounter: React.FC = () => {
         if (entry.isIntersecting && !hasAnimated) {
           setHasAnimated(true);
           
-          // Start counting animation for each stat
-          const finalValues = stats.map(stat => stat.value);
-          const duration = 2500; // Animation duration in ms
-          const steps = 60; // Number of steps to take
-          const stepDuration = duration / steps;
-          
-          let step = 0;
-          const interval = setInterval(() => {
-            step++;
+          // Add a 1-second delay before starting the animation
+          setTimeout(() => {
+            // Start counting animation for each stat
+            const finalValues = stats.map(stat => stat.value);
+            const duration = 2500; // Animation duration in ms
+            const steps = 60; // Number of steps to take
+            const stepDuration = duration / steps;
             
-            if (step >= steps) {
-              setCounts(finalValues);
-              clearInterval(interval);
-            } else {
-              setCounts(finalValues.map(final => 
-                Math.round((final / steps) * step)
-              ));
-            }
-          }, stepDuration);
+            let step = 0;
+            const interval = setInterval(() => {
+              step++;
+              
+              if (step >= steps) {
+                setCounts(finalValues);
+                clearInterval(interval);
+              } else {
+                setCounts(finalValues.map(final => 
+                  Math.round((final / steps) * step)
+                ));
+              }
+            }, stepDuration);
+          }, 1000); // 1-second delay
         }
       },
       { threshold: 0.1 }
