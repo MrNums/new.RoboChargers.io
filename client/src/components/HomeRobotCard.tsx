@@ -34,7 +34,7 @@ const HomeRobotCard: React.FC<HomeRobotCardProps> = ({ robot }) => {
   
   return (
     <>
-      <Card className="flex-shrink-0 w-[400px] bg-white dark:bg-zinc-800 rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl border border-gray-100 dark:border-zinc-700">
+      <Card className="flex-shrink-0 w-[400px] bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl border border-gray-100">
         <div className="relative">
           <div className="w-full h-64 overflow-hidden">
             <LazyImage
@@ -47,32 +47,32 @@ const HomeRobotCard: React.FC<HomeRobotCardProps> = ({ robot }) => {
           </div>
           <div className="absolute top-3 right-3 flex flex-col gap-2">
             {robot.current && (
-              <Badge className="bg-[#ffd700] text-[#0a1a70] font-semibold">
+              <Badge className="bg-[#ffd700] text-[#0a1a70] font-semibold flex items-center justify-center px-3">
                 Current
               </Badge>
             )}
-            <Badge variant="outline" className="bg-white/80 dark:bg-zinc-800/80 backdrop-blur-sm border-[#1a36e8] text-[#1a36e8] font-medium">
+            <Badge variant="outline" className="bg-white/80 backdrop-blur-sm border-[#1a36e8] text-[#1a36e8] font-medium flex items-center justify-center px-3">
               {robot.season}
             </Badge>
           </div>
         </div>
         <CardContent className="p-6">
           <div className="mb-2">
-            <h4 className="font-bold text-xl text-[#0a1a70] dark:text-blue-300">{robot.name}</h4>
-            <div className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-3">
+            <h4 className="font-bold text-xl text-[#0a1a70]">{robot.name}</h4>
+            <div className="text-sm font-medium text-gray-500 mb-3">
               {robot.challenge}
             </div>
           </div>
-          <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">{robot.description}</p>
+          <p className="text-sm text-gray-600 mb-4 line-clamp-2">{robot.description}</p>
           
           <div className="space-y-2">
             {robot.features.slice(0, 2).map((feature, index) => (
-              <div key={index} className="px-3 py-1.5 bg-gray-100 dark:bg-zinc-700 text-gray-700 dark:text-gray-200 text-sm rounded-md">
+              <div key={index} className="px-3 py-1.5 bg-gray-100 text-gray-700 text-sm rounded-md">
                 {feature}
               </div>
             ))}
             {robot.features.length > 2 && (
-              <div className="text-sm text-gray-500 dark:text-gray-400">
+              <div className="text-sm text-gray-500">
                 +{robot.features.length - 2} more features
               </div>
             )}
@@ -94,7 +94,7 @@ const HomeRobotCard: React.FC<HomeRobotCardProps> = ({ robot }) => {
 
       {/* Robot Details Dialog */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto dark:bg-zinc-900 dark:border-zinc-700">
+        <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold flex items-center">
               <span className="text-[#0a1a70] dark:text-blue-300">{robot.name}</span>

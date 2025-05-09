@@ -38,7 +38,7 @@ const RobotShowcase: React.FC = () => {
 
         <div className="mb-10 relative">
           <div className="flex justify-between items-center mb-6">
-            <h3 className="text-2xl font-bold text-[#1a36e8]">
+            <h3 className="text-3xl md:text-4xl font-bold text-[#1a36e8]">
               Featured Robot: Relay (2025)
             </h3>
             <div className="flex space-x-3">
@@ -84,6 +84,25 @@ const RobotShowcase: React.FC = () => {
 
           {/* Right fade gradient */}
           <div className="absolute right-0 top-[4.5rem] bottom-4 w-8 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none"></div>
+        </div>
+
+        {/* State Champions Banner */}
+        <div className="text-center mb-10 py-4 bg-blue-50 rounded-lg border border-blue-100 shadow-inner">
+          <div className="flex items-center justify-center mb-2">
+            <span className="text-[#0a1a70] font-bold text-xl lg:text-2xl flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="inline-block h-7 w-7 text-[#ffd700] mr-1 fill-current">
+                <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="inline-block h-7 w-7 text-[#ffd700] mx-1 fill-current">
+                <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="inline-block h-7 w-7 text-[#ffd700] ml-1 fill-current">
+                <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/>
+              </svg>
+            </span>
+          </div>
+          <h3 className="text-[#0a1a70] font-bold text-xl lg:text-2xl">3-Time Back-to-Back-to-Back State Champions</h3>
+          <p className="text-gray-600 text-sm mt-1">2023 • 2024 • 2025</p>
         </div>
 
         <div className="text-center">
