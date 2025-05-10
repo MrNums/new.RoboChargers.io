@@ -14,7 +14,7 @@ const StatsCounter: React.FC = () => {
 
   const stats: StatItem[] = [
     { 
-      value: 15, 
+      value: 8, 
       label: "Competition Trophies", 
       icon: <Trophy className="h-12 w-12 text-[#ffd700]" /> 
     },
@@ -24,14 +24,14 @@ const StatsCounter: React.FC = () => {
       icon: <Award className="h-12 w-12 text-[#ffd700]" /> 
     },
     { 
-      value: 124, 
+      value: 35, 
       label: "Team Members", 
-      icon: <TrendingUp className="h-12 w-12 text-[#1a36e8]" /> 
+      icon: <TrendingUp className="h-12 w-12 text-[#ffd700]" /> 
     },
     { 
-      value: 47, 
+      value: 4, 
       label: "Blue Banners", 
-      icon: <BarChart2 className="h-12 w-12 text-[#1a36e8]" /> 
+      icon: <BarChart2 className="h-12 w-12 text-[#ffd700]" /> 
     },
   ];
 
@@ -89,7 +89,7 @@ const StatsCounter: React.FC = () => {
         <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-5xl font-bold mb-4">Our Impact</h2>
           <p className="text-lg max-w-2xl mx-auto opacity-90">
-            Team 3005 RoboChargers has made a significant impact since 2009
+            Team 3005 RoboChargers has made a significant impact within the 2025 season.
           </p>
         </div>
 

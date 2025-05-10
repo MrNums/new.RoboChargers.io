@@ -28,7 +28,7 @@ const RecentUpdates: React.FC = () => {
         <div className="text-center mt-10">
           <Button
             asChild
-            className="bg-[#1a36e8] hover:bg-[#0a1a70] text-white font-bold"
+            className="bg-[#1a36e8] hover:bg-[#0a1a70] text-white font-bold px-8 py-6 text-lg"
             size="lg"
           >
             <Link href="/blog">Read All Updates</Link>

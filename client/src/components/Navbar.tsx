@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
             <Link href="/" className="flex items-center">
               <div className="flex items-center mr-3">
                 <img
-                  src="/images/RCLogoWhite.png"
+                  src="/images/logos/RCLogoWhite.png"
                   alt="RoboChargers Logo"
                   className="h-10 w-auto"
                 />
