@@ -13,6 +13,9 @@ export interface Robot {
   current: boolean;
   features: string[];
   revealVideoUrl?: string;
+  // OnShape 3D model properties
+  onshapeDocumentId?: string;   // The OnShape document ID for the 3D model
+  onshapeElementId?: string;    // The OnShape element ID for the 3D model
   awards?: {
     name: string;
     event: string;
@@ -284,6 +287,8 @@ export const robots: Robot[] = [
       "Automated game piece tracking",
       "Efficient auto-balancing capabilities",
     ],
+    onshapeDocumentId: "f1c0c9ce2309b0be3a22a379",
+    onshapeElementId: "15f84812434f5022b133b60c",
     awards: [
       {
         name: "FIT District Waco Event Winner",
@@ -340,6 +345,8 @@ export const robots: Robot[] = [
       "Extending multi-joint arm for wide reach",
       "Pivoting arm enables scoring without rotating chassis",
     ],
+    onshapeDocumentId: "f1c0c9ce2309b0be3a22a379",
+    onshapeElementId: "2d9c76777cab1eba9beda808",
     awards: [
       {
         name: "FIT District Dallas Event Winner",

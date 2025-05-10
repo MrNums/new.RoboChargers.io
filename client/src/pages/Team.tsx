@@ -10,7 +10,7 @@ import { teamMembers } from "@/lib/data";
 const Team: React.FC = () => {
   const [mentorPage, setMentorPage] = useState(0);
   const [alumniPage, setAlumniPage] = useState(0);
-  
+
   // Define how many items to show per page
   const itemsPerPage = 6; // 2x3 grid
   
@@ -119,7 +119,7 @@ const Team: React.FC = () => {
                     <AvatarFallback>MG</AvatarFallback>
                   </Avatar>
                   <h4 className="font-bold text-lg text-[#0a1a70]">Marco Guerra</h4>
-                  <p className="text-[#1a36e8] text-sm mb-2">Team Principal (2009-2025)</p>
+                  <p className="text-[#1a36e8] text-sm mb-2">Team Principal (20014-2025)</p>
                   <p className="text-gray-600 text-sm text-center">
                     A founding leader whose vision and guidance helped establish Team 3005 as a powerhouse in FIRST Robotics.
                   </p>

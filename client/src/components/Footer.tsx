@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://facebook.com"
+                href="https://m.facebook.com/FRC3005/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition duration-150"
@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
                 <Facebook size={18} />
               </a>
               <a
-                href="https://twitter.com"
+                href="http://twitter.com/frc3005"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition duration-150"
@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
                 <Twitter size={18} />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/frc3005?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition duration-150"
@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
                 <Instagram size={18} />
               </a>
               <a
-                href="https://youtube.com"
+                href="https://www.youtube.com/@frc3005"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition duration-150"
@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
                 <Youtube size={18} />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/FRC3005?q=&type=all&language=&sort="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition duration-150"
