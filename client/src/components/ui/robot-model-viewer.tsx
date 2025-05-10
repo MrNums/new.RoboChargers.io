@@ -31,7 +31,7 @@ const RobotModelViewer: React.FC<RobotModelViewerProps> = ({
     const setupScene = () => {
       // Create scene
       scene = new THREE.Scene();
-      scene.background = new THREE.Color(0xf0f0f0);
+      scene.background = new THREE.Color(0xf5f8ff); // Light blue-tinted background
       
       // Create camera
       const container = containerRef.current;
@@ -167,19 +167,20 @@ const RobotModelViewer: React.FC<RobotModelViewerProps> = ({
   return (
     <div className="relative" style={{ width, height }}>
       {isLoading && (
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-100 bg-opacity-75 z-10">
+        <div className="absolute inset-0 flex items-center justify-center bg-white dark:bg-zinc-900 bg-opacity-90 dark:bg-opacity-90 z-10">
           <div className="text-center">
-            <Loader2 className="h-8 w-8 animate-spin text-blue-600 mx-auto mb-2" />
-            <p className="text-blue-800 font-medium">Loading 3D model...</p>
+            <Loader2 className="h-8 w-8 animate-spin text-[#1a36e8] dark:text-blue-400 mx-auto mb-2" />
+            <p className="text-[#0a1a70] dark:text-blue-300 font-medium">Loading 3D model...</p>
+            <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">This may take a moment</p>
           </div>
         </div>
       )}
       
       {error && (
-        <div className="absolute inset-0 flex items-center justify-center bg-red-50 z-10">
+        <div className="absolute inset-0 flex items-center justify-center bg-red-50 dark:bg-red-950/30 z-10">
           <div className="text-center p-4">
-            <p className="text-red-600 font-medium">{error}</p>
-            <p className="text-sm text-gray-600 mt-2">Try refreshing the page</p>
+            <p className="text-red-600 dark:text-red-400 font-medium">{error}</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">Try refreshing the page</p>
           </div>
         </div>
       )}
@@ -191,8 +192,8 @@ const RobotModelViewer: React.FC<RobotModelViewerProps> = ({
       />
       
       {!isLoading && !error && (
-        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white text-xs px-3 py-1 rounded-full">
-          Click and drag to rotate
+        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-[#1a36e8] bg-opacity-80 text-white text-xs px-3 py-1 rounded-full shadow-md">
+          Click and drag to rotate • Scroll to zoom
         </div>
       )}
     </div>

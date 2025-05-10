@@ -143,19 +143,23 @@ const HomeRobotCard: React.FC<HomeRobotCardProps> = ({ robot }) => {
                 {/* 3D model view */}
                 {modelViewMode === '3d' && (
                   <div className="rounded-lg overflow-hidden h-64">
-                    {/* We'd use this for actual OnShape models */}
-                    {/* Example: robot.onShapeDocumentId and robot.onShapeElementId would be defined in the data model */}
-                    {robot.name === 'Relay' ? (
+                    {robot.onshapeDocumentId && robot.onshapeElementId ? (
                       <OnShapeViewer
-                        documentId="2d47b6157553adb3cb65d2a5"
-                        elementId="1a1bf39505d3843e896d26de"
+                        documentId={robot.onshapeDocumentId}
+                        elementId={robot.onshapeElementId}
                         height="256px"
                       />
                     ) : (
-                      <RobotModelViewer
-                        modelUrl={robot.imageUrl} // This would be replaced with actual model URL
-                        height="256px"
-                      />
+                      <div className="flex items-center justify-center h-full bg-gray-100 dark:bg-zinc-800 rounded-lg">
+                        <div className="text-center p-4">
+                          <p className="text-gray-500 dark:text-gray-400 font-medium">
+                            3D model not available yet
+                          </p>
+                          <p className="text-sm text-gray-400 dark:text-gray-500 mt-1">
+                            Check back later for model updates
+                          </p>
+                        </div>
+                      </div>
                     )}
                   </div>
                 )}
