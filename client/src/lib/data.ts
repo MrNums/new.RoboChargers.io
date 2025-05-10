@@ -289,6 +289,7 @@ export const robots: Robot[] = [
     ],
     onshapeDocumentId: "f1c0c9ce2309b0be3a22a379",
     onshapeElementId: "15f84812434f5022b133b60c",
+    revealVideoUrl: "https://youtu.be/8Q35zErAfHI?si=iQ86ruf4wE_AI2Tb",
     awards: [
       {
         name: "FIT District Waco Event Winner",
@@ -347,6 +348,7 @@ export const robots: Robot[] = [
     ],
     onshapeDocumentId: "f1c0c9ce2309b0be3a22a379",
     onshapeElementId: "2d9c76777cab1eba9beda808",
+    revealVideoUrl: "https://youtu.be/63VciN6goR8?si=yEq5UnchS8Js6Nx2",
     awards: [
       {
         name: "FIT District Dallas Event Winner",
@@ -399,6 +401,7 @@ export const robots: Robot[] = [
       "Ground-fed intake with optimized funneling",
       "Custom-built swerve modules powered by Neo & Neo 550 motors",
     ],
+    revealVideoUrl: "https://youtu.be/WPG_ZI3BXq8?si=JS5C17i-Nkf0hsWg",
     awards: [
       {
         name: "FIT District Waco Event",

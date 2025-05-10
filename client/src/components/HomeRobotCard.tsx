@@ -219,7 +219,11 @@ const HomeRobotCard: React.FC<HomeRobotCardProps> = ({ robot }) => {
                       <iframe
                         width="100%"
                         height="100%"
-                        src={robot.revealVideoUrl.replace('youtu.be/', 'youtube.com/embed/')}
+                        src={
+                          robot.revealVideoUrl.includes('youtu.be/')
+                            ? robot.revealVideoUrl.replace(/youtu\.be\/([^?]+)(\?si=.+)?/, 'youtube.com/embed/$1$2')
+                            : robot.revealVideoUrl.replace(/youtube\.com\/watch\?v=([^&]+)(&.+)?/, 'youtube.com/embed/$1$2')
+                        }
                         title={`${robot.name} Reveal Video`}
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
