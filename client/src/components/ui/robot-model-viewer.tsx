@@ -169,7 +169,11 @@ const RobotModelViewer: React.FC<RobotModelViewerProps> = ({
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center bg-white dark:bg-zinc-900 bg-opacity-90 dark:bg-opacity-90 z-10">
           <div className="text-center">
-            <Loader2 className="h-8 w-8 animate-spin text-[#1a36e8] dark:text-blue-400 mx-auto mb-2" />
+            <img 
+              src="/images/logos/ChargerBolt.png" 
+              alt="Charging" 
+              className="h-12 w-auto mx-auto mb-2 animate-pulse" 
+            />
             <p className="text-[#0a1a70] dark:text-blue-300 font-medium">Loading 3D model...</p>
             <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">This may take a moment</p>
           </div>

@@ -78,13 +78,13 @@ const Team: React.FC = () => {
               <Card className="overflow-hidden shadow-lg">
                 <div className="p-6 flex flex-col items-center">
                   <Avatar className="h-32 w-32 mb-4">
-                    <AvatarImage src="/images/team/karen-herrada.jpg" alt="Karen Herrada" />
+                    <AvatarImage src="https://ca.slack-edge.com/T01DCLZ42JV-U02LA8NR3NY-9675e25b5217-512" alt="Karen Herrada" />
                     <AvatarFallback>KH</AvatarFallback>
                   </Avatar>
                   <h3 className="font-bold text-xl text-[#0a1a70]">Karen Herrada</h3>
                   <p className="text-[#1a36e8] font-medium mb-3">Team Principal</p>
                   <p className="text-gray-600 text-center">
-                    Guiding our team with passion and innovation since 2025. Ms. Herrada brings expertise in engineering education and a commitment to student success.
+                    Guiding our team with passion and innovation since 2025. Mrs. Herrada brings expertise in engineering education and a commitment to student success.
                   </p>
                 </div>
               </Card>
@@ -92,7 +92,7 @@ const Team: React.FC = () => {
               <Card className="overflow-hidden shadow-lg">
                 <div className="p-6 flex flex-col items-center">
                   <Avatar className="h-32 w-32 mb-4">
-                    <AvatarImage src="/images/team/adam-gaddis.jpg" alt="Adam Gaddis" />
+                    <AvatarImage src="https://ca.slack-edge.com/T01DCLZ42JV-U02ED7DNH2R-35af29c5c68c-512" alt="Adam Gaddis" />
                     <AvatarFallback>AG</AvatarFallback>
                   </Avatar>
                   <h3 className="font-bold text-xl text-[#0a1a70]">Adam Gaddis</h3>
@@ -115,7 +115,7 @@ const Team: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="flex flex-col items-center">
                   <Avatar className="h-24 w-24 mb-3">
-                    <AvatarImage src="/images/team/marco-guerra.jpg" alt="Marco Guerra" />
+                    <AvatarImage src="https://ca.slack-edge.com/T01DCLZ42JV-U01CVPBQ9HU-9ba6df24e4f0-512" alt="Marco Guerra" />
                     <AvatarFallback>MG</AvatarFallback>
                   </Avatar>
                   <h4 className="font-bold text-lg text-[#0a1a70]">Marco Guerra</h4>
@@ -127,7 +127,7 @@ const Team: React.FC = () => {
 
                 <div className="flex flex-col items-center">
                   <Avatar className="h-24 w-24 mb-3">
-                    <AvatarImage src="/images/team/rachel-moore.jpg" alt="Rachel Moore" />
+                    <AvatarImage src="https://ca.slack-edge.com/T01DCLZ42JV-U01D02FESQ2-936275125000-512" alt="Rachel Moore" />
                     <AvatarFallback>RM</AvatarFallback>
                   </Avatar>
                   <h4 className="font-bold text-lg text-[#0a1a70]">Rachel Moore</h4>
