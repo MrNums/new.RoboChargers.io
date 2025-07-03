@@ -22,11 +22,21 @@ const Stats: React.FC = () => {
       }
       
       .award-box {
-        animation: rainbow-border 5s linear infinite;
         border-width: 2px;
         border-style: solid;
         border-color: rgba(200, 200, 200, 0.3);
       }
+      
+      .award-box:nth-child(1) { animation: rainbow-border 4s linear infinite; }
+      .award-box:nth-child(2) { animation: rainbow-border 5.5s linear infinite 0.5s; }
+      .award-box:nth-child(3) { animation: rainbow-border 3.5s linear infinite 1s; }
+      .award-box:nth-child(4) { animation: rainbow-border 6s linear infinite 1.5s; }
+      .award-box:nth-child(5) { animation: rainbow-border 4.5s linear infinite 2s; }
+      .award-box:nth-child(6) { animation: rainbow-border 5s linear infinite 2.5s; }
+      .award-box:nth-child(7) { animation: rainbow-border 3.8s linear infinite 3s; }
+      .award-box:nth-child(8) { animation: rainbow-border 5.2s linear infinite 3.5s; }
+      .award-box:nth-child(9) { animation: rainbow-border 4.2s linear infinite 4s; }
+      .award-box:nth-child(10) { animation: rainbow-border 5.8s linear infinite 4.5s; }
     `;
     document.head.appendChild(style);
     
