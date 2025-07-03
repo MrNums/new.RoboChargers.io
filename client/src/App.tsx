@@ -10,6 +10,7 @@ import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Team from "@/pages/Team";
 import Projects from "@/pages/Projects";
+import Stats from "@/pages/Stats";
 import Gallery from "@/pages/Gallery";
 import Schedule from "@/pages/Schedule";
 import Sponsors from "@/pages/Sponsors";
@@ -28,6 +29,7 @@ function Router() {
           <Route path="/about" component={About} />
           <Route path="/team" component={Team} />
           <Route path="/projects" component={Projects} />
+          <Route path="/stats" component={Stats} />
           <Route path="/gallery" component={Gallery} />
           <Route path="/schedule" component={Schedule} />
           <Route path="/sponsors" component={Sponsors} />

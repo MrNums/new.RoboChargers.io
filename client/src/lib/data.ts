@@ -972,3 +972,114 @@ export const resources: Resource[] = [
     dateAdded: "November 15, 2022",
   },
 ];
+
+// Team Statistics Data - Easy to edit for updating team achievements
+export interface TeamStats {
+  overview: {
+    established: string;
+    location: string;
+    schoolDistrict: string;
+    currentSeason: string;
+  };
+  achievements: {
+    competitionTrophies: number;
+    stateChampionships: number;
+    teamMembers: number;
+    blueBanners: number;
+    yearsActive: number;
+    robotsBuilt: number;
+  };
+  awards: {
+    name: string;
+    event: string;
+    year: string;
+    description?: string;
+  }[];
+  outreach: {
+    eventsHosted: number;
+    studentsReached: number;
+    volunteersEngaged: number;
+    communityPartners: number;
+    stemDemonstrations: number;
+    mentorshipHours: number;
+  };
+  currentSeason: {
+    competitions: number;
+    matchesPlayed: number;
+    wins: number;
+    averageScore: number;
+    highestScore: number;
+    ranking: string;
+  };
+}
+
+export const teamStats: TeamStats = {
+  overview: {
+    established: "2009",
+    location: "Dallas, Texas",
+    schoolDistrict: "Dallas ISD",
+    currentSeason: "2024-2025",
+  },
+  achievements: {
+    competitionTrophies: 8,
+    stateChampionships: 3,
+    teamMembers: 35,
+    blueBanners: 4,
+    yearsActive: 16,
+    robotsBuilt: 12,
+  },
+  awards: [
+    {
+      name: "FIT District Waco Event",
+      event: "Creativity Award",
+      year: "2023",
+      description: "Recognized for innovative robot design and creative problem-solving approach",
+    },
+    {
+      name: "FIT District Fort Worth Event Winner",
+      event: "Excellence in Engineering Award",
+      year: "2023",
+      description: "Outstanding mechanical design and engineering excellence",
+    },
+    {
+      name: "FIT District Championship",
+      event: "Quality Award",
+      year: "2023",
+      description: "Exceptional build quality and attention to detail",
+    },
+    {
+      name: "Newton Division",
+      event: "District Finalist",
+      year: "2023",
+      description: "Advanced to FIRST Championship Newton Division playoffs",
+    },
+    {
+      name: "State Championship",
+      event: "Alliance Captain",
+      year: "2022",
+      description: "Led alliance to state championship victory",
+    },
+    {
+      name: "Regional Competition",
+      event: "Rookie Inspiration Award",
+      year: "2010",
+      description: "Outstanding rookie team performance and inspiration to others",
+    },
+  ],
+  outreach: {
+    eventsHosted: 12,
+    studentsReached: 450,
+    volunteersEngaged: 75,
+    communityPartners: 8,
+    stemDemonstrations: 25,
+    mentorshipHours: 320,
+  },
+  currentSeason: {
+    competitions: 3,
+    matchesPlayed: 18,
+    wins: 12,
+    averageScore: 85,
+    highestScore: 142,
+    ranking: "Top 25% in Texas",
+  },
+};

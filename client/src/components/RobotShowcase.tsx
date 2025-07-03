@@ -111,7 +111,7 @@ const RobotShowcase: React.FC = () => {
             className="bg-[#1a36e8] hover:bg-[#0a1a70] text-white font-bold text-lg shadow-lg transition-transform hover:scale-105 px-8 py-6 h-auto"
             size="lg"
           >
-            <Link href="/projects">View All Robots</Link>
+            <Link href="/stats">View Team Stats</Link>
           </Button>
         </div>
       </div>
