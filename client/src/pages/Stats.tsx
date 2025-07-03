@@ -12,19 +12,20 @@ const Stats: React.FC = () => {
     const style = document.createElement('style');
     style.textContent = `
       @keyframes rainbow-border {
-        0% { border-color: #ff0000; box-shadow: 0 0 8px #ff0000; }
-        16.66% { border-color: #ff8800; box-shadow: 0 0 8px #ff8800; }
-        33.33% { border-color: #ffff00; box-shadow: 0 0 8px #ffff00; }
-        50% { border-color: #00ff00; box-shadow: 0 0 8px #00ff00; }
-        66.66% { border-color: #0088ff; box-shadow: 0 0 8px #0088ff; }
-        83.33% { border-color: #8800ff; box-shadow: 0 0 8px #8800ff; }
-        100% { border-color: #ff0000; box-shadow: 0 0 8px #ff0000; }
+        0% { border-color: rgba(255, 182, 193, 0.6); box-shadow: 0 0 4px rgba(255, 182, 193, 0.3); }
+        16.66% { border-color: rgba(255, 218, 185, 0.6); box-shadow: 0 0 4px rgba(255, 218, 185, 0.3); }
+        33.33% { border-color: rgba(255, 255, 186, 0.6); box-shadow: 0 0 4px rgba(255, 255, 186, 0.3); }
+        50% { border-color: rgba(186, 255, 201, 0.6); box-shadow: 0 0 4px rgba(186, 255, 201, 0.3); }
+        66.66% { border-color: rgba(173, 216, 230, 0.6); box-shadow: 0 0 4px rgba(173, 216, 230, 0.3); }
+        83.33% { border-color: rgba(221, 160, 221, 0.6); box-shadow: 0 0 4px rgba(221, 160, 221, 0.3); }
+        100% { border-color: rgba(255, 182, 193, 0.6); box-shadow: 0 0 4px rgba(255, 182, 193, 0.3); }
       }
       
       .award-box {
-        animation: rainbow-border 3s linear infinite;
+        animation: rainbow-border 5s linear infinite;
         border-width: 2px;
         border-style: solid;
+        border-color: rgba(200, 200, 200, 0.3);
       }
     `;
     document.head.appendChild(style);
