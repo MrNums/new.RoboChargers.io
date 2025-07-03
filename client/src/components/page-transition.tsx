@@ -52,15 +52,16 @@ const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
 
             {}
             <motion.div
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+              className="fixed top-1/2 left-1/2 z-10 flex items-center justify-center"
+              style={{ transform: 'translate(-50%, -50%)' }}
               initial={{ scale: 0.2, opacity: 1 }}
               animate={{ 
-                scale: 1.5,
+                scale: 2,
                 opacity: [1, 1, 0]
               }}
               transition={{
-                duration: 1,
-                delay: 0.2,
+                duration: 0.8,
+                delay: 0.1,
                 times: [0, 0.6, 1]
               }}
             >
@@ -76,9 +77,9 @@ const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
               initial={{ scaleY: 1 }}
               animate={{ scaleY: 0 }}
               transition={{
-                duration: 0.7,
+                duration: 0.5,
                 ease: [0.22, 1, 0.36, 1],
-                delay: 0.8,
+                delay: 0.6,
               }}
               className="absolute inset-0 bg-[#0a1a70] origin-bottom"
             />
