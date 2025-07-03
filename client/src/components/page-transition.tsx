@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useLocation } from 'wouter';
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useLocation } from "wouter";
 
 interface PageTransitionProps {
   children: React.ReactNode;
@@ -32,9 +32,7 @@ const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
   return (
     <div className="relative">
       {}
-      <div className={isNavigating ? 'hidden' : 'block'}>
-        {children}
-      </div>
+      <div className={isNavigating ? "hidden" : "block"}>{children}</div>
 
       {}
       <AnimatePresence>
@@ -47,7 +45,7 @@ const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
               exit={{ scaleY: 0 }}
               transition={{
                 duration: 0.7,
-                ease: [0.22, 1, 0.36, 1]
+                ease: [0.22, 1, 0.36, 1],
               }}
               className="absolute inset-0 bg-[#0a1a70] origin-top"
             />
@@ -55,11 +53,15 @@ const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
             {}
             <motion.div
               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
-              initial={{ scale: 0.2 }}
-              animate={{ scale: 1.5 }}
+              initial={{ scale: 0.2, opacity: 1 }}
+              animate={{ 
+                scale: 1.5,
+                opacity: [1, 1, 0]
+              }}
               transition={{
                 duration: 1,
-                delay: 0.2
+                delay: 0.2,
+                times: [0, 0.6, 1]
               }}
             >
               <img
@@ -76,7 +78,7 @@ const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
               transition={{
                 duration: 0.7,
                 ease: [0.22, 1, 0.36, 1],
-                delay: 0.8
+                delay: 0.8,
               }}
               className="absolute inset-0 bg-[#0a1a70] origin-bottom"
             />
