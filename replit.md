@@ -81,6 +81,7 @@ The application follows a monorepo structure with clear separation between front
 
 ## Changelog
 - July 03, 2025. Initial setup
+- July 03, 2025. Added Stats page with rainbow animated award borders and easter egg celebrations
 
 ## User Preferences
 

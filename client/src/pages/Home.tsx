@@ -193,13 +193,6 @@ const Home: React.FC = () => {
       {/* Celebration Animation */}
       {celebrationElements}
       
-      {/* Mobile hint - only show on touch devices */}
-      <div className="fixed bottom-4 right-4 text-xs text-gray-400 pointer-events-none z-40 md:hidden">
-        <div className="bg-black/20 backdrop-blur-sm px-2 py-1 rounded">
-          Draw a ⚡ to charge up!
-        </div>
-      </div>
-      
       <HeroSection />
       <ProgramsSection />
       <RobotShowcase />
