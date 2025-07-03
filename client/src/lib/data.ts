@@ -563,73 +563,8 @@ export const events: Event[] = [
   },
 ];
 
-// Sponsors data
-export const sponsors: Sponsor[] = [
-  {
-    id: "1",
-    name: "Texas Instruments",
-    level: "platinum",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/9/9c/Texas_Instruments_Logo.svg",
-    website: "https://www.ti.com/",
-  },
-  {
-    id: "2",
-    name: "Lockheed Martin",
-    level: "platinum",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/9/9e/Lockheed_Martin_logo.svg",
-    website: "https://www.lockheedmartin.com/",
-  },
-  {
-    id: "3",
-    name: "Boeing",
-    level: "gold",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/4/4f/Boeing_full_logo.svg",
-    website: "https://www.boeing.com/",
-  },
-  {
-    id: "4",
-    name: "Toyota",
-    level: "gold",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/9/9d/Toyota_carlogo.svg",
-    website: "https://www.toyota.com/",
-  },
-  {
-    id: "5",
-    name: "L3Harris",
-    level: "silver",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/b/b7/L3Harris_Technologies_logo.svg",
-    website: "https://www.l3harris.com/",
-  },
-  {
-    id: "6",
-    name: "Dallas Education Foundation",
-    level: "silver",
-    logoUrl:
-      "https://images.unsplash.com/photo-1496200186974-4293800e2c20?ixlib=rb-1.2.1&auto=format&fit=crop&w=120&q=80",
-    website: "https://futureofdallas.org/",
-  },
-  {
-    id: "7",
-    name: "Bank of Texas",
-    level: "bronze",
-    logoUrl:
-      "https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?ixlib=rb-1.2.1&auto=format&fit=crop&w=120&q=80",
-    website: "https://www.bankoftexas.com/",
-  },
-  {
-    id: "8",
-    name: "Dallas Regional Chamber",
-    level: "bronze",
-    logoUrl:
-      "https://images.unsplash.com/photo-1535868463750-2318539a9176?ixlib=rb-1.2.1&auto=format&fit=crop&w=120&q=80",
-    website: "https://www.dallaschamber.org/",
-  },
-];
+// Sponsors data - Add real sponsors here when available
+export const sponsors: Sponsor[] = [];
 
 // Sponsorship levels data
 export const sponsorshipLevels: SponsorshipLevel[] = [
