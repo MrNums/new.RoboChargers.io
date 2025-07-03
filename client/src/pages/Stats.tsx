@@ -7,23 +7,49 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { teamStats } from "@/lib/data";
 
 const Stats: React.FC = () => {
+  // Add CSS for rainbow neon border animation
+  React.useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes rainbow-border {
+        0% { border-color: #ff0000; box-shadow: 0 0 8px #ff0000; }
+        16.66% { border-color: #ff8800; box-shadow: 0 0 8px #ff8800; }
+        33.33% { border-color: #ffff00; box-shadow: 0 0 8px #ffff00; }
+        50% { border-color: #00ff00; box-shadow: 0 0 8px #00ff00; }
+        66.66% { border-color: #0088ff; box-shadow: 0 0 8px #0088ff; }
+        83.33% { border-color: #8800ff; box-shadow: 0 0 8px #8800ff; }
+        100% { border-color: #ff0000; box-shadow: 0 0 8px #ff0000; }
+      }
+      
+      .award-box {
+        animation: rainbow-border 3s linear infinite;
+        border-width: 2px;
+        border-style: solid;
+      }
+    `;
+    document.head.appendChild(style);
+    
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
   const StatCard = ({ icon: Icon, title, value, description }: {
     icon: React.ElementType;
     title: string;
     value: string | number;
     description?: string;
   }) => (
-    <Card className="bg-white/10 border-white/20 text-white">
+    <Card className="bg-white border-gray-200 shadow-md">
       <CardContent className="p-6">
         <div className="flex items-center justify-between mb-4">
-          <Icon className="h-8 w-8 text-yellow-400" />
+          <Icon className="h-8 w-8 text-[#1a36e8]" />
           <div className="text-right">
-            <div className="text-3xl font-bold">{value}</div>
-            <div className="text-sm opacity-80">{title}</div>
+            <div className="text-3xl font-bold text-gray-900">{value}</div>
+            <div className="text-sm text-gray-600">{title}</div>
           </div>
         </div>
         {description && (
-          <p className="text-sm opacity-70">{description}</p>
+          <p className="text-sm text-gray-600">{description}</p>
         )}
       </CardContent>
     </Card>
@@ -189,7 +215,7 @@ const Stats: React.FC = () => {
           <TabsContent value="awards">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {teamStats.awards.map((award, index) => (
-                <Card key={index}>
+                <Card key={index} className="award-box bg-white">
                   <CardHeader>
                     <div className="flex items-start justify-between">
                       <div>
