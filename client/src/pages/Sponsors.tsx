@@ -105,7 +105,9 @@ const Sponsors: React.FC = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 <div className="bg-gray-50 p-4 rounded-lg">
-                  <h3 className="font-semibold mb-3">Benefits of Sponsorship</h3>
+                  <h3 className="font-semibold mb-3">
+                    Benefits of Sponsorship
+                  </h3>
                   <ul className="list-disc list-inside text-gray-600 space-y-1">
                     <li>Logo placement on our robot and team materials</li>
                     <li>Recognition at competitions and events</li>
@@ -143,10 +145,10 @@ const Sponsors: React.FC = () => {
                   For more information about sponsorship opportunities, please
                   contact our team at{" "}
                   <a
-                    href="mailto:sponsors@robochargers.org"
+                    href="mailto:rememberToPutRealEmailhere@email.com"
                     className="text-[#1a36e8] hover:text-[#0a1a70]"
                   >
-                    sponsors@robochargers.org
+                    rememberToPutRealEmailhere@email.com
                   </a>
                 </p>
               </div>
@@ -159,14 +161,20 @@ const Sponsors: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Card>
               <CardContent className="p-6 h-full flex flex-col">
-                <h3 className="text-xl font-semibold mb-4">Individual Donations</h3>
+                <h3 className="text-xl font-semibold mb-4">
+                  Individual Donations
+                </h3>
                 <p className="text-gray-600 mb-6 flex-grow">
                   Even small contributions can make a big difference! Individual
                   donations help us fund tools, materials, and competition
                   registration fees for our teams.
                 </p>
                 <Button className="bg-[#1a36e8] hover:bg-[#0a1a70] text-white font-bold mt-auto">
-                  <a href="https://example.com/donate" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://example.com/donate"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Make a Donation
                   </a>
                 </Button>

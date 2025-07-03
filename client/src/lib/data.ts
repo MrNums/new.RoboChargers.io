@@ -563,8 +563,97 @@ export const events: Event[] = [
   },
 ];
 
-// Sponsors data - Add real sponsors here when available
-export const sponsors: Sponsor[] = [];
+// Sponsors data - Real RoboChargers sponsors
+export const sponsors: Sponsor[] = [
+  // Platinum tier ($10,000+)
+  {
+    id: "1",
+    name: "AoE Logo",
+    level: "platinum",
+    logoUrl: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMTIwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iODAiIGZpbGw9IiMzMzMzMzMiLz48L3N2Zz4=",
+    website: "#",
+  },
+  // Gold tier ($5,000+)
+  {
+    id: "2",
+    name: "REV Robotics (#Team REV)",
+    level: "gold",
+    logoUrl: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMTIwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iODAiIGZpbGw9IiMzMzMzMzMiLz48L3N2Zz4=",
+    website: "https://www.revrobotics.com/",
+  },
+  {
+    id: "3",
+    name: "Boeing",
+    level: "gold",
+    logoUrl: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMTIwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iODAiIGZpbGw9IiMzMzMzMzMiLz48L3N2Zz4=",
+    website: "https://www.boeing.com/",
+  },
+  // Silver tier ($2,500+)
+  {
+    id: "4",
+    name: "FIRST",
+    level: "silver",
+    logoUrl: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMTIwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iODAiIGZpbGw9IiMzMzMzMzMiLz48L3N2Zz4=",
+    website: "https://www.firstinspires.org/",
+  },
+  {
+    id: "5",
+    name: "HAAS",
+    level: "silver",
+    logoUrl: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMTIwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iODAiIGZpbGw9IiMzMzMzMzMiLz48L3N2Zz4=",
+    website: "https://www.haascnc.com/",
+  },
+  {
+    id: "6",
+    name: "Raytheon + NAF",
+    level: "silver",
+    logoUrl: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMTIwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iODAiIGZpbGw9IiMzMzMzMzMiLz48L3N2Zz4=",
+    website: "https://www.raytheon.com/",
+  },
+  // Bronze tier ($1,000+)
+  {
+    id: "7",
+    name: "Vickery Meadow Youth Development Foundation",
+    level: "bronze",
+    logoUrl: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMTIwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iODAiIGZpbGw9IiMzMzMzMzMiLz48L3N2Zz4=",
+    website: "#",
+  },
+  {
+    id: "8",
+    name: "Cisco Meraki",
+    level: "bronze",
+    logoUrl: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMTIwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iODAiIGZpbGw9IiMzMzMzMzMiLz48L3N2Zz4=",
+    website: "https://meraki.cisco.com/",
+  },
+  {
+    id: "9",
+    name: "Liberty Mutual",
+    level: "bronze",
+    logoUrl: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMTIwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iODAiIGZpbGw9IiMzMzMzMzMiLz48L3N2Zz4=",
+    website: "https://www.libertymutual.com/",
+  },
+  {
+    id: "10",
+    name: "Texas Instruments",
+    level: "bronze",
+    logoUrl: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMTIwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iODAiIGZpbGw9IiMzMzMzMzMiLz48L3N2Zz4=",
+    website: "https://www.ti.com/",
+  },
+  {
+    id: "11",
+    name: "Texas Workforce Commission",
+    level: "bronze",
+    logoUrl: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMTIwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iODAiIGZpbGw9IiMzMzMzMzMiLz48L3N2Zz4=",
+    website: "https://www.twc.texas.gov/",
+  },
+  {
+    id: "12",
+    name: "NI / Emerson",
+    level: "bronze",
+    logoUrl: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMTIwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iODAiIGZpbGw9IiMzMzMzMzMiLz48L3N2Zz4=",
+    website: "https://www.emerson.com/",
+  },
+];
 
 // Sponsorship levels data
 export const sponsorshipLevels: SponsorshipLevel[] = [
