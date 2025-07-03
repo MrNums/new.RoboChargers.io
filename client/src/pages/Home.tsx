@@ -12,6 +12,8 @@ import { Helmet } from "react-helmet";
 const Home: React.FC = () => {
   const [celebrationActive, setCelebrationActive] = useState(false);
   const [keySequence, setKeySequence] = useState("");
+  const [touchPoints, setTouchPoints] = useState<{x: number, y: number}[]>([]);
+  const [isDrawing, setIsDrawing] = useState(false);
 
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
@@ -26,6 +28,77 @@ const Home: React.FC = () => {
     window.addEventListener("keydown", handleKeyPress);
     return () => window.removeEventListener("keydown", handleKeyPress);
   }, [keySequence]);
+
+  // Lightning bolt swipe detection
+  useEffect(() => {
+    const handleTouchStart = (event: TouchEvent) => {
+      setIsDrawing(true);
+      setTouchPoints([]);
+    };
+
+    const handleTouchMove = (event: TouchEvent) => {
+      if (!isDrawing) return;
+      
+      const touch = event.touches[0];
+      const newPoint = { x: touch.clientX, y: touch.clientY };
+      
+      setTouchPoints(prev => [...prev, newPoint]);
+    };
+
+    const handleTouchEnd = () => {
+      if (!isDrawing) return;
+      setIsDrawing(false);
+      
+      if (isLightningBoltPattern(touchPoints)) {
+        triggerCelebration();
+      }
+      
+      setTouchPoints([]);
+    };
+
+    window.addEventListener("touchstart", handleTouchStart);
+    window.addEventListener("touchmove", handleTouchMove);
+    window.addEventListener("touchend", handleTouchEnd);
+
+    return () => {
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
+      window.removeEventListener("touchend", handleTouchEnd);
+    };
+  }, [isDrawing, touchPoints]);
+
+  const isLightningBoltPattern = (points: {x: number, y: number}[]) => {
+    if (points.length < 6) return false;
+    
+    // Analyze the pattern for zigzag motion
+    let directionChanges = 0;
+    let lastDirection = '';
+    
+    for (let i = 2; i < points.length; i++) {
+      const prevPoint = points[i - 2];
+      const currentPoint = points[i];
+      
+      const deltaX = currentPoint.x - prevPoint.x;
+      const deltaY = currentPoint.y - prevPoint.y;
+      
+      // Determine direction
+      let direction = '';
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        direction = deltaX > 0 ? 'right' : 'left';
+      } else {
+        direction = deltaY > 0 ? 'down' : 'up';
+      }
+      
+      if (lastDirection && direction !== lastDirection) {
+        directionChanges++;
+      }
+      
+      lastDirection = direction;
+    }
+    
+    // Lightning bolt should have at least 3 direction changes (zigzag)
+    return directionChanges >= 3;
+  };
 
   const triggerCelebration = () => {
     setCelebrationActive(true);
@@ -119,6 +192,13 @@ const Home: React.FC = () => {
       
       {/* Celebration Animation */}
       {celebrationElements}
+      
+      {/* Mobile hint - only show on touch devices */}
+      <div className="fixed bottom-4 right-4 text-xs text-gray-400 pointer-events-none z-40 md:hidden">
+        <div className="bg-black/20 backdrop-blur-sm px-2 py-1 rounded">
+          Draw a ⚡ to charge up!
+        </div>
+      </div>
       
       <HeroSection />
       <ProgramsSection />
