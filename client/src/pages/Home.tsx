@@ -103,10 +103,13 @@ const Home: React.FC = () => {
   const triggerCelebration = () => {
     setCelebrationActive(true);
     
-    // Reset after animation
+    // Reset after animation completes
     setTimeout(() => {
       setCelebrationActive(false);
-    }, 4000);
+      // Force cleanup any remaining elements
+      const celebrationElements = document.querySelectorAll('[data-celebration="true"]');
+      celebrationElements.forEach(el => el.remove());
+    }, 4500);
   };
 
   const createFlyingElement = (content: string, delay: number) => {
@@ -119,11 +122,12 @@ const Home: React.FC = () => {
     return (
       <div
         key={`${content}-${delay}`}
+        data-celebration="true"
         className="fixed pointer-events-none z-50 text-2xl font-bold"
         style={{
           left: startX,
           top: startY,
-          animation: `flyAround 3s ease-out forwards`,
+          animation: `flyAround 3.5s ease-out forwards`,
           animationDelay: `${delay}ms`,
           transform: `rotate(${rotation}deg)`,
           color: ['#1a36e8', '#ffd700', '#ff4444', '#44ff44', '#ff44ff'][Math.floor(Math.random() * 5)]
