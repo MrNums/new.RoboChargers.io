@@ -31,10 +31,8 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
           </div>
           <p className="text-gray-600 mb-4">{event.description}</p>
           <div className="flex items-center">
-            <Link href={`/schedule/${event.id}`}>
-              <a className="text-[#1a36e8] hover:text-[#0a1a70] font-bold mr-4 flex items-center">
-                Event Details <ArrowRight className="ml-1" size={14} />
-              </a>
+            <Link href={`/schedule/${event.id}`} className="text-[#1a36e8] hover:text-[#0a1a70] font-bold mr-4 flex items-center">
+              Event Details <ArrowRight className="ml-1" size={14} />
             </Link>
             <a
               href={event.calendarLink}

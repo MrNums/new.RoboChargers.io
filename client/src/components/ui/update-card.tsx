@@ -25,10 +25,8 @@ const UpdateCard: React.FC<UpdateCardProps> = ({ post }) => {
         <p className="text-gray-600 mb-4">{post.excerpt}</p>
       </CardContent>
       <CardFooter className="px-6 pb-6 pt-0">
-        <Link href={`/blog/${post.slug}`}>
-          <a className="text-[#1a36e8] hover:text-[#0a1a70] font-bold flex items-center">
-            Read More <ArrowRight className="ml-1" size={16} />
-          </a>
+        <Link href={`/blog/${post.slug}`} className="text-[#1a36e8] hover:text-[#0a1a70] font-bold flex items-center">
+          Read More <ArrowRight className="ml-1" size={16} />
         </Link>
       </CardFooter>
     </Card>

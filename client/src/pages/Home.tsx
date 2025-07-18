@@ -109,12 +109,9 @@ const Home: React.FC = () => {
   const triggerCelebration = () => {
     setCelebrationActive(true);
     
-    // Reset after animation completes
+    // Reset after animation completes - let React handle cleanup
     setTimeout(() => {
       setCelebrationActive(false);
-      // Force cleanup any remaining elements
-      const celebrationElements = document.querySelectorAll('[data-celebration="true"]');
-      celebrationElements.forEach(el => el.remove());
     }, 4500);
   };
 
