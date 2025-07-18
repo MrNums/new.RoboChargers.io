@@ -8,7 +8,7 @@ const HeroSection: React.FC = () => {
   return (
     <section className="relative bg-[#0a1a70] text-white py-16 md:py-24 overflow-hidden">
       <div 
-        className="absolute inset-0 z-0 opacity-10"
+        className="absolute inset-0 z-0 opacity-5 md:opacity-10"
         style={{ 
           backgroundImage: `url(${backgroundPattern})`, 
           backgroundSize: '120%',
@@ -18,7 +18,10 @@ const HeroSection: React.FC = () => {
       ></div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col md:flex-row items-center min-h-[500px] md:min-h-[400px]">
-          <div className="md:w-1/2 mb-8 md:mb-0 flex flex-col justify-center">
+          <div className="md:w-1/2 mb-8 md:mb-0 flex flex-col justify-center relative">
+            {/* Mobile-only background overlay for better text readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0a1a70]/80 via-[#0a1a70]/60 to-transparent backdrop-blur-sm rounded-lg md:hidden"></div>
+            <div className="relative z-10">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Building the future through robotics
             </h1>
@@ -34,10 +37,10 @@ const HeroSection: React.FC = () => {
                 🔧 Robotics for all. Opportunity for everyone.
               </p>
             </div>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-4">
               <Button
                 asChild
-                className="bg-[#ffd700] hover:bg-amber-400 text-[#0a1a70] font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#ffd700]/30"
+                className="bg-[#ffd700] hover:bg-amber-400 text-[#0a1a70] font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#ffd700]/30 w-full sm:w-auto"
                 size="lg"
               >
                 <Link href="/team">Meet Our Team</Link>
@@ -45,15 +48,16 @@ const HeroSection: React.FC = () => {
               <Button
                 asChild
                 variant="outline"
-                className="border-2 border-white text-white bg-transparent hover:bg-white/10 hover:text-white hover:border-cyan-300 hover:shadow-lg hover:shadow-white/20 transition-all duration-300 hover:scale-105"
+                className="border-2 border-white text-white bg-transparent hover:bg-white/10 hover:text-white hover:border-cyan-300 hover:shadow-lg hover:shadow-white/20 transition-all duration-300 hover:scale-105 w-full sm:w-auto"
                 size="lg"
               >
                 <Link href="/schedule">Upcoming Events</Link>
               </Button>
             </div>
+            </div>
           </div>
-          <div className="md:w-1/2 flex justify-center items-center">
-            <div className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] lg:w-[380px] lg:h-[380px] xl:w-[420px] xl:h-[420px]">
+          <div className="md:w-1/2 flex justify-center items-center py-8 md:py-0">
+            <div className="relative w-[320px] h-[320px] sm:w-[360px] sm:h-[360px] lg:w-[380px] lg:h-[380px] xl:w-[420px] xl:h-[420px]">
               {/* Large soft radial fade background - no hard edges */}
               <div className="absolute inset-[-60px] bg-gradient-radial from-[#ffd700]/15 via-[#ffd700]/8 via-[#ffd700]/4 to-transparent blur-3xl"></div>
               
@@ -63,15 +67,14 @@ const HeroSection: React.FC = () => {
               {/* Inner subtle glow */}
               <div className="absolute inset-[-15px] bg-gradient-radial from-[#ffd700]/12 via-[#ffd700]/6 to-transparent blur-xl"></div>
               
-              {/* Robot image - responsive and centered */}
+              {/* Robot image - responsive and centered, bigger on mobile */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <img
                   src={robotImage}
                   alt="RoboChargers Robot"
-                  className="w-full h-full object-contain max-w-none"
+                  className="w-full h-full object-contain max-w-none scale-[1.2] sm:scale-[1.15] md:scale-[1.1]"
                   style={{
-                    filter: 'drop-shadow(0 0 25px rgba(255, 215, 0, 0.4)) drop-shadow(0 0 50px rgba(255, 215, 0, 0.15))',
-                    transform: 'scale(1.1)'
+                    filter: 'drop-shadow(0 0 25px rgba(255, 215, 0, 0.4)) drop-shadow(0 0 50px rgba(255, 215, 0, 0.15))'
                   }}
                 />
               </div>

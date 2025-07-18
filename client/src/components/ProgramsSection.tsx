@@ -5,31 +5,31 @@ import { Badge } from "@/components/ui/badge";
 
 const ProgramsSection: React.FC = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4">Our Programs</h2>
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-4 mt-8 md:mt-0">Our Programs</h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             The RoboChargers participate in multiple FIRST Robotics programs,
             providing opportunities for students at all levels.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {/* FRC Program */}
           <div className="bg-gray-50 rounded-lg shadow-lg overflow-hidden flex flex-col h-full">
-            <div className="p-6 flex flex-col flex-grow">
-              <div className="flex items-center mb-4">
+            <div className="p-6 md:p-8 flex flex-col flex-grow">
+              <div className="flex flex-col sm:flex-row sm:items-center mb-4 md:mb-6">
                 <img
                   src="/images/otherLogos/FIRSTRobotics_iconHorz_RGB.png"
                   alt="FRC Logo"
-                  className="h-14 w-auto mr-4"
+                  className="h-12 sm:h-14 w-auto mb-3 sm:mb-0 sm:mr-4"
                 />
-                <h3 className="text-2xl font-bold">
+                <h3 className="text-xl sm:text-2xl font-bold leading-tight">
                   The Ultimate Sport for the Mind
                 </h3>
               </div>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 mb-4 md:mb-6 leading-relaxed">
                 High school teams design and build industrial-sized robots for a high-energy game revealed each January—some starting from a Kit of Parts, others from custom designs.
 
                 They compete in three-team alliances and embrace Coopertition®.
@@ -74,16 +74,16 @@ const ProgramsSection: React.FC = () => {
 
           {/* FTC Program */}
           <div className="bg-gray-50 rounded-lg shadow-lg overflow-hidden flex flex-col h-full">
-            <div className="p-6 flex flex-col flex-grow">
-              <div className="flex items-center mb-4">
+            <div className="p-6 md:p-8 flex flex-col flex-grow">
+              <div className="flex flex-col sm:flex-row sm:items-center mb-4 md:mb-6">
                 <img
                   src="/images/otherLogos/FIRSTTech_iconHorz_RGB.png"
                   alt="FTC Logo"
-                  className="h-14 w-auto mr-4"
+                  className="h-12 sm:h-14 w-auto mb-3 sm:mb-0 sm:mr-4"
                 />
-                <h3 className="text-2xl font-bold">Code, Design, and Compete with Robots!</h3>
+                <h3 className="text-xl sm:text-2xl font-bold leading-tight">Code, Design, and Compete with Robots!</h3>
               </div>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 mb-4 md:mb-6 leading-relaxed">
                 FIRST® Tech Challenge teams design and build robots to compete in exciting challenges released each September.
 
                 Robots run autonomously before student drivers take control in 2v2 matches.
