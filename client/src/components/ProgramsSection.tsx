@@ -10,24 +10,16 @@ const ProgramsSection: React.FC = () => {
     style.textContent = `
       @keyframes blue-yellow-border {
         0% { 
-          border-color: rgba(26, 54, 232, 0.6); 
-          box-shadow: 0 0 8px rgba(26, 54, 232, 0.3), 0 0 16px rgba(26, 54, 232, 0.1); 
-        }
-        25% { 
-          border-color: rgba(255, 215, 0, 0.8); 
-          box-shadow: 0 0 8px rgba(255, 215, 0, 0.4), 0 0 16px rgba(255, 215, 0, 0.2); 
+          border-color: rgba(26, 54, 232, 0.4); 
+          box-shadow: 0 0 4px rgba(26, 54, 232, 0.2); 
         }
         50% { 
-          border-color: rgba(10, 26, 112, 0.7); 
-          box-shadow: 0 0 8px rgba(10, 26, 112, 0.3), 0 0 16px rgba(10, 26, 112, 0.1); 
-        }
-        75% { 
-          border-color: rgba(255, 215, 0, 0.8); 
-          box-shadow: 0 0 8px rgba(255, 215, 0, 0.4), 0 0 16px rgba(255, 215, 0, 0.2); 
+          border-color: rgba(255, 215, 0, 0.5); 
+          box-shadow: 0 0 4px rgba(255, 215, 0, 0.2); 
         }
         100% { 
-          border-color: rgba(26, 54, 232, 0.6); 
-          box-shadow: 0 0 8px rgba(26, 54, 232, 0.3), 0 0 16px rgba(26, 54, 232, 0.1); 
+          border-color: rgba(26, 54, 232, 0.4); 
+          box-shadow: 0 0 4px rgba(26, 54, 232, 0.2); 
         }
       }
       
@@ -39,15 +31,15 @@ const ProgramsSection: React.FC = () => {
       }
       
       .program-card:nth-child(1) { 
-        animation: blue-yellow-border 4s ease-in-out infinite; 
+        animation: blue-yellow-border 8s ease-in-out infinite; 
       }
       .program-card:nth-child(2) { 
-        animation: blue-yellow-border 4s ease-in-out infinite 2s; 
+        animation: blue-yellow-border 8s ease-in-out infinite 4s; 
       }
       
       .program-card:hover {
         transform: translateY(-2px);
-        box-shadow: 0 0 12px rgba(26, 54, 232, 0.4), 0 0 24px rgba(255, 215, 0, 0.3);
+        box-shadow: 0 0 8px rgba(26, 54, 232, 0.3), 0 0 16px rgba(255, 215, 0, 0.2);
       }
     `;
     document.head.appendChild(style);
