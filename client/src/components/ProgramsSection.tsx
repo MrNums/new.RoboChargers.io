@@ -4,6 +4,58 @@ import { ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const ProgramsSection: React.FC = () => {
+  // Add CSS for blue-yellow animated borders
+  React.useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes blue-yellow-border {
+        0% { 
+          border-color: rgba(26, 54, 232, 0.6); 
+          box-shadow: 0 0 8px rgba(26, 54, 232, 0.3), 0 0 16px rgba(26, 54, 232, 0.1); 
+        }
+        25% { 
+          border-color: rgba(255, 215, 0, 0.8); 
+          box-shadow: 0 0 8px rgba(255, 215, 0, 0.4), 0 0 16px rgba(255, 215, 0, 0.2); 
+        }
+        50% { 
+          border-color: rgba(10, 26, 112, 0.7); 
+          box-shadow: 0 0 8px rgba(10, 26, 112, 0.3), 0 0 16px rgba(10, 26, 112, 0.1); 
+        }
+        75% { 
+          border-color: rgba(255, 215, 0, 0.8); 
+          box-shadow: 0 0 8px rgba(255, 215, 0, 0.4), 0 0 16px rgba(255, 215, 0, 0.2); 
+        }
+        100% { 
+          border-color: rgba(26, 54, 232, 0.6); 
+          box-shadow: 0 0 8px rgba(26, 54, 232, 0.3), 0 0 16px rgba(26, 54, 232, 0.1); 
+        }
+      }
+      
+      .program-card {
+        border-width: 2px;
+        border-style: solid;
+        border-color: rgba(200, 200, 200, 0.3);
+        transition: all 0.3s ease;
+      }
+      
+      .program-card:nth-child(1) { 
+        animation: blue-yellow-border 4s ease-in-out infinite; 
+      }
+      .program-card:nth-child(2) { 
+        animation: blue-yellow-border 4s ease-in-out infinite 2s; 
+      }
+      
+      .program-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 0 12px rgba(26, 54, 232, 0.4), 0 0 24px rgba(255, 215, 0, 0.3);
+      }
+    `;
+    document.head.appendChild(style);
+    
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
   return (
     <section className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,7 +69,7 @@ const ProgramsSection: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {/* FRC Program */}
-          <div className="bg-gray-50 rounded-lg shadow-lg overflow-hidden flex flex-col h-full">
+          <div className="program-card bg-gray-50 rounded-lg shadow-lg overflow-hidden flex flex-col h-full">
             <div className="p-6 md:p-8 flex flex-col flex-grow">
               <div className="flex flex-col sm:flex-row sm:items-center mb-4 md:mb-6">
                 <img
@@ -73,7 +125,7 @@ const ProgramsSection: React.FC = () => {
           </div>
 
           {/* FTC Program */}
-          <div className="bg-gray-50 rounded-lg shadow-lg overflow-hidden flex flex-col h-full">
+          <div className="program-card bg-gray-50 rounded-lg shadow-lg overflow-hidden flex flex-col h-full">
             <div className="p-6 md:p-8 flex flex-col flex-grow">
               <div className="flex flex-col sm:flex-row sm:items-center mb-4 md:mb-6">
                 <img
