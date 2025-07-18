@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import robotImage from "../assets/robots/robot_trophy.png";
+import robotImage from "/images/robots/RelayVrooom.png";
 import backgroundPattern from "../assets/patterns/RoboChargers Logos Background.png";
 
 const HeroSection: React.FC = () => {

@@ -95,9 +95,7 @@ const Team: React.FC = () => {
                     Team Principal
                   </p>
                   <p className="text-gray-600 text-center">
-                    Guiding our team with passion and innovation since 2025.
-                    Mrs. Herrada brings expertise in engineering education and a
-                    commitment to student success.
+                    Blah Blah Blah (Fill this in later) Blah Blah Blah
                   </p>
                 </div>
               </Card>
@@ -118,9 +116,7 @@ const Team: React.FC = () => {
                     Team Principal
                   </p>
                   <p className="text-gray-600 text-center">
-                    Mr. Gaddis joined our leadership team in 2025, bringing
-                    valuable industry experience and a dedication to helping
-                    students develop real-world engineering skills.
+                    Blah Blah Blah (Fill this in later) Blah Blah Blah
                   </p>
                 </div>
               </Card>

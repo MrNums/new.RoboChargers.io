@@ -197,16 +197,6 @@ export const teamMembers = {
       schoolOrCompany: "The University of Texas at Dallas",
       teamRole: "PIT Mentor",
     },
-    {
-      id: "5",
-      name: "Jack Varelas",
-      gradYear: "2027",
-      photoUrl:
-        "https://ca.slack-edge.com/T01DCLZ42JV-U05U22T528J-cdba1bf8938a-512",
-      currentRole: "Awards and Media Lead",
-      schoolOrCompany: "Stanford University",
-      teamRole: "Build Lead",
-    },
   ],
 };
 

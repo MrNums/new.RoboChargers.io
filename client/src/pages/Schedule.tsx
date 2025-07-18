@@ -152,11 +152,11 @@ const Schedule: React.FC = () => {
                     <ul className="space-y-2 text-gray-600">
                       <li className="flex justify-between">
                         <span>Monday - Friday:</span>
-                        <span>4:00 PM - 6:30 PM</span>
+                        <span>5:00 PM - 8:00 PM</span>
                       </li>
                       <li className="flex justify-between">
                         <span>Saturday:</span>
-                        <span>9:00 AM - 2:00 PM</span>
+                        <span>10:00 AM - 4:00 PM</span>
                       </li>
                       <li className="flex justify-between">
                         <span>Sunday:</span>
@@ -192,7 +192,7 @@ const Schedule: React.FC = () => {
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <h3 className="font-semibold mb-2">Meeting Location</h3>
                   <p className="text-gray-600">
-                    All team meetings take place in the Robotics Lab (Room 1420) at Coppell High School
+                    All team meetings take place in the Robotics Lab (Room 1420) at Emmett J Conrad High School,
                     unless otherwise specified.
                   </p>
                 </div>
