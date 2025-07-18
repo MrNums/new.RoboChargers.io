@@ -15,6 +15,7 @@ const Home: React.FC = () => {
   const [touchPoints, setTouchPoints] = useState<{x: number, y: number}[]>([]);
   const [isDrawing, setIsDrawing] = useState(false);
   const [lastCelebrationTime, setLastCelebrationTime] = useState(0);
+  const [celebrationTimeoutId, setCelebrationTimeoutId] = useState<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
@@ -56,7 +57,12 @@ const Home: React.FC = () => {
       setIsDrawing(false);
       
       if (isLightningBoltPattern(touchPoints)) {
-        triggerCelebration();
+        const now = Date.now();
+        // Throttle celebrations to once every 3 seconds for swipe too
+        if (now - lastCelebrationTime > 3000) {
+          triggerCelebration();
+          setLastCelebrationTime(now);
+        }
       }
       
       setTouchPoints([]);
@@ -71,7 +77,7 @@ const Home: React.FC = () => {
       window.removeEventListener("touchmove", handleTouchMove);
       window.removeEventListener("touchend", handleTouchEnd);
     };
-  }, [isDrawing, touchPoints]);
+  }, [isDrawing, touchPoints, lastCelebrationTime]);
 
   const isLightningBoltPattern = (points: {x: number, y: number}[]) => {
     if (points.length < 6) return false;
@@ -107,12 +113,20 @@ const Home: React.FC = () => {
   };
 
   const triggerCelebration = () => {
+    // Clear any existing timeout to prevent conflicts
+    if (celebrationTimeoutId) {
+      clearTimeout(celebrationTimeoutId);
+    }
+    
     setCelebrationActive(true);
     
     // Reset after animation completes - let React handle cleanup
-    setTimeout(() => {
+    const timeoutId = setTimeout(() => {
       setCelebrationActive(false);
+      setCelebrationTimeoutId(null);
     }, 4500);
+    
+    setCelebrationTimeoutId(timeoutId);
   };
 
   const createFlyingElement = (content: string, delay: number) => {
@@ -196,6 +210,15 @@ const Home: React.FC = () => {
       };
     }
   }, [celebrationActive]);
+
+  // Cleanup on unmount
+  React.useEffect(() => {
+    return () => {
+      if (celebrationTimeoutId) {
+        clearTimeout(celebrationTimeoutId);
+      }
+    };
+  }, [celebrationTimeoutId]);
 
   return (
     <>

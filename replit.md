@@ -93,6 +93,8 @@ For custom domain deployment on Replit:
 - July 03, 2025. Added Stats page with rainbow animated award borders and easter egg celebrations
 - July 18, 2025. Security patch: Upgraded Vite from 5.4.14 to 5.4.15 (CVE-2025-30208)
 - July 18, 2025. Enhanced hero section: updated robot image to RelayVrooom.png, improved text, added glow effects and background pan animation
+- July 18, 2025. Added animated blue/yellow borders to program cards with 8-second subtle animation cycles
+- July 18, 2025. Fixed DOM validation errors: removed nested anchor tags, added celebration throttling, improved easter egg cleanup
 
 ## User Preferences
 
