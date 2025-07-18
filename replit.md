@@ -73,6 +73,15 @@ The application follows a monorepo structure with clear separation between front
 - **Production**: Compiled JavaScript with NODE_ENV=production
 - **Database**: Requires DATABASE_URL environment variable
 
+### Custom Domain Deployment
+**User Preference**: Deploy with custom domain instead of default .replit.app domain
+
+For custom domain deployment on Replit:
+1. Deploy the application using Replit Deployments
+2. In the deployment settings, configure custom domain
+3. Update DNS records to point to Replit's servers
+4. SSL/TLS certificates are handled automatically by Replit
+
 ### Scripts
 - `npm run dev`: Development server with hot reload
 - `npm run build`: Production build for both frontend and backend
@@ -82,7 +91,10 @@ The application follows a monorepo structure with clear separation between front
 ## Changelog
 - July 03, 2025. Initial setup
 - July 03, 2025. Added Stats page with rainbow animated award borders and easter egg celebrations
+- July 18, 2025. Security patch: Upgraded Vite from 5.4.14 to 5.4.15 (CVE-2025-30208)
+- July 18, 2025. Enhanced hero section: updated robot image to RelayVrooom.png, improved text, added glow effects and background pan animation
 
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+Deployment preference: Custom domain instead of default .replit.app domain

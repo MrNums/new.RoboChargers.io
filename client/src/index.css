@@ -31,3 +31,9 @@
 .bolt-animation {
   animation: bolt-flash 1s ease-in-out;
 }
+
+/* Hero section background pan animation */
+@keyframes panBackground {
+  0% { transform: translateX(-2%) translateY(-2%); }
+  100% { transform: translateX(2%) translateY(2%); }
+}

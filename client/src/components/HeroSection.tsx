@@ -6,13 +6,14 @@ import backgroundPattern from "../assets/patterns/RoboChargers Logos Background.
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="relative bg-[#0a1a70] text-white py-16 md:py-24">
+    <section className="relative bg-[#0a1a70] text-white py-16 md:py-24 overflow-hidden">
       <div 
         className="absolute inset-0 z-0 opacity-10"
         style={{ 
           backgroundImage: `url(${backgroundPattern})`, 
-          backgroundSize: 'cover',
+          backgroundSize: '120%',
           backgroundPosition: 'center',
+          animation: 'panBackground 30s ease-in-out infinite alternate',
         }}
       ></div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -23,8 +24,7 @@ const HeroSection: React.FC = () => {
             </h1>
             <div className="text-lg mb-8 space-y-4">
               <p>
-                We're not just building robots — we're using robotics to build confident, 
-                capable students who lead with purpose.
+                We don't just build robots — we build confident student leaders.
               </p>
               <p>
                 Our team is dedicated to making STEM accessible for all, empowering youth 
@@ -53,16 +53,25 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
           <div className="md:w-1/2 flex justify-center">
-            <div className="relative w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] rounded-full">
-              {/* Background circle */}
-              <div className="absolute inset-0 bg-white/10 rounded-full"></div>
+            <div className="relative w-[300px] h-[300px] lg:w-[400px] lg:h-[400px]">
+              {/* Soft glow background - vignette style */}
+              <div className="absolute inset-0 rounded-full bg-gradient-radial from-[#ffd700]/20 via-[#ffd700]/10 to-transparent blur-xl"></div>
+              
+              {/* Subtle spotlight effect */}
+              <div className="absolute inset-0 rounded-full bg-gradient-radial from-white/5 via-white/2 to-transparent"></div>
+              
+              {/* Background circle with enhanced glow */}
+              <div className="absolute inset-0 bg-white/10 rounded-full shadow-2xl shadow-[#ffd700]/20"></div>
               
               {/* Robot image that extends beyond the circle */}
               <div className="absolute inset-0 flex items-center justify-center" style={{ transform: 'scale(1.2)' }}>
                 <img
                   src={robotImage}
                   alt="RoboChargers Robot"
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain drop-shadow-2xl"
+                  style={{
+                    filter: 'drop-shadow(0 0 20px rgba(255, 215, 0, 0.3)) drop-shadow(0 0 40px rgba(255, 215, 0, 0.1))'
+                  }}
                 />
               </div>
             </div>
