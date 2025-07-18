@@ -4,50 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const ProgramsSection: React.FC = () => {
-  // Add CSS for blue-yellow animated borders
-  React.useEffect(() => {
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes blue-yellow-border {
-        0% { 
-          border-color: rgba(26, 54, 232, 0.4); 
-          box-shadow: 0 0 4px rgba(26, 54, 232, 0.2); 
-        }
-        50% { 
-          border-color: rgba(255, 215, 0, 0.5); 
-          box-shadow: 0 0 4px rgba(255, 215, 0, 0.2); 
-        }
-        100% { 
-          border-color: rgba(26, 54, 232, 0.4); 
-          box-shadow: 0 0 4px rgba(26, 54, 232, 0.2); 
-        }
-      }
-      
-      .program-card {
-        border-width: 2px;
-        border-style: solid;
-        border-color: rgba(200, 200, 200, 0.3);
-        transition: all 0.3s ease;
-      }
-      
-      .program-card:nth-child(1) { 
-        animation: blue-yellow-border 8s ease-in-out infinite; 
-      }
-      .program-card:nth-child(2) { 
-        animation: blue-yellow-border 8s ease-in-out infinite 4s; 
-      }
-      
-      .program-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 0 8px rgba(26, 54, 232, 0.3), 0 0 16px rgba(255, 215, 0, 0.2);
-      }
-    `;
-    document.head.appendChild(style);
-    
-    return () => {
-      document.head.removeChild(style);
-    };
-  }, []);
+
   return (
     <section className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
