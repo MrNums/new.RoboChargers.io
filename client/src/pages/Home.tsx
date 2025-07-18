@@ -14,6 +14,7 @@ const Home: React.FC = () => {
   const [keySequence, setKeySequence] = useState("");
   const [touchPoints, setTouchPoints] = useState<{x: number, y: number}[]>([]);
   const [isDrawing, setIsDrawing] = useState(false);
+  const [lastCelebrationTime, setLastCelebrationTime] = useState(0);
 
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
@@ -21,13 +22,18 @@ const Home: React.FC = () => {
       setKeySequence(newSequence);
       
       if (newSequence === "3005") {
-        triggerCelebration();
+        const now = Date.now();
+        // Throttle celebrations to once every 3 seconds
+        if (now - lastCelebrationTime > 3000) {
+          triggerCelebration();
+          setLastCelebrationTime(now);
+        }
       }
     };
 
     window.addEventListener("keydown", handleKeyPress);
     return () => window.removeEventListener("keydown", handleKeyPress);
-  }, [keySequence]);
+  }, [keySequence, lastCelebrationTime]);
 
   // Lightning bolt swipe detection
   useEffect(() => {
@@ -155,7 +161,14 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     if (celebrationActive) {
+      // Check if style already exists to prevent duplicates
+      const existingStyle = document.getElementById('celebration-keyframes');
+      if (existingStyle) {
+        return;
+      }
+
       const style = document.createElement('style');
+      style.id = 'celebration-keyframes';
       style.textContent = `
         @keyframes flyAround {
           0% {
@@ -164,22 +177,25 @@ const Home: React.FC = () => {
           }
           20% {
             opacity: 1;
-            transform: translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px) rotate(${Math.random() * 180}deg) scale(1);
+            transform: translate(100px, -50px) rotate(45deg) scale(1);
           }
           80% {
             opacity: 1;
-            transform: translate(${Math.random() * 400 - 200}px, ${Math.random() * 400 - 200}px) rotate(${Math.random() * 360}deg) scale(1.2);
+            transform: translate(-150px, -200px) rotate(180deg) scale(1.2);
           }
           100% {
             opacity: 0;
-            transform: translate(${Math.random() * 600 - 300}px, ${Math.random() * 600 - 300}px) rotate(${Math.random() * 720}deg) scale(0.8);
+            transform: translate(250px, -300px) rotate(360deg) scale(0.8);
           }
         }
       `;
       document.head.appendChild(style);
       
       return () => {
-        document.head.removeChild(style);
+        const styleToRemove = document.getElementById('celebration-keyframes');
+        if (styleToRemove) {
+          styleToRemove.remove();
+        }
       };
     }
   }, [celebrationActive]);

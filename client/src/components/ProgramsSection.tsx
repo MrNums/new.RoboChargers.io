@@ -49,10 +49,8 @@ const ProgramsSection: React.FC = () => {
               </div>
               <div className="mt-auto pt-4">
                 <div className="flex justify-between items-center">
-                  <Link href="/projects">
-                    <a className="text-[#1a36e8] hover:text-[#0a1a70] font-bold transition duration-150 flex items-center text-lg">
-                      Learn More <ArrowRight className="ml-1 h-5 w-5" />
-                    </a>
+                  <Link href="/projects" className="text-[#1a36e8] hover:text-[#0a1a70] font-bold transition duration-150 flex items-center text-lg">
+                    Learn More <ArrowRight className="ml-1 h-5 w-5" />
                   </Link>
                   <div className="flex space-x-2">
                     <Badge
@@ -105,10 +103,8 @@ const ProgramsSection: React.FC = () => {
               </div>
               <div className="mt-auto pt-4">
                 <div className="flex justify-between items-center">
-                  <Link href="/projects?team=ftc">
-                    <a className="text-[#1a36e8] hover:text-[#0a1a70] font-bold transition duration-150 flex items-center text-lg">
-                      Learn More <ArrowRight className="ml-1 h-5 w-5" />
-                    </a>
+                  <Link href="/projects?team=ftc" className="text-[#1a36e8] hover:text-[#0a1a70] font-bold transition duration-150 flex items-center text-lg">
+                    Learn More <ArrowRight className="ml-1 h-5 w-5" />
                   </Link>
                   <div className="flex space-x-2">
                     <Badge
