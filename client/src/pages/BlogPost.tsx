@@ -1,7 +1,7 @@
 import React from "react";
 import { useRoute } from "wouter";
 import { Helmet } from "react-helmet";
-import { ArrowLeft, CalendarIcon, UserIcon } from "lucide-react";
+import { ArrowLeft, CalendarIcon, UserIcon, ExternalLink } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { blogPosts } from "@/lib/data";
@@ -65,6 +65,21 @@ const BlogPost: React.FC = () => {
             alt={post.title}
             className="w-full h-64 md:h-96 object-cover rounded-lg shadow-md mb-8"
           />
+
+          {post.videoUrl && (
+            <div className="mb-8">
+              <div className="aspect-video rounded-lg overflow-hidden shadow-md">
+                <iframe
+                  src={post.videoUrl}
+                  title={`${post.title} Video`}
+                  className="w-full h-full"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+          )}
           
           <div className="prose prose-lg max-w-none">
             <p className="text-xl text-gray-600 mb-6 leading-relaxed">
@@ -74,6 +89,21 @@ const BlogPost: React.FC = () => {
             <div className="text-gray-800 leading-relaxed whitespace-pre-line">
               {post.content}
             </div>
+
+            {post.linkUrl && post.linkText && (
+              <div className="mt-8 p-6 bg-gray-50 rounded-lg border">
+                <h3 className="text-lg font-semibold mb-3">Related Link</h3>
+                <a 
+                  href={post.linkUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-[#1a36e8] hover:text-[#0a1a70] font-medium"
+                >
+                  <ExternalLink className="mr-2" size={18} />
+                  {post.linkText}
+                </a>
+              </div>
+            )}
           </div>
 
           <div className="mt-12 pt-8 border-t border-gray-200">

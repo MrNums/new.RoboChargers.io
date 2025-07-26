@@ -33,6 +33,9 @@ export interface BlogPost {
   date: string;
   imageUrl: string;
   author: string;
+  videoUrl?: string; // Optional YouTube/Vimeo embed URL
+  linkUrl?: string; // Optional external link
+  linkText?: string; // Optional text for the link button
 }
 
 // Event type definition
@@ -473,6 +476,9 @@ const blogPostsRaw: Omit<BlogPost, "id">[] = [
     imageUrl:
       "/images/BlogPhotos/Screenshot 2025-07-26 151617.png",
     author: "RoboChargers Team",
+    videoUrl: "https://www.youtube.com/embed/example-video-id", // Example optional video
+    linkUrl: "https://www.firstinspires.org/robotics/frc/blog/2025-fit-waco-event-results",
+    linkText: "View Official Results",
   },
   {
     title: "FIT District Fort Worth Event Recap",

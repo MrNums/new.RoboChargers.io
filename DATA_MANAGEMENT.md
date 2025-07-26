@@ -28,6 +28,10 @@ Both blog posts and events now use **ascending chronological order**:
   date: "January 26, 2025",
   imageUrl: "/images/BlogPhotos/your-image.png", // Path starts from public folder
   author: "RoboChargers Team",
+  // Optional fields - only include if you have them:
+  videoUrl: "https://www.youtube.com/embed/your-video-id", // Optional YouTube/Vimeo embed
+  linkUrl: "https://external-website.com", // Optional external link
+  linkText: "View Results", // Optional text for the link button
 },
 // Add comment: "Add new posts here - they will automatically get the next ID number"
 ```
@@ -45,6 +49,35 @@ Both blog posts and events now use **ascending chronological order**:
 **Example:**
 - File location: `client/public/images/BlogPhotos/event-photo.jpg`
 - Image URL in code: `"/images/BlogPhotos/event-photo.jpg"`
+
+### 🎥 Adding Videos (Optional)
+
+**YouTube Videos:**
+1. Get the video ID from YouTube URL (e.g., `https://youtube.com/watch?v=ABC123` → `ABC123`)
+2. Use embed format: `"https://www.youtube.com/embed/ABC123"`
+
+**Vimeo Videos:**
+1. Get video ID from Vimeo URL (e.g., `https://vimeo.com/123456` → `123456`)
+2. Use embed format: `"https://player.vimeo.com/video/123456"`
+
+### 🔗 Adding Links (Optional)
+
+**External Links:**
+- `linkUrl`: The full URL to link to
+- `linkText`: The text displayed on the link button
+
+**Example:**
+```typescript
+linkUrl: "https://www.firstinspires.org/robotics/frc/blog/2025-results",
+linkText: "View Official Results",
+```
+
+### Optional Field Usage
+
+**All optional fields can be omitted if not needed:**
+- Don't include `videoUrl` if there's no video
+- Don't include `linkUrl` and `linkText` if there's no external link
+- Only add what you actually have content for
 
 #### 📅 Adding a New Event
 
