@@ -491,10 +491,12 @@ const blogPostsRaw: Omit<BlogPost, "id">[] = [
     linkUrl: "https://www.thebluealliance.com/event/2025txfor",
     linkText: "The Blue Alliance",
     galleryImages: [
-      "/images/BlogPhotos/FIT-Waco-13020490.jpg",
-      "/images/BlogPhotos/DSC02194.jpg",
-      "/images/BlogPhotos/DSC02355.jpg",
-      "/images/BlogPhotos/DSC02681.jpg"
+      "/images/BlogPhotos/FW2025/FTWGroupEvent.jpg",
+      "/images/BlogPhotos/FW2025/FortWorthRobot.png",
+      "/images/BlogPhotos/FW2025/FWUnoGang.jpg",
+      "/images/BlogPhotos/FW2025/CapeFWEvent.png",
+      "/images/BlogPhotos/FW2025/FWRandom01.jpg",
+      "/images/BlogPhotos/FW2025/FWRandom02.jpg"
     ],
   },
   // Add new posts here - they will automatically get the next ID number
