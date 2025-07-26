@@ -17,6 +17,8 @@ import Sponsors from "@/pages/Sponsors";
 import Contact from "@/pages/Contact";
 import Resources from "@/pages/Resources";
 import Store from "@/pages/Store";
+import Blog from "@/pages/Blog";
+import BlogPost from "@/pages/BlogPost";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -36,6 +38,8 @@ function Router() {
           <Route path="/contact" component={Contact} />
           <Route path="/resources" component={Resources} />
           <Route path="/store" component={Store} />
+          <Route path="/blog" component={Blog} />
+          <Route path="/blog/:slug" component={BlogPost} />
           <Route component={NotFound} />
         </Switch>
       </PageTransition>

@@ -6,7 +6,8 @@ import UpdateCard from "@/components/ui/update-card";
 import { blogPosts } from "@/lib/data";
 
 const RecentUpdates: React.FC = () => {
-  const recentPosts = blogPosts.slice(0, 3);
+  // Get the most recent posts (reverse order since we want newest first for display)
+  const recentPosts = blogPosts.slice(-3).reverse();
 
   return (
     <section className="py-16 bg-white">

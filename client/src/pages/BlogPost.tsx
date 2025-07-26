@@ -1,0 +1,96 @@
+import React from "react";
+import { useRoute } from "wouter";
+import { Helmet } from "react-helmet";
+import { ArrowLeft, CalendarIcon, UserIcon } from "lucide-react";
+import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
+import { blogPosts } from "@/lib/data";
+import NotFound from "@/pages/not-found";
+
+const BlogPost: React.FC = () => {
+  const [match, params] = useRoute("/blog/:slug");
+  
+  if (!match || !params?.slug) {
+    return <NotFound />;
+  }
+
+  const post = blogPosts.find((p) => p.slug === params.slug);
+
+  if (!post) {
+    return <NotFound />;
+  }
+
+  return (
+    <>
+      <Helmet>
+        <title>{post.title} - RoboChargers</title>
+        <meta
+          name="description"
+          content={post.excerpt}
+        />
+      </Helmet>
+
+      <div className="bg-[#0a1a70] text-white py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <Button
+            asChild
+            variant="ghost"
+            className="text-white hover:text-gray-200 mb-6"
+          >
+            <Link href="/blog">
+              <ArrowLeft className="mr-2" size={20} />
+              Back to Blog
+            </Link>
+          </Button>
+          
+          <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
+          
+          <div className="flex items-center space-x-6 text-gray-200">
+            <div className="flex items-center">
+              <CalendarIcon className="mr-2" size={16} />
+              <span>{post.date}</span>
+            </div>
+            <div className="flex items-center">
+              <UserIcon className="mr-2" size={16} />
+              <span>{post.author}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-4xl mx-auto">
+          <img
+            src={post.imageUrl}
+            alt={post.title}
+            className="w-full h-64 md:h-96 object-cover rounded-lg shadow-md mb-8"
+          />
+          
+          <div className="prose prose-lg max-w-none">
+            <p className="text-xl text-gray-600 mb-6 leading-relaxed">
+              {post.excerpt}
+            </p>
+            
+            <div className="text-gray-800 leading-relaxed whitespace-pre-line">
+              {post.content}
+            </div>
+          </div>
+
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <Button
+              asChild
+              className="bg-[#1a36e8] hover:bg-[#0a1a70] text-white"
+            >
+              <Link href="/blog">
+                <ArrowLeft className="mr-2" size={16} />
+                Back to All Posts
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default BlogPost;

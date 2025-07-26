@@ -14,8 +14,8 @@ export interface Robot {
   features: string[];
   revealVideoUrl?: string;
   // OnShape 3D model properties
-  onshapeDocumentId?: string;   // The OnShape document ID for the 3D model
-  onshapeElementId?: string;    // The OnShape element ID for the 3D model
+  onshapeDocumentId?: string; // The OnShape document ID for the 3D model
+  onshapeElementId?: string; // The OnShape element ID for the 3D model
   awards?: {
     name: string;
     event: string;
@@ -124,36 +124,38 @@ export const teamMembers = {
       company: "Dallas ISD",
     },
     {
-      id:"2",
-      name:"Emmanuel  Coronado",
-      role:"Drive Coach",
-      photoUrl:"https://ca.slack-edge.com/T01DCLZ42JV-U02E5UFFE92-d2c2334c412d-512",
-      bio:"Emma was here",
-      company:"RoboBum (Internship)",
+      id: "2",
+      name: "Emmanuel  Coronado",
+      role: "Drive Coach",
+      photoUrl:
+        "https://ca.slack-edge.com/T01DCLZ42JV-U02E5UFFE92-d2c2334c412d-512",
+      bio: "Emma was here",
+      company: "RoboBum (Internship)",
     },
     {
-      id:"3",
-      name:"Greyson Long",
-      role:"Mentor Design Lead",
-      photoUrl:"https://ca.slack-edge.com/T01DCLZ42JV-U035TB1A4BH-fc185966e245-512",
-      bio:"Professional Yapper in Engineering",
-      company:"Texas Instruments",
+      id: "3",
+      name: "Greyson Long",
+      role: "Mentor Design Lead",
+      photoUrl:
+        "https://ca.slack-edge.com/T01DCLZ42JV-U035TB1A4BH-fc185966e245-512",
+      bio: "Professional Yapper in Engineering",
+      company: "Texas Instruments",
     },
     {
-      id:"",
-      name:"",
-      role:"",
-      photoUrl:"",
-      bio:"",
-      company:"",
+      id: "",
+      name: "",
+      role: "",
+      photoUrl: "",
+      bio: "",
+      company: "",
     },
     {
-      id:"",
-      name:"",
-      role:"",
-      photoUrl:"",
-      bio:"",
-      company:"",
+      id: "",
+      name: "",
+      role: "",
+      photoUrl: "",
+      bio: "",
+      company: "",
     },
   ],
   alumni: [
@@ -423,7 +425,7 @@ export const robots: Robot[] = [
 ];
 
 // Blog posts data - ordered chronologically (oldest = 1, newest = highest)
-const blogPostsRaw: Omit<BlogPost, 'id'>[] = [
+const blogPostsRaw: Omit<BlogPost, "id">[] = [
   {
     title: "2023 RoboChargers Kickoff Recap",
     slug: "2023-kickoff-recap",
@@ -460,6 +462,30 @@ const blogPostsRaw: Omit<BlogPost, 'id'>[] = [
       "https://images.unsplash.com/photo-1501506780317-5cbe5f4c3482?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=300&q=80",
     author: "RoboChargers Team",
   },
+  {
+    title: "FIT District Waco Event Recap",
+    slug: "waco-district-event-recap",
+    excerpt:
+      "We opened the season hot. Relay helped us lock down a Rank 3 finish in qualifications (10-2-0 record), and we proudly led Alliance 2 all the way to event champions!..",
+    content:
+      "We opened the season hot. Relay helped us lock down a Rank 3 finish in qualifications (10-2-0 record), and we proudly led Alliance 2 all the way to event champions!Not only did we take home the blue banner, but we also earned the Innovation in Control Award, recognizing our advanced autonomous routines and smooth driver-assist features",
+    date: "March 1st, 2025",
+    imageUrl:
+      "https://images.unsplash.com/photo-1501506780317-5cbe5f4c3482?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=300&q=80",
+    author: "RoboChargers Team",
+  },
+  {
+    title: "FIT District Fort Worth Event Recap",
+    slug: "fort-wroth-district-event-recap",
+    excerpt:
+      "Week 4 was something special. We went undefeated in quals (Rank 1) with a record of 16-1-0, and captained Alliance 1 to win it all.",
+    content:
+      "WWeek 4 was something special. We went undefeated in quals (Rank 1) with a record of 16-1-0, and captained Alliance 1 to win it all. Together with our Alliance, we ran the bracket and brought home another District Event Winner banner, plus our second Excellence in Engineering Award of the season. Fort Worth locked in 73 district points and showed that Relay could dominate when it mattered most.",
+    date: "March 20th, 2025",
+    imageUrl:
+      "https://images.unsplash.com/photo-1501506780317-5cbe5f4c3482?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=300&q=80",
+    author: "RoboChargers Team",
+  },
   // Add new posts here - they will automatically get the next ID number
 ];
 
@@ -469,8 +495,8 @@ export const blogPosts: BlogPost[] = blogPostsRaw.map((post, index) => ({
   id: (index + 1).toString(),
 }));
 
-// Events data - ordered chronologically (oldest = 1, newest = highest)  
-const eventsRaw: Omit<Event, 'id'>[] = [
+// Events data - ordered chronologically (oldest = 1, newest = highest)
+const eventsRaw: Omit<Event, "id">[] = [
   {
     title: "FIRST in Texas Fort Worth District Event",
     description:
@@ -483,71 +509,6 @@ const eventsRaw: Omit<Event, 'id'>[] = [
     calendarLink:
       "https://calendar.google.com/calendar/render?action=TEMPLATE&text=FIRST%20in%20Texas%20Fort%20Worth%20District%20Event&dates=20230318T080000/20230318T180000&details=Support%20Team%203005%20at%20the%20Fort%20Worth%20District%20Event!&location=Fort%20Worth%20Convention%20Center",
     type: "competition",
-  },
-  {
-    title: "FIRST in Texas District Championship",
-    description:
-      "The district championship where qualifying teams from across Texas compete for advancement to the FIRST Championship.",
-    day: "5",
-    month: "APR",
-    year: "2023",
-    time: "9:00 AM - 7:00 PM",
-    location: "George R. Brown Convention Center, Houston",
-    calendarLink:
-      "https://calendar.google.com/calendar/render?action=TEMPLATE&text=FIRST%20in%20Texas%20District%20Championship&dates=20230405T090000/20230405T190000&details=Qualifying%20teams%20from%20across%20Texas%20compete%20for%20advancement%20to%20the%20FIRST%20Championship&location=George%20R.%20Brown%20Convention%20Center%2C%20Houston",
-    type: "competition",
-  },
-  {
-    title: "FIRST Championship - Houston",
-    description:
-      "The ultimate FIRST Robotics event where teams from around the world compete for the championship title.",
-    day: "19",
-    month: "APR",
-    year: "2023",
-    time: "All Day Event",
-    location: "George R. Brown Convention Center, Houston",
-    calendarLink:
-      "https://calendar.google.com/calendar/render?action=TEMPLATE&text=FIRST%20Championship%20-%20Houston&dates=20230419T080000/20230422T180000&details=The%20ultimate%20FIRST%20Robotics%20event%20where%20teams%20from%20around%20the%20world%20compete%20for%20the%20championship%20title.&location=George%20R.%20Brown%20Convention%20Center%2C%20Houston",
-    type: "competition",
-  },
-  {
-    title: "Robot Demonstration at Elementary School",
-    description:
-      "Outreach event to inspire younger students about STEM and robotics through interactive demonstrations.",
-    day: "12",
-    month: "MAY",
-    year: "2023",
-    time: "3:30 PM - 5:00 PM",
-    location: "Wilson Elementary School",
-    calendarLink:
-      "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Robot%20Demonstration%20at%20Elementary%20School&dates=20230512T153000/20230512T170000&details=Outreach%20event%20to%20inspire%20younger%20students%20about%20STEM%20and%20robotics.&location=Wilson%20Elementary%20School",
-    type: "outreach",
-  },
-  {
-    title: "End of Year Team Banquet",
-    description:
-      "Celebration of our team's achievements throughout the season with awards, recognitions, and fun activities.",
-    day: "27",
-    month: "MAY",
-    year: "2023",
-    time: "6:00 PM - 9:00 PM",
-    location: "Emmett J Conrad High School Cafeteria",
-    calendarLink:
-      "https://calendar.google.com/calendar/render?action=TEMPLATE&text=End%20of%20Year%20Team%20Banquet&dates=20230527T180000/20230527T210000&details=Celebration%20of%20our%20team's%20achievements%20throughout%20the%20season.&location=Emmett%20J%20Conrad%20High%20School%20Cafeteria",
-    type: "meeting",
-  },
-  {
-    title: "Car Wash Fundraiser",
-    description:
-      "Team fundraising event to support our program's expenses for the upcoming season.",
-    day: "10",
-    month: "JUN",
-    year: "2023",
-    time: "10:00 AM - 2:00 PM",
-    location: "Emmett J Conrad High School Parking Lot",
-    calendarLink:
-      "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Car%20Wash%20Fundraiser&dates=20230610T100000/20230610T140000&details=Team%20fundraising%20event%20to%20support%20our%20program's%20expenses.&location=Emmett%20J%20Conrad%20High%20School%20Parking%20Lot",
-    type: "fundraising",
   },
   // Add new events here - they will automatically get the next ID number
 ];
@@ -1028,7 +989,8 @@ export const teamStats: TeamStats = {
       name: "FIT District Waco Event",
       event: "Creativity Award",
       year: "2023",
-      description: "Recognized for innovative robot design and creative problem-solving approach",
+      description:
+        "Recognized for innovative robot design and creative problem-solving approach",
     },
     {
       name: "FIT District Fort Worth Event Winner",
@@ -1058,7 +1020,8 @@ export const teamStats: TeamStats = {
       name: "Regional Competition",
       event: "Rookie Inspiration Award",
       year: "2010",
-      description: "Outstanding rookie team performance and inspiration to others",
+      description:
+        "Outstanding rookie team performance and inspiration to others",
     },
   ],
   outreach: {
