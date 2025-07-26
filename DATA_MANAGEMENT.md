@@ -64,6 +64,28 @@ Both blog posts and events now use **ascending chronological order**:
 
 **Important:** Videos may not display in development if YouTube/Vimeo is blocked, but they will work when the site is deployed publicly.
 
+### 📸 Adding Photo Galleries (Optional)
+
+Blog posts can include a photo gallery that displays below the video (if present). The gallery shows images in a responsive grid layout.
+
+**Adding Gallery Images:**
+1. Place photos in `client/public/images/BlogPhotos/` folder
+2. Add `galleryImages` array to your blog post:
+
+```javascript
+galleryImages: [
+  "/images/BlogPhotos/photo1.jpg",
+  "/images/BlogPhotos/photo2.jpg",
+  "/images/BlogPhotos/photo3.jpg"
+],
+```
+
+**Gallery Features:**
+- Responsive grid: 1 column on mobile, 2 on tablet, 3 on desktop
+- Square aspect ratio for consistent layout
+- Hover effects with subtle zoom animation
+- Automatic "Photo Gallery" heading when images are present
+
 ### 🔗 Adding Links (Optional)
 
 **External Links:**

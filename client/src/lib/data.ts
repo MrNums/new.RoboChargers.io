@@ -36,6 +36,7 @@ export interface BlogPost {
   videoUrl?: string; // Optional YouTube/Vimeo embed URL
   linkUrl?: string; // Optional external link
   linkText?: string; // Optional text for the link button
+  galleryImages?: string[]; // Optional array of additional images for gallery
 }
 
 // Event type definition
@@ -473,7 +474,7 @@ const blogPostsRaw: Omit<BlogPost, "id">[] = [
     content:
       "We wrapped up the event with a 15-2-0 overall record, finishing Rank 2 at the end of qualifications. In playoffs, we joined forces with 148 and 8732 as the first pick of Alliance 1, and together we powered through the bracket to win our first blue banner of the season. Our success was the result of tight teamwork across the board. We were honored with the Innovation in Control Award, sponsored by nVent, which recognizes creative and effective use of control systems across electrical, mechanical, and software that elevate robot performance on the field. The Waco event marked a strong start to our 2025 season, and Relay was just getting warmed up.",
     date: "March 1st, 2025",
-    imageUrl: "/images/BlogPhotos/Screenshot 2025-07-26 151617.png",
+    imageUrl: "/images/BlogPhotos/WacoEventBlogPicture.png",
     author: "RoboChargers Team",
     videoUrl: "https://www.youtube.com/embed/k9Cnp3AmAjE",
     linkUrl: "https://www.thebluealliance.com/event/2025txwac",
@@ -482,14 +483,19 @@ const blogPostsRaw: Omit<BlogPost, "id">[] = [
   {
     title: "FIT District Fort Worth Event Recap",
     slug: "fort-wroth-district-event-recap",
-    excerpt:
-      "Week 4 was something special. We went undefeated in quals (Rank 1) with a record of 16-1-0, and captained Alliance 1 to win it all.",
-    content:
-      "WWeek 4 was something special. We went undefeated in quals (Rank 1) with a record of 16-1-0, and captained Alliance 1 to win it all. Together with our Alliance, we ran the bracket and brought home another District Event Winner banner, plus our second Excellence in Engineering Award of the season. Fort Worth locked in 73 district points and showed that Relay could dominate when it mattered most.",
+    excerpt: "Week 4 was something special. We went undefeated in quals (Rank 1) with a record of 16-1-0, and captained Alliance 1 to win it all.",
+    content: "Week 4 was something special. We went undefeated in quals (Rank 1) with a record of 16-1-0, and captained Alliance 1 to win it all. Together with our Alliance, we ran the bracket and brought home another District Event Winner banner, plus our second Excellence in Engineering Award of the season. Fort Worth locked in 73 district points and showed that Relay could dominate when it mattered most.",
     date: "March 20th, 2025",
-    imageUrl:
-      "https://images.unsplash.com/photo-1501506780317-5cbe5f4c3482?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=300&q=80",
+    imageUrl: "/images/BlogPhotos/FortWorthEventBlogPicture (2).png",
     author: "RoboChargers Team",
+    linkUrl: "https://www.thebluealliance.com/event/2025txfor",
+    linkText: "The Blue Alliance",
+    galleryImages: [
+      "/images/BlogPhotos/FIT-Waco-13020490.jpg",
+      "/images/BlogPhotos/DSC02194.jpg",
+      "/images/BlogPhotos/DSC02355.jpg",
+      "/images/BlogPhotos/DSC02681.jpg"
+    ],
   },
   // Add new posts here - they will automatically get the next ID number
 ];
