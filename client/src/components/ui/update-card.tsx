@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "wouter";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { CalendarIcon, ArrowRight, ExternalLink, Play } from "lucide-react";
+import { CalendarIcon, ArrowRight, ExternalLink } from "lucide-react";
 import { BlogPost } from "@/lib/data";
 
 interface UpdateCardProps {
@@ -11,18 +11,11 @@ interface UpdateCardProps {
 const UpdateCard: React.FC<UpdateCardProps> = ({ post }) => {
   return (
     <Card className="bg-gray-50 rounded-lg shadow-md overflow-hidden">
-      <div className="relative">
-        <img
-          src={post.imageUrl}
-          alt={post.title}
-          className="w-full h-48 object-cover"
-        />
-        {post.videoUrl && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
-            <Play className="w-12 h-12 text-white opacity-80" />
-          </div>
-        )}
-      </div>
+      <img
+        src={post.imageUrl}
+        alt={post.title}
+        className="w-full h-48 object-cover"
+      />
       <CardContent className="p-6">
         <div className="flex items-center text-gray-500 text-sm mb-2">
           <CalendarIcon className="mr-2" size={14} />
