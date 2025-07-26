@@ -473,12 +473,11 @@ const blogPostsRaw: Omit<BlogPost, "id">[] = [
     content:
       "We opened the season hot. Relay helped us lock down a Rank 3 finish in qualifications (10-2-0 record), and we proudly led Alliance 2 all the way to event champions!Not only did we take home the blue banner, but we also earned the Innovation in Control Award, recognizing our advanced autonomous routines and smooth driver-assist features",
     date: "March 1st, 2025",
-    imageUrl:
-      "/images/BlogPhotos/Screenshot 2025-07-26 151617.png",
+    imageUrl: "/images/BlogPhotos/Screenshot 2025-07-26 151617.png",
     author: "RoboChargers Team",
-    videoUrl: "https://www.youtube.com/embed/example-video-id", // Example optional video
-    linkUrl: "https://www.firstinspires.org/robotics/frc/blog/2025-fit-waco-event-results",
-    linkText: "View Official Results",
+    videoUrl: "https://www.youtube.com/embed/k9Cnp3AmAjE",
+    linkUrl: "https://www.thebluealliance.com/event/2025txfor",
+    linkText: "The Blue Alliance",
   },
   {
     title: "FIT District Fort Worth Event Recap",

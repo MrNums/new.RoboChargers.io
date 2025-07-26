@@ -53,12 +53,16 @@ Both blog posts and events now use **ascending chronological order**:
 ### 🎥 Adding Videos (Optional)
 
 **YouTube Videos:**
-1. Get the video ID from YouTube URL (e.g., `https://youtube.com/watch?v=ABC123` → `ABC123`)
-2. Use embed format: `"https://www.youtube.com/embed/ABC123"`
+1. Get the video ID from YouTube URL:
+   - From `https://youtu.be/k9Cnp3AmAjE?si=...` → `k9Cnp3AmAjE`
+   - From `https://youtube.com/watch?v=k9Cnp3AmAjE` → `k9Cnp3AmAjE`
+2. Use embed format: `"https://www.youtube.com/embed/k9Cnp3AmAjE"`
 
 **Vimeo Videos:**
 1. Get video ID from Vimeo URL (e.g., `https://vimeo.com/123456` → `123456`)
 2. Use embed format: `"https://player.vimeo.com/video/123456"`
+
+**Important:** Videos may not display in development if YouTube/Vimeo is blocked, but they will work when the site is deployed publicly.
 
 ### 🔗 Adding Links (Optional)
 
