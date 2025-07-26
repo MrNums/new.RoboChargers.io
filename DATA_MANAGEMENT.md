@@ -26,11 +26,25 @@ Both blog posts and events now use **ascending chronological order**:
   excerpt: "A brief excerpt about your post...",
   content: "Full content of your blog post...",
   date: "January 26, 2025",
-  imageUrl: "https://your-image-url.com/image.jpg",
+  imageUrl: "/images/BlogPhotos/your-image.png", // Path starts from public folder
   author: "RoboChargers Team",
 },
 // Add comment: "Add new posts here - they will automatically get the next ID number"
 ```
+
+### 🖼️ Adding Images
+
+**Local Images (Recommended):**
+1. Place your image in `client/public/images/BlogPhotos/`
+2. Reference it as: `"/images/BlogPhotos/your-image.png"`
+3. The path starts with `/` (from the public folder root)
+
+**External Images:**
+- Use full URLs: `"https://your-domain.com/image.jpg"`
+
+**Example:**
+- File location: `client/public/images/BlogPhotos/event-photo.jpg`
+- Image URL in code: `"/images/BlogPhotos/event-photo.jpg"`
 
 #### 📅 Adding a New Event
 

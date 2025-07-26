@@ -471,7 +471,7 @@ const blogPostsRaw: Omit<BlogPost, "id">[] = [
       "We opened the season hot. Relay helped us lock down a Rank 3 finish in qualifications (10-2-0 record), and we proudly led Alliance 2 all the way to event champions!Not only did we take home the blue banner, but we also earned the Innovation in Control Award, recognizing our advanced autonomous routines and smooth driver-assist features",
     date: "March 1st, 2025",
     imageUrl:
-      "https://images.unsplash.com/photo-1501506780317-5cbe5f4c3482?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=300&q=80",
+      "/images/BlogPhotos/Screenshot 2025-07-26 151617.png",
     author: "RoboChargers Team",
   },
   {
