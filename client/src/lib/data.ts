@@ -422,23 +422,21 @@ export const robots: Robot[] = [
   },
 ];
 
-// Blog posts data
-export const blogPosts: BlogPost[] = [
+// Blog posts data - ordered chronologically (oldest = 1, newest = highest)
+const blogPostsRaw: Omit<BlogPost, 'id'>[] = [
   {
-    id: "1",
-    title: "FiT Fort Worth District Event Recap",
-    slug: "fort-worth-district-event-recap",
+    title: "2023 RoboChargers Kickoff Recap",
+    slug: "2023-kickoff-recap",
     excerpt:
-      "Our team celebrated another successful weekend of competition at the FIRST in Texas Fort Worth District Event...",
+      "The 2023 FRC season has begun, and the RoboChargers are ready for it! The new FRC challenge, CHARGED UP...",
     content:
-      "Our team celebrated another successful weekend of competition at the FIRST in Texas Fort Worth District Event that was held from March 16th to March 18th. With only a week after our Dallas District Event, our team continued to give 110% at this weekend's competition. If you are not yet familiar with the 2023 FIRST Robotics Competition game, 'CHARGED UP,' teams work to place cubes and cones on a grid to score points, as well as balance on a charging station for additional points.",
-    date: "March 21, 2023",
+      "The 2023 FRC season has begun, and the RoboChargers are ready for it! The new FRC challenge, CHARGED UP, has got us excited for all the new and interesting obstacles just waiting to be solved. This was an exciting kickoff for us. Like many teams, we faced significant challenges during the pandemic and started out this season with a renewed energy and focus. Our strategy team has already begun analyzing the game and developing a competitive approach that plays to our team's strengths.",
+    date: "January 7, 2023",
     imageUrl:
-      "https://images.unsplash.com/photo-1501506780317-5cbe5f4c3482?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=300&q=80",
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=300&q=80",
     author: "RoboChargers Team",
   },
   {
-    id: "2",
     title: "FiT Dallas District Event Recap",
     slug: "dallas-district-event-recap",
     excerpt:
@@ -451,24 +449,29 @@ export const blogPosts: BlogPost[] = [
     author: "RoboChargers Team",
   },
   {
-    id: "3",
-    title: "2023 RoboChargers Kickoff Recap",
-    slug: "2023-kickoff-recap",
+    title: "FiT Fort Worth District Event Recap",
+    slug: "fort-worth-district-event-recap",
     excerpt:
-      "The 2023 FRC season has begun, and the RoboChargers are ready for it! The new FRC challenge, CHARGED UP...",
+      "Our team celebrated another successful weekend of competition at the FIRST in Texas Fort Worth District Event...",
     content:
-      "The 2023 FRC season has begun, and the RoboChargers are ready for it! The new FRC challenge, CHARGED UP, has got us excited for all the new and interesting obstacles just waiting to be solved. This was an exciting kickoff for us. Like many teams, we faced significant challenges during the pandemic and started out this season with a renewed energy and focus. Our strategy team has already begun analyzing the game and developing a competitive approach that plays to our team's strengths.",
-    date: "January 7, 2023",
+      "Our team celebrated another successful weekend of competition at the FIRST in Texas Fort Worth District Event that was held from March 16th to March 18th. With only a week after our Dallas District Event, our team continued to give 110% at this weekend's competition. If you are not yet familiar with the 2023 FIRST Robotics Competition game, 'CHARGED UP,' teams work to place cubes and cones on a grid to score points, as well as balance on a charging station for additional points.",
+    date: "March 21, 2023",
     imageUrl:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=300&q=80",
+      "https://images.unsplash.com/photo-1501506780317-5cbe5f4c3482?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=300&q=80",
     author: "RoboChargers Team",
   },
+  // Add new posts here - they will automatically get the next ID number
 ];
 
-// Events data
-export const events: Event[] = [
+// Generate IDs automatically in ascending order
+export const blogPosts: BlogPost[] = blogPostsRaw.map((post, index) => ({
+  ...post,
+  id: (index + 1).toString(),
+}));
+
+// Events data - ordered chronologically (oldest = 1, newest = highest)  
+const eventsRaw: Omit<Event, 'id'>[] = [
   {
-    id: "1",
     title: "FIRST in Texas Fort Worth District Event",
     description:
       "Join us as we compete in the Fort Worth District Event. Come support our team and see our robot in action!",
@@ -482,7 +485,6 @@ export const events: Event[] = [
     type: "competition",
   },
   {
-    id: "2",
     title: "FIRST in Texas District Championship",
     description:
       "The district championship where qualifying teams from across Texas compete for advancement to the FIRST Championship.",
@@ -496,7 +498,6 @@ export const events: Event[] = [
     type: "competition",
   },
   {
-    id: "3",
     title: "FIRST Championship - Houston",
     description:
       "The ultimate FIRST Robotics event where teams from around the world compete for the championship title.",
@@ -510,7 +511,6 @@ export const events: Event[] = [
     type: "competition",
   },
   {
-    id: "4",
     title: "Robot Demonstration at Elementary School",
     description:
       "Outreach event to inspire younger students about STEM and robotics through interactive demonstrations.",
@@ -524,7 +524,6 @@ export const events: Event[] = [
     type: "outreach",
   },
   {
-    id: "5",
     title: "End of Year Team Banquet",
     description:
       "Celebration of our team's achievements throughout the season with awards, recognitions, and fun activities.",
@@ -538,7 +537,6 @@ export const events: Event[] = [
     type: "meeting",
   },
   {
-    id: "6",
     title: "Car Wash Fundraiser",
     description:
       "Team fundraising event to support our program's expenses for the upcoming season.",
@@ -551,7 +549,14 @@ export const events: Event[] = [
       "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Car%20Wash%20Fundraiser&dates=20230610T100000/20230610T140000&details=Team%20fundraising%20event%20to%20support%20our%20program's%20expenses.&location=Emmett%20J%20Conrad%20High%20School%20Parking%20Lot",
     type: "fundraising",
   },
+  // Add new events here - they will automatically get the next ID number
 ];
+
+// Generate IDs automatically in ascending order
+export const events: Event[] = eventsRaw.map((event, index) => ({
+  ...event,
+  id: (index + 1).toString(),
+}));
 
 // Sponsors data - Real RoboChargers sponsors
 export const sponsors: Sponsor[] = [
