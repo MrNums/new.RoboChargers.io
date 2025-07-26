@@ -469,14 +469,14 @@ const blogPostsRaw: Omit<BlogPost, "id">[] = [
     title: "FIT District Waco Event Recap",
     slug: "waco-district-event-recap",
     excerpt:
-      "We opened the season hot. Relay helped us lock down a Rank 3 finish in qualifications (10-2-0 record), and we proudly led Alliance 2 all the way to event champions!..",
+      "Relay hit the field for the first time this season and made an immediate impact.",
     content:
-      "We opened the season hot. Relay helped us lock down a Rank 3 finish in qualifications (10-2-0 record), and we proudly led Alliance 2 all the way to event champions!Not only did we take home the blue banner, but we also earned the Innovation in Control Award, recognizing our advanced autonomous routines and smooth driver-assist features",
+      "We wrapped up the event with a 15-2-0 overall record, finishing Rank 2 at the end of qualifications. In playoffs, we joined forces with 148 and 8732 as the first pick of Alliance 1, and together we powered through the bracket to win our first blue banner of the season. Our success was the result of tight teamwork across the board. We were honored with the Innovation in Control Award, sponsored by nVent, which recognizes creative and effective use of control systems across electrical, mechanical, and software that elevate robot performance on the field. The Waco event marked a strong start to our 2025 season, and Relay was just getting warmed up.",
     date: "March 1st, 2025",
     imageUrl: "/images/BlogPhotos/Screenshot 2025-07-26 151617.png",
     author: "RoboChargers Team",
     videoUrl: "https://www.youtube.com/embed/k9Cnp3AmAjE",
-    linkUrl: "https://www.thebluealliance.com/event/2025txfor",
+    linkUrl: "https://www.thebluealliance.com/event/2025txwac",
     linkText: "The Blue Alliance",
   },
   {
