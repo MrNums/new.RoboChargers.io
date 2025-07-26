@@ -65,21 +65,6 @@ const BlogPost: React.FC = () => {
             alt={post.title}
             className="w-full h-64 md:h-96 object-cover rounded-lg shadow-md mb-8"
           />
-
-          {post.videoUrl && (
-            <div className="mb-8">
-              <div className="aspect-video rounded-lg overflow-hidden shadow-md">
-                <iframe
-                  src={post.videoUrl}
-                  title={`${post.title} Video`}
-                  className="w-full h-full"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
-          )}
           
           <div className="prose prose-lg max-w-none">
             <p className="text-xl text-gray-600 mb-6 leading-relaxed">
@@ -102,6 +87,22 @@ const BlogPost: React.FC = () => {
                   <ExternalLink className="mr-2" size={18} />
                   {post.linkText}
                 </a>
+              </div>
+            )}
+
+            {post.videoUrl && (
+              <div className="mt-8">
+                <h3 className="text-lg font-semibold mb-4">Watch Video</h3>
+                <div className="aspect-video rounded-lg overflow-hidden shadow-md">
+                  <iframe
+                    src={post.videoUrl}
+                    title={`${post.title} Video`}
+                    className="w-full h-full"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
               </div>
             )}
           </div>
