@@ -72,8 +72,7 @@ const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
 
             {}
             <motion.div
-              className="fixed top-1/2 left-1/2 z-10 flex items-center justify-center"
-              style={{ transform: "translate(-50%, -50%)" }}
+              className="fixed inset-0 z-10 flex items-center justify-center"
               initial={{ scale: 0.2, opacity: 1 }}
               animate={{
                 scale: 2,
