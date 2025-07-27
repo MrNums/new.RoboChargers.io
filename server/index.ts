@@ -31,6 +31,13 @@ async function startServer() {
         host: "0.0.0.0",
         cors: true,
         strictPort: false,
+        allowedHosts: [
+          "robochargers.replit.app",
+          "new.robochargers.io",
+          "localhost",
+          ".replit.dev",
+          ".replit.app"
+        ],
         hmr: false, // Disable HMR to avoid connection issues
       },
       appType: "spa"
