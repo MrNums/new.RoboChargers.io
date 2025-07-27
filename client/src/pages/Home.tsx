@@ -58,8 +58,8 @@ const Home: React.FC = () => {
       
       if (isLightningBoltPattern(touchPoints)) {
         const now = Date.now();
-        // Throttle celebrations to once every 3 seconds for swipe too
-        if (now - lastCelebrationTime > 3000) {
+        // Throttle celebrations to once every 10 seconds for swipe
+        if (now - lastCelebrationTime > 10000) {
           triggerCelebration();
           setLastCelebrationTime(now);
         }
@@ -80,18 +80,32 @@ const Home: React.FC = () => {
   }, [isDrawing, touchPoints, lastCelebrationTime]);
 
   const isLightningBoltPattern = (points: {x: number, y: number}[]) => {
-    if (points.length < 6) return false;
+    if (points.length < 12) return false; // Require more points for detection
     
-    // Analyze the pattern for zigzag motion
+    // Calculate total distance traveled
+    let totalDistance = 0;
+    for (let i = 1; i < points.length; i++) {
+      const dx = points[i].x - points[i-1].x;
+      const dy = points[i].y - points[i-1].y;
+      totalDistance += Math.sqrt(dx*dx + dy*dy);
+    }
+    
+    // Require minimum distance to avoid accidental triggers
+    if (totalDistance < 150) return false;
+    
+    // Analyze the pattern for zigzag motion (more strict)
     let directionChanges = 0;
     let lastDirection = '';
     
-    for (let i = 2; i < points.length; i++) {
-      const prevPoint = points[i - 2];
+    for (let i = 3; i < points.length; i += 2) { // Sample less frequently
+      const prevPoint = points[i - 3];
       const currentPoint = points[i];
       
       const deltaX = currentPoint.x - prevPoint.x;
       const deltaY = currentPoint.y - prevPoint.y;
+      
+      // Require significant movement to register a direction
+      if (Math.abs(deltaX) < 20 && Math.abs(deltaY) < 20) continue;
       
       // Determine direction
       let direction = '';
@@ -108,8 +122,8 @@ const Home: React.FC = () => {
       lastDirection = direction;
     }
     
-    // Lightning bolt should have at least 3 direction changes (zigzag)
-    return directionChanges >= 3;
+    // Lightning bolt should have at least 4 direction changes (more strict)
+    return directionChanges >= 4;
   };
 
   const triggerCelebration = () => {
