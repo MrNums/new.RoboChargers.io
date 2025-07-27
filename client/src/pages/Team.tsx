@@ -126,13 +126,13 @@ const Team: React.FC = () => {
           {/* Former Team Principals */}
           <div className="mb-6">
             <h3 className="text-xl font-semibold mb-4 text-center">
-              Former Leadership (2009-2025)
+              Former Leadership (2013-2025)
             </h3>
             <div className="bg-gray-50 p-6 rounded-lg">
               <p className="text-center text-gray-700 mb-6">
                 We honor the dedication and vision of our founding team
                 principals who built the foundation for our program's success
-                over 16 remarkable years.
+                over 12 remarkable years.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="flex flex-col items-center">
@@ -167,11 +167,11 @@ const Team: React.FC = () => {
                     Rachel Moore
                   </h4>
                   <p className="text-[#1a36e8] text-sm mb-2">
-                    Team Principal since 2009
+                    Team Principal since 2013
                   </p>
                   <p className="text-gray-600 text-sm text-center">
                     Provided exceptional leadership and mentorship for our
-                    students through 16 competition seasons.
+                    students through 12 competition seasons.
                   </p>
                 </div>
               </div>
