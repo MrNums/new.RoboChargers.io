@@ -534,10 +534,8 @@ const blogPostsRaw: Omit<BlogPost, "id">[] = [
   {
     title: "FIT District Fort Worth Event Recap",
     slug: "fort-wroth-district-event-recap",
-    excerpt:
-      "Week 4 was something special. We went undefeated in quals (Rank 1) with a record of 16-1-0, and captained Alliance 1 to win it all.",
-    content:
-      "Week 4 was something special. We went undefeated in quals (Rank 1) with a record of 16-1-0, and captained Alliance 1 to win it all. Together with our Alliance, we ran the bracket and brought home another District Event Winner banner, plus our second Excellence in Engineering Award of the season. Fort Worth locked in 73 district points and showed that Relay could dominate when it mattered most.",
+    excerpt: "Blog available soon!",
+    content: "Come back later...",
     date: "March 20th, 2025",
     imageUrl: "/images/BlogPhotos/FortWorthEventBlogPicture (2).png",
     author: "RoboChargers Team",
