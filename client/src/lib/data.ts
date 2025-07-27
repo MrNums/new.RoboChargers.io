@@ -37,7 +37,7 @@ export interface BlogPost {
   linkUrl?: string; // Optional external link
   linkText?: string; // Optional text for the link button
   galleryImages?: string[]; // Optional array of additional images for gallery
-  galleryOrientations?: ('horizontal' | 'vertical')[]; // Optional array to override orientations
+  galleryOrientations?: ("horizontal" | "vertical")[]; // Optional array to override orientations
 }
 
 // Event type definition
@@ -484,24 +484,30 @@ const blogPostsRaw: Omit<BlogPost, "id">[] = [
   {
     title: "FIT District Fort Worth Event Recap",
     slug: "fort-wroth-district-event-recap",
-    excerpt: "Week 4 was something special. We went undefeated in quals (Rank 1) with a record of 16-1-0, and captained Alliance 1 to win it all.",
-    content: "Week 4 was something special. We went undefeated in quals (Rank 1) with a record of 16-1-0, and captained Alliance 1 to win it all. Together with our Alliance, we ran the bracket and brought home another District Event Winner banner, plus our second Excellence in Engineering Award of the season. Fort Worth locked in 73 district points and showed that Relay could dominate when it mattered most.",
+    excerpt:
+      "Week 4 was something special. We went undefeated in quals (Rank 1) with a record of 16-1-0, and captained Alliance 1 to win it all.",
+    content:
+      "Week 4 was something special. We went undefeated in quals (Rank 1) with a record of 16-1-0, and captained Alliance 1 to win it all. Together with our Alliance, we ran the bracket and brought home another District Event Winner banner, plus our second Excellence in Engineering Award of the season. Fort Worth locked in 73 district points and showed that Relay could dominate when it mattered most.",
     date: "March 20th, 2025",
     imageUrl: "/images/BlogPhotos/FortWorthEventBlogPicture (2).png",
     author: "RoboChargers Team",
     linkUrl: "https://www.thebluealliance.com/event/2025txfor",
     linkText: "The Blue Alliance",
     galleryImages: [
-      "/images/BlogPhotos/FIT-Waco-13020490.jpg",
-      "/images/BlogPhotos/DSC02194.jpg",
-      "/images/BlogPhotos/DSC02355.jpg",
-      "/images/BlogPhotos/DSC02681.jpg"
+      "/images/BlogPhotos/FW2025/FWRandom02.jpg",
+      "/images/BlogPhotos/FW2025/FWUnoGang.jpg",
+      "/images/BlogPhotos/FW2025/CapeFWEvent.png",
+      "/images/BlogPhotos/FW2025/FortWorthRobot.png",
+      "/images/BlogPhotos/FW2025/FTWGroupEvent.jpg",
+      "/images/BlogPhotos/FW2025/FWRandom01.jpg",
     ],
     galleryOrientations: [
       "horizontal",
-      "vertical", 
       "horizontal",
-      "horizontal"
+      "vertical",
+      "vertical",
+      "horizontal",
+      "horizontal",
     ],
   },
   // Add new posts here - they will automatically get the next ID number

@@ -119,16 +119,12 @@ const BlogPost: React.FC = () => {
                     // Use manual orientation if provided, otherwise default to horizontal
                     const orientation = post.galleryOrientations?.[index] || 'horizontal';
                     return (
-                      <div 
-                        key={index} 
-                        className={`gallery-rectangle ${orientation} rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer`}
-                      >
-                        <img
-                          src={imageUrl}
-                          alt={`${post.title} - Photo ${index + 1}`}
-                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                        />
-                      </div>
+                      <img
+                        key={index}
+                        src={imageUrl}
+                        alt={`${post.title} - Photo ${index + 1}`}
+                        className={`gallery-rectangle ${orientation} rounded-lg shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer object-cover hover:scale-105`}
+                      />
                     );
                   })}
                 </div>
