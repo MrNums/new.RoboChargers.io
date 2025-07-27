@@ -114,36 +114,19 @@ const BlogPost: React.FC = () => {
             {post.galleryImages && post.galleryImages.length > 0 && (
               <div className="mt-8">
                 <h3 className="text-lg font-semibold mb-4">Photo Gallery</h3>
-                <div className="masonry-gallery">
+                <div className="simple-gallery">
                   {post.galleryImages.map((imageUrl, index) => {
-                    const orientation = imageDimensions[imageUrl] || 'square';
+                    // Use manual orientation if provided, otherwise default to horizontal
+                    const orientation = post.galleryOrientations?.[index] || 'horizontal';
                     return (
                       <div 
                         key={index} 
-                        className={`gallery-item ${orientation} rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer`}
+                        className={`gallery-rectangle ${orientation} rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer`}
                       >
                         <img
                           src={imageUrl}
                           alt={`${post.title} - Photo ${index + 1}`}
                           className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                          onLoad={(e) => {
-                            const img = e.target as HTMLImageElement;
-                            const aspectRatio = img.naturalWidth / img.naturalHeight;
-                            let orientation: 'landscape' | 'portrait' | 'square';
-                            
-                            if (aspectRatio > 1.3) {
-                              orientation = 'landscape';
-                            } else if (aspectRatio < 0.8) {
-                              orientation = 'portrait';
-                            } else {
-                              orientation = 'square';
-                            }
-                            
-                            setImageDimensions(prev => ({
-                              ...prev,
-                              [imageUrl]: orientation
-                            }));
-                          }}
                         />
                       </div>
                     );

@@ -66,7 +66,7 @@ Both blog posts and events now use **ascending chronological order**:
 
 ### 📸 Adding Photo Galleries (Optional)
 
-Blog posts can include a photo gallery that displays below the video (if present). The gallery shows images in a responsive grid layout.
+Blog posts can include a photo gallery that displays below the video (if present). You can manually control how each image is displayed.
 
 **Adding Gallery Images:**
 1. Place photos in `client/public/images/BlogPhotos/` folder
@@ -78,13 +78,23 @@ galleryImages: [
   "/images/BlogPhotos/photo2.jpg",
   "/images/BlogPhotos/photo3.jpg"
 ],
+galleryOrientations: [
+  "horizontal",
+  "vertical", 
+  "horizontal"
+],
 ```
 
+**Gallery Orientations:**
+- **"horizontal"**: Wide rectangle (16:9 aspect ratio) - great for team photos, wide shots
+- **"vertical"**: Tall rectangle (9:16 aspect ratio) - perfect for robot photos, portraits
+
 **Gallery Features:**
-- Responsive grid: 1 column on mobile, 2 on tablet, 3 on desktop
-- Square aspect ratio for consistent layout
+- Manual control over each image's display shape
+- Consistent rectangle shapes regardless of original image dimensions
+- Images automatically fit within their assigned rectangle
 - Hover effects with subtle zoom animation
-- Automatic "Photo Gallery" heading when images are present
+- Responsive: all images display horizontally on mobile for consistency
 
 ### 🔗 Adding Links (Optional)
 

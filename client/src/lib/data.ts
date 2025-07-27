@@ -37,6 +37,7 @@ export interface BlogPost {
   linkUrl?: string; // Optional external link
   linkText?: string; // Optional text for the link button
   galleryImages?: string[]; // Optional array of additional images for gallery
+  galleryOrientations?: ('horizontal' | 'vertical')[]; // Optional array to override orientations
 }
 
 // Event type definition
@@ -491,12 +492,16 @@ const blogPostsRaw: Omit<BlogPost, "id">[] = [
     linkUrl: "https://www.thebluealliance.com/event/2025txfor",
     linkText: "The Blue Alliance",
     galleryImages: [
-      "/images/BlogPhotos/FW2025/FTWGroupEvent.jpg",
-      "/images/BlogPhotos/FW2025/FortWorthRobot.png",
-      "/images/BlogPhotos/FW2025/FWUnoGang.jpg",
-      "/images/BlogPhotos/FW2025/CapeFWEvent.png",
-      "/images/BlogPhotos/FW2025/FWRandom01.jpg",
-      "/images/BlogPhotos/FW2025/FWRandom02.jpg"
+      "/images/BlogPhotos/FIT-Waco-13020490.jpg",
+      "/images/BlogPhotos/DSC02194.jpg",
+      "/images/BlogPhotos/DSC02355.jpg",
+      "/images/BlogPhotos/DSC02681.jpg"
+    ],
+    galleryOrientations: [
+      "horizontal",
+      "vertical", 
+      "horizontal",
+      "horizontal"
     ],
   },
   // Add new posts here - they will automatically get the next ID number
