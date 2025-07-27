@@ -14,7 +14,14 @@ async function startServer() {
       port: port,
       host: "0.0.0.0",
       cors: true,
-      allowedHosts: "all", // Allow all hosts for Replit
+      allowedHosts: [
+        "robochargers.replit.app",
+        "new.robochargers.io",
+        "localhost",
+        ".replit.dev",
+        ".replit.app",
+        ".replit.co"
+      ],
       hmr: {
         clientPort: 443, // Use HTTPS port for HMR
         host: "0.0.0.0"
