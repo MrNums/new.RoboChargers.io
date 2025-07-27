@@ -147,7 +147,7 @@ const Team: React.FC = () => {
                     Marco Guerra
                   </h4>
                   <p className="text-[#1a36e8] text-sm mb-2">
-                    Team Principal (2014-2025)
+                    Team Principal since 2014
                   </p>
                   <p className="text-gray-600 text-sm text-center">
                     A founding leader whose vision and guidance helped establish
@@ -167,7 +167,7 @@ const Team: React.FC = () => {
                     Rachel Moore
                   </h4>
                   <p className="text-[#1a36e8] text-sm mb-2">
-                    Team Principal (2009-2025)
+                    Team Principal since 2009
                   </p>
                   <p className="text-gray-600 text-sm text-center">
                     Provided exceptional leadership and mentorship for our
