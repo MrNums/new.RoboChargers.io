@@ -82,6 +82,7 @@ For custom domain deployment on Replit:
 - July 26, 2025. Data management improvements: restructured blog posts and events to use ascending chronological order with automatic ID generation
 - July 26, 2025. Blog system completion: created full blog functionality with individual post pages, fixed Recent Updates display, added comprehensive blog navigation
 - July 27, 2025. Static site conversion: removed all server dependencies, eliminated database requirements, converted to pure static hosting for free deployment
+- July 27, 2025. FTC data cleanup: updated FTC teams to real team numbers with simple names - Team 13537 (Red), Team 13542 (Blue), Team 13552 (Pink), removed fake placeholder data
 
 ## User Preferences
 

@@ -430,103 +430,54 @@ export const robots: Robot[] = [
   // FTC robots start here
   {
     id: "5",
-    name: "Lightning",
-    description: "Circuit Breakers' 2025 robot designed for the INTO THE DEEP challenge, featuring precise specimen handling and efficient sample collection.",
+    name: "Blue",
+    description: "Team 13542's robot designed for the INTO THE DEEP challenge.",
     season: "2025", 
     challenge: "INTO THE DEEP",
     team: "ftc",
-    ftcTeam: "13537",
-    imageUrl: "/images/robots/ftc-lightning.jpg",
+    ftcTeam: "13542",
+    imageUrl: "/images/robots/ftc-blue.jpg",
     current: true,
     features: [
-      "Precision specimen handling mechanism",
-      "Fast sample collection system", 
-      "Reliable climbing capability",
-      "Autonomous navigation system",
-      "Efficient power management"
+      "Competition-ready design",
+      "Reliable autonomous operation",
+      "Efficient game piece handling"
     ],
-    awards: [
-      {
-        name: "Regional Championship",
-        event: "Design Award",
-        year: "2025"
-      }
-    ]
+    awards: []
   },
   {
     id: "6", 
-    name: "Storm",
-    description: "Alternating Current's 2025 robot focusing on autonomous excellence and consistent scoring performance.",
+    name: "Pink",
+    description: "Team 13552's robot designed for the INTO THE DEEP challenge.",
     season: "2025",
     challenge: "INTO THE DEEP", 
     team: "ftc",
-    ftcTeam: "13542",
-    imageUrl: "/images/robots/ftc-storm.jpg",
+    ftcTeam: "13552",
+    imageUrl: "/images/robots/ftc-pink.jpg",
     current: true,
     features: [
-      "Advanced autonomous programming",
-      "Consistent scoring mechanisms",
-      "Robust drivetrain design",
-      "Vision-guided operation",
-      "Modular component system"
+      "Competition-ready design",
+      "Reliable autonomous operation", 
+      "Efficient game piece handling"
     ],
-    awards: [
-      {
-        name: "League Championship",
-        event: "Programming Award", 
-        year: "2025"
-      }
-    ]
+    awards: []
   },
   {
     id: "7",
-    name: "Bolt",
-    description: "Voltage's 2025 robot engineered for speed and efficiency in the INTO THE DEEP challenge.",
+    name: "Red",
+    description: "Team 13537's robot designed for the INTO THE DEEP challenge.",
     season: "2025",
     challenge: "INTO THE DEEP",
     team: "ftc", 
-    ftcTeam: "13552",
-    imageUrl: "/images/robots/ftc-bolt.jpg",
+    ftcTeam: "13537",
+    imageUrl: "/images/robots/ftc-red.jpg",
     current: true,
     features: [
-      "High-speed drivetrain",
-      "Efficient intake system",
-      "Quick deployment mechanisms", 
-      "Lightweight frame design",
-      "Rapid scoring capabilities"
+      "Competition-ready design",
+      "Reliable autonomous operation",
+      "Efficient game piece handling"
     ],
-    awards: [
-      {
-        name: "Regional Tournament",
-        event: "Innovation Award",
-        year: "2025"
-      }
-    ]
-  },
-  {
-    id: "8",
-    name: "Surge",
-    description: "Power Surge's 2025 robot bringing fresh innovation to the INTO THE DEEP challenge.",
-    season: "2025", 
-    challenge: "INTO THE DEEP",
-    team: "ftc",
-    ftcTeam: "18871", 
-    imageUrl: "/images/robots/ftc-surge.jpg",
-    current: true,
-    features: [
-      "Creative mechanism design",
-      "Innovative approach to scoring",
-      "Team collaboration features",
-      "Adaptive control system",
-      "Rookie-friendly operation"
-    ],
-    awards: [
-      {
-        name: "Rookie Tournament",
-        event: "Rookie Inspiration Award", 
-        year: "2025"
-      }
-    ]
+    awards: []
   }
 ];
 

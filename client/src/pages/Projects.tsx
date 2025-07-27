@@ -147,12 +147,12 @@ const Projects: React.FC = () => {
             <Accordion type="single" collapsible className="mb-8">
               <AccordionItem value="team-13537">
                 <AccordionTrigger className="text-lg font-semibold">
-                  Team 13537 - Circuit Breakers
+                  Team 13537 - Red
                 </AccordionTrigger>
                 <AccordionContent>
                   <div className="p-4">
                     <p className="mb-4">
-                      The Circuit Breakers specialize in innovative mechanisms and precise control systems.
+                      Team 13537 competes in the FTC INTO THE DEEP challenge.
                     </p>
                     <div className="grid grid-cols-1 gap-8 mt-6">
                       {ftcRobots.filter(robot => robot.ftcTeam === "13537").map((robot) => (
@@ -164,12 +164,12 @@ const Projects: React.FC = () => {
               </AccordionItem>
               <AccordionItem value="team-13542">
                 <AccordionTrigger className="text-lg font-semibold">
-                  Team 13542 - Alternating Current
+                  Team 13542 - Blue
                 </AccordionTrigger>
                 <AccordionContent>
                   <div className="p-4">
                     <p className="mb-4">
-                      Alternating Current is known for their software excellence and autonomous capabilities.
+                      Team 13542 competes in the FTC INTO THE DEEP challenge.
                     </p>
                     <div className="grid grid-cols-1 gap-8 mt-6">
                       {ftcRobots.filter(robot => robot.ftcTeam === "13542").map((robot) => (
@@ -181,32 +181,15 @@ const Projects: React.FC = () => {
               </AccordionItem>
               <AccordionItem value="team-13552">
                 <AccordionTrigger className="text-lg font-semibold">
-                  Team 13552 - Voltage
+                  Team 13552 - Pink
                 </AccordionTrigger>
                 <AccordionContent>
                   <div className="p-4">
                     <p className="mb-4">
-                      Voltage focuses on efficient mechanical design and robust drive systems.
+                      Team 13552 competes in the FTC INTO THE DEEP challenge.
                     </p>
                     <div className="grid grid-cols-1 gap-8 mt-6">
                       {ftcRobots.filter(robot => robot.ftcTeam === "13552").map((robot) => (
-                        <RobotCard key={robot.id} robot={robot} />
-                      ))}
-                    </div>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="team-18871">
-                <AccordionTrigger className="text-lg font-semibold">
-                  Team 18871 - Power Surge
-                </AccordionTrigger>
-                <AccordionContent>
-                  <div className="p-4">
-                    <p className="mb-4">
-                      Power Surge, our newest team, brings fresh ideas and creative approaches to FTC challenges.
-                    </p>
-                    <div className="grid grid-cols-1 gap-8 mt-6">
-                      {ftcRobots.filter(robot => robot.ftcTeam === "18871").map((robot) => (
                         <RobotCard key={robot.id} robot={robot} />
                       ))}
                     </div>
