@@ -427,6 +427,107 @@ export const robots: Robot[] = [
       },
     ],
   },
+  // FTC robots start here
+  {
+    id: "5",
+    name: "Lightning",
+    description: "Circuit Breakers' 2025 robot designed for the INTO THE DEEP challenge, featuring precise specimen handling and efficient sample collection.",
+    season: "2025", 
+    challenge: "INTO THE DEEP",
+    team: "ftc",
+    ftcTeam: "13537",
+    imageUrl: "/images/robots/ftc-lightning.jpg",
+    current: true,
+    features: [
+      "Precision specimen handling mechanism",
+      "Fast sample collection system", 
+      "Reliable climbing capability",
+      "Autonomous navigation system",
+      "Efficient power management"
+    ],
+    awards: [
+      {
+        name: "Regional Championship",
+        event: "Design Award",
+        year: "2025"
+      }
+    ]
+  },
+  {
+    id: "6", 
+    name: "Storm",
+    description: "Alternating Current's 2025 robot focusing on autonomous excellence and consistent scoring performance.",
+    season: "2025",
+    challenge: "INTO THE DEEP", 
+    team: "ftc",
+    ftcTeam: "13542",
+    imageUrl: "/images/robots/ftc-storm.jpg",
+    current: true,
+    features: [
+      "Advanced autonomous programming",
+      "Consistent scoring mechanisms",
+      "Robust drivetrain design",
+      "Vision-guided operation",
+      "Modular component system"
+    ],
+    awards: [
+      {
+        name: "League Championship",
+        event: "Programming Award", 
+        year: "2025"
+      }
+    ]
+  },
+  {
+    id: "7",
+    name: "Bolt",
+    description: "Voltage's 2025 robot engineered for speed and efficiency in the INTO THE DEEP challenge.",
+    season: "2025",
+    challenge: "INTO THE DEEP",
+    team: "ftc", 
+    ftcTeam: "13552",
+    imageUrl: "/images/robots/ftc-bolt.jpg",
+    current: true,
+    features: [
+      "High-speed drivetrain",
+      "Efficient intake system",
+      "Quick deployment mechanisms", 
+      "Lightweight frame design",
+      "Rapid scoring capabilities"
+    ],
+    awards: [
+      {
+        name: "Regional Tournament",
+        event: "Innovation Award",
+        year: "2025"
+      }
+    ]
+  },
+  {
+    id: "8",
+    name: "Surge",
+    description: "Power Surge's 2025 robot bringing fresh innovation to the INTO THE DEEP challenge.",
+    season: "2025", 
+    challenge: "INTO THE DEEP",
+    team: "ftc",
+    ftcTeam: "18871", 
+    imageUrl: "/images/robots/ftc-surge.jpg",
+    current: true,
+    features: [
+      "Creative mechanism design",
+      "Innovative approach to scoring",
+      "Team collaboration features",
+      "Adaptive control system",
+      "Rookie-friendly operation"
+    ],
+    awards: [
+      {
+        name: "Rookie Tournament",
+        event: "Rookie Inspiration Award", 
+        year: "2025"
+      }
+    ]
+  }
 ];
 
 // Blog posts data - ordered chronologically (oldest = 1, newest = highest)
