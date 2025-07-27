@@ -432,7 +432,7 @@ export const robots: Robot[] = [
     id: "5",
     name: "Blue",
     description: "Team 13542's robot designed for the INTO THE DEEP challenge.",
-    season: "2025", 
+    season: "2025",
     challenge: "INTO THE DEEP",
     team: "ftc",
     ftcTeam: "13542",
@@ -441,26 +441,26 @@ export const robots: Robot[] = [
     features: [
       "Competition-ready design",
       "Reliable autonomous operation",
-      "Efficient game piece handling"
+      "Efficient game piece handling",
     ],
-    awards: []
+    awards: [],
   },
   {
-    id: "6", 
+    id: "6",
     name: "Pink",
     description: "Team 13552's robot designed for the INTO THE DEEP challenge.",
     season: "2025",
-    challenge: "INTO THE DEEP", 
+    challenge: "INTO THE DEEP",
     team: "ftc",
     ftcTeam: "13552",
     imageUrl: "/images/robots/ftc-pink.jpg",
     current: true,
     features: [
       "Competition-ready design",
-      "Reliable autonomous operation", 
-      "Efficient game piece handling"
+      "Reliable autonomous operation",
+      "Efficient game piece handling",
     ],
-    awards: []
+    awards: [],
   },
   {
     id: "7",
@@ -468,17 +468,17 @@ export const robots: Robot[] = [
     description: "Team 13537's robot designed for the INTO THE DEEP challenge.",
     season: "2025",
     challenge: "INTO THE DEEP",
-    team: "ftc", 
+    team: "ftc",
     ftcTeam: "13537",
     imageUrl: "/images/robots/ftc-red.jpg",
     current: true,
     features: [
       "Competition-ready design",
       "Reliable autonomous operation",
-      "Efficient game piece handling"
+      "Efficient game piece handling",
     ],
-    awards: []
-  }
+    awards: [],
+  },
 ];
 
 // Blog posts data - ordered chronologically (oldest = 1, newest = highest)
@@ -510,10 +510,8 @@ const blogPostsRaw: Omit<BlogPost, "id">[] = [
   {
     title: "FiT Fort Worth District Event Recap",
     slug: "fort-worth-district-event-recap",
-    excerpt:
-      "Our team celebrated another successful weekend of competition at the FIRST in Texas Fort Worth District Event...",
-    content:
-      "Our team celebrated another successful weekend of competition at the FIRST in Texas Fort Worth District Event that was held from March 16th to March 18th. With only a week after our Dallas District Event, our team continued to give 110% at this weekend's competition. If you are not yet familiar with the 2023 FIRST Robotics Competition game, 'CHARGED UP,' teams work to place cubes and cones on a grid to score points, as well as balance on a charging station for additional points.",
+    excerpt: "Blog available soon!",
+    content: "Come back later...",
     date: "March 21, 2023",
     imageUrl:
       "https://images.unsplash.com/photo-1501506780317-5cbe5f4c3482?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=300&q=80",

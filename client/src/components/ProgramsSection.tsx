@@ -4,12 +4,13 @@ import { ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const ProgramsSection: React.FC = () => {
-
   return (
     <section className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4 mt-8 md:mt-0">Our Programs</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold mb-4 mt-8 md:mt-0">
+            Our Programs
+          </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             The RoboChargers participate in multiple FIRST Robotics programs,
             providing opportunities for students at all levels.
@@ -31,11 +32,12 @@ const ProgramsSection: React.FC = () => {
                 </h3>
               </div>
               <p className="text-gray-600 mb-4 md:mb-6 leading-relaxed">
-                High school teams design and build industrial-sized robots for a high-energy game revealed each January—some starting from a Kit of Parts, others from custom designs.
-
-                They compete in three-team alliances and embrace Coopertition®.
-
-                Guided by mentors, teams also fundraise, build a team identity, and promote STEM in their communities.
+                High school teams design and build industrial-sized robots for a
+                high-energy game revealed each January—some starting from a Kit
+                of Parts, others from custom designs. They compete in three-team
+                alliances and embrace Coopertition®. Guided by mentors, teams
+                also fundraise, build a team identity, and promote STEM in their
+                communities.
               </p>
               <div className="mb-6">
                 <div className="flex items-center justify-between mb-2">
@@ -49,7 +51,10 @@ const ProgramsSection: React.FC = () => {
               </div>
               <div className="mt-auto pt-4">
                 <div className="flex justify-between items-center">
-                  <Link href="/projects" className="text-[#1a36e8] hover:text-[#0a1a70] font-bold transition duration-150 flex items-center text-lg">
+                  <Link
+                    href="/projects"
+                    className="text-[#1a36e8] hover:text-[#0a1a70] font-bold transition duration-150 flex items-center text-lg"
+                  >
                     Learn More <ArrowRight className="ml-1 h-5 w-5" />
                   </Link>
                   <div className="flex space-x-2">
@@ -80,20 +85,22 @@ const ProgramsSection: React.FC = () => {
                   alt="FTC Logo"
                   className="h-12 sm:h-14 w-auto mb-3 sm:mb-0 sm:mr-4"
                 />
-                <h3 className="text-xl sm:text-2xl font-bold leading-tight">Code, Design, and Compete with Robots!</h3>
+                <h3 className="text-xl sm:text-2xl font-bold leading-tight">
+                  Code, Design, and Compete with Robots!
+                </h3>
               </div>
               <p className="text-gray-600 mb-4 md:mb-6 leading-relaxed">
-                FIRST® Tech Challenge teams design and build robots to compete in exciting challenges released each September.
-
-                Robots run autonomously before student drivers take control in 2v2 matches.
-
-                Students also grow STEM skills, do outreach, and build confidence for future success.
+                FIRST® Tech Challenge teams design and build robots to compete
+                in exciting challenges released each September. Robots run
+                autonomously before student drivers take control in 2v2 matches.
+                Students also grow STEM skills, do outreach, and build
+                confidence for future success.
               </p>
               <div className="mb-6">
                 <div className="flex items-center justify-between mb-2">
                   <span className="font-semibold">Team Numbers:</span>
                   <span className="text-[#1a36e8] font-bold">
-                    13537 ┃ 13542 ┃ 13552 ┃ 18871
+                    13537 ┃ 13542 ┃ 13552
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
@@ -103,7 +110,10 @@ const ProgramsSection: React.FC = () => {
               </div>
               <div className="mt-auto pt-4">
                 <div className="flex justify-between items-center">
-                  <Link href="/projects?team=ftc" className="text-[#1a36e8] hover:text-[#0a1a70] font-bold transition duration-150 flex items-center text-lg">
+                  <Link
+                    href="/projects?team=ftc"
+                    className="text-[#1a36e8] hover:text-[#0a1a70] font-bold transition duration-150 flex items-center text-lg"
+                  >
                     Learn More <ArrowRight className="ml-1 h-5 w-5" />
                   </Link>
                   <div className="flex space-x-2">

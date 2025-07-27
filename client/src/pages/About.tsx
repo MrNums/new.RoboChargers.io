@@ -69,8 +69,8 @@ const About: React.FC = () => {
                   <h3 className="text-xl font-semibold mb-2">Today</h3>
                   <p className="text-gray-600">
                     Today, the RoboChargers program includes FRC Team 3005 and
-                    four FTC teams: 13537, 13542, 13552, and 18871. We continue
-                    to innovate, inspire, and grow as we prepare students for
+                    four FTC teams: 13537, 13542, 13552... We continue to
+                    innovate, inspire, and grow as we prepare students for
                     futures in STEM fields.
                   </p>
                 </div>
