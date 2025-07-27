@@ -87,7 +87,7 @@
 }
 
 .gallery-rectangle.vertical {
-  aspect-ratio: 9/16; /* Tall rectangle */
+  aspect-ratio: 3/4; /* More compact tall rectangle */
 }
 
 /* Responsive adjustments */
