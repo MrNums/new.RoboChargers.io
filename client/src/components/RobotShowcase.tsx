@@ -10,16 +10,17 @@ const RobotShowcase: React.FC = () => {
 
   const scroll = (direction: "left" | "right") => {
     if (carouselRef.current) {
-      const cardWidth = 430; // Card width (400px) + spacing (30px)
-      const scrollLeft = carouselRef.current.scrollLeft;
+      const container = carouselRef.current;
+      const containerWidth = container.clientWidth;
+      const scrollAmount = containerWidth * 0.8; // Scroll 80% of container width
       
-      // Calculate next card position
-      const position = direction === "left"
-        ? Math.floor(scrollLeft / cardWidth) * cardWidth - cardWidth
-        : Math.floor(scrollLeft / cardWidth) * cardWidth + cardWidth;
+      const currentScroll = container.scrollLeft;
+      const newPosition = direction === "left" 
+        ? Math.max(0, currentScroll - scrollAmount)
+        : currentScroll + scrollAmount;
         
-      carouselRef.current.scrollTo({
-        left: position,
+      container.scrollTo({
+        left: newPosition,
         behavior: "smooth",
       });
     }
@@ -74,7 +75,7 @@ const RobotShowcase: React.FC = () => {
           >
             <div className="flex space-x-6 pb-2">
               {robots
-                .filter(robot => ["1", "2", "3", "4"].includes(robot.id)) // Only show first 4 robots
+                .filter(robot => ["1", "2", "3", "4", "5", "6"].includes(robot.id)) // Show more robots for better scrolling
                 .sort((a, b) => parseInt(b.season) - parseInt(a.season)) // Sort by newest first
                 .map((robot) => (
                   <HomeRobotCard key={robot.id} robot={robot} />
