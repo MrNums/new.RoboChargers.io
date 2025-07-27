@@ -6,13 +6,12 @@ This is a full-stack web application for a competitive robotics team (FRC 3005 R
 
 ## System Architecture
 
-The application follows a monorepo structure with clear separation between frontend and backend:
+The application is now a static site with no backend dependencies:
 
 - **Frontend**: React with TypeScript, Vite build system
-- **Backend**: Express.js with TypeScript
-- **Database**: PostgreSQL with Drizzle ORM
+- **Data**: Static data files in TypeScript (no database)
 - **Styling**: TailwindCSS with shadcn/ui components
-- **Authentication**: Passport.js with session-based auth
+- **Deployment**: Static hosting ready (Netlify, Vercel, GitHub Pages)
 
 ## Key Components
 
@@ -26,52 +25,38 @@ The application follows a monorepo structure with clear separation between front
 - **Forms**: React Hook Form with Zod validation
 - **Animations**: Framer Motion for page transitions
 
-### Backend Architecture
-- **Framework**: Express.js with TypeScript
-- **Database ORM**: Drizzle with PostgreSQL dialect
-- **Authentication**: Passport.js with local strategy
-- **Session Management**: Express-session with configurable store
-- **Development**: Hot reload with Vite integration
-
 ### Data Layer
-- **Database**: PostgreSQL (configured via DATABASE_URL)
-- **ORM**: Drizzle with schema-first approach
-- **Migrations**: Drizzle Kit for database management
-- **Storage Interface**: Abstracted storage layer with in-memory fallback
+- **Data Storage**: Static TypeScript files in `client/src/lib/data.ts`
+- **Content Types**: Blog posts, robots, events, sponsors, gallery images
+- **Updates**: Direct file editing with version control
 
 ## Data Flow
 
-1. **Client Requests**: React components make API calls using TanStack Query
-2. **Authentication**: Passport.js middleware checks session authentication
-3. **Route Handling**: Express routes process requests and interact with storage layer
-4. **Database Operations**: Drizzle ORM handles database interactions
-5. **Response**: JSON data returned to client and cached by TanStack Query
+1. **Static Data**: React components import data directly from TypeScript files
+2. **Client-side Routing**: Wouter handles navigation without server requests
+3. **Immediate Loading**: No API calls or database queries needed
+4. **Static Assets**: Images and media served directly from CDN
 
 ## External Dependencies
 
 ### Core Dependencies
-- **Database**: Neon Database (@neondatabase/serverless)
 - **UI Framework**: Radix UI component primitives
-- **Validation**: Zod for schema validation
+- **Validation**: Zod for schema validation (forms only)
 - **Image Processing**: Sharp for image optimization
 - **Development**: Replit-specific plugins and tooling
-
-### Authentication Dependencies
-- **Passport.js**: Authentication middleware
-- **Express Session**: Session management
-- **Crypto**: Built-in Node.js crypto for password hashing
+- **No Server Dependencies**: No database, authentication, or backend services
 
 ## Deployment Strategy
 
 ### Build Process
-1. **Frontend Build**: Vite builds React app to `dist/public`
-2. **Backend Build**: esbuild bundles server code to `dist/index.js`
-3. **Database**: Drizzle pushes schema changes to PostgreSQL
+1. **Static Build**: Vite builds React app to `dist/public`
+2. **Asset Optimization**: Images and CSS automatically optimized
+3. **No Backend**: Pure static files ready for CDN deployment
 
 ### Environment Configuration
-- **Development**: Uses tsx for TypeScript execution with hot reload
-- **Production**: Compiled JavaScript with NODE_ENV=production
-- **Database**: Requires DATABASE_URL environment variable
+- **Development**: Vite development server with hot reload
+- **Production**: Static files served from any web server or CDN
+- **No Environment Variables**: No secrets or configuration needed
 
 ### Custom Domain Deployment
 **User Preference**: Deploy with custom domain instead of default .replit.app domain
@@ -83,10 +68,9 @@ For custom domain deployment on Replit:
 4. SSL/TLS certificates are handled automatically by Replit
 
 ### Scripts
-- `npm run dev`: Development server with hot reload
-- `npm run build`: Production build for both frontend and backend
-- `npm run start`: Production server
-- `npm run db:push`: Apply database schema changes
+- `vite dev --port 5000`: Development server with hot reload
+- `vite build`: Production build for static deployment
+- `vite preview`: Preview production build locally
 
 ## Changelog
 - July 03, 2025. Initial setup
@@ -97,6 +81,7 @@ For custom domain deployment on Replit:
 - July 18, 2025. Fixed DOM validation errors: removed nested anchor tags, added celebration throttling, improved easter egg cleanup
 - July 26, 2025. Data management improvements: restructured blog posts and events to use ascending chronological order with automatic ID generation
 - July 26, 2025. Blog system completion: created full blog functionality with individual post pages, fixed Recent Updates display, added comprehensive blog navigation
+- July 27, 2025. Static site conversion: removed all server dependencies, eliminated database requirements, converted to pure static hosting for free deployment
 
 ## User Preferences
 
