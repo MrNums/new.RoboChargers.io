@@ -68,7 +68,7 @@ const RobotShowcase: React.FC = () => {
 
           {/* Horizontal scroll container */}
           <div
-            className="relative overflow-x-auto pb-6 -mx-4 px-4 md:mx-0 md:px-0"
+            className="relative overflow-x-auto pb-6"
             ref={carouselRef}
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
