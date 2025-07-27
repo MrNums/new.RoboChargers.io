@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useRoute } from "wouter";
 import { Helmet } from "react-helmet";
 import { ArrowLeft, CalendarIcon, UserIcon, ExternalLink } from "lucide-react";
@@ -7,8 +7,13 @@ import { Button } from "@/components/ui/button";
 import { blogPosts } from "@/lib/data";
 import NotFound from "@/pages/not-found";
 
+interface ImageDimensions {
+  [key: string]: 'landscape' | 'portrait' | 'square';
+}
+
 const BlogPost: React.FC = () => {
   const [match, params] = useRoute("/blog/:slug");
+  const [imageDimensions, setImageDimensions] = useState<ImageDimensions>({});
   
   if (!match || !params?.slug) {
     return <NotFound />;
@@ -109,16 +114,40 @@ const BlogPost: React.FC = () => {
             {post.galleryImages && post.galleryImages.length > 0 && (
               <div className="mt-8">
                 <h3 className="text-lg font-semibold mb-4">Photo Gallery</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {post.galleryImages.map((imageUrl, index) => (
-                    <div key={index} className="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer">
-                      <img
-                        src={imageUrl}
-                        alt={`${post.title} - Photo ${index + 1}`}
-                        className="w-full h-auto min-h-[200px] max-h-[400px] object-contain hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  ))}
+                <div className="masonry-gallery">
+                  {post.galleryImages.map((imageUrl, index) => {
+                    const orientation = imageDimensions[imageUrl] || 'square';
+                    return (
+                      <div 
+                        key={index} 
+                        className={`gallery-item ${orientation} rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer`}
+                      >
+                        <img
+                          src={imageUrl}
+                          alt={`${post.title} - Photo ${index + 1}`}
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                          onLoad={(e) => {
+                            const img = e.target as HTMLImageElement;
+                            const aspectRatio = img.naturalWidth / img.naturalHeight;
+                            let orientation: 'landscape' | 'portrait' | 'square';
+                            
+                            if (aspectRatio > 1.3) {
+                              orientation = 'landscape';
+                            } else if (aspectRatio < 0.8) {
+                              orientation = 'portrait';
+                            } else {
+                              orientation = 'square';
+                            }
+                            
+                            setImageDimensions(prev => ({
+                              ...prev,
+                              [imageUrl]: orientation
+                            }));
+                          }}
+                        />
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             )}
