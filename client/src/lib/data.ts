@@ -836,7 +836,7 @@ export const resources: Resource[] = [
     title: "Team Handbook 2023",
     description:
       "Comprehensive guide to team policies, expectations, and procedures for the 2023 season",
-    fileUrl: "/resources/TeamHandbook2023.pdf",
+    fileUrl: "",
     category: "documents",
     type: "PDF",
     dateAdded: "October 1, 2022",
@@ -846,7 +846,7 @@ export const resources: Resource[] = [
     title: "Robot CAD Files - Amp (2023)",
     description:
       "Complete CAD model of our 2023 robot including all assemblies and components",
-    fileUrl: "/resources/Amp2023CAD.zip",
+    fileUrl: "",
     category: "cad",
     type: "ZIP (Onshape)",
     dateAdded: "April 30, 2023",
@@ -856,7 +856,7 @@ export const resources: Resource[] = [
     title: "Java Programming Guide for FRC",
     description:
       "Introduction to programming FRC robots using Java, including examples and best practices",
-    fileUrl: "/resources/JavaProgrammingGuide.pdf",
+    fileUrl: "",
     category: "programming",
     type: "PDF",
     dateAdded: "January 15, 2023",
